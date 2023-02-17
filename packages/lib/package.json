@@ -1,0 +1,28 @@
+{
+	"name": "vue-useform",
+	"version": "0.0.1",
+	"license": "MIT",
+	"files": [
+		"dist"
+	],
+	"module": "./dist/index.mjs",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"build": "tsup",
+		"build:watch": "tsup --watch"
+	},
+	"devDependencies": {
+		"tsup": "^6.6.3",
+		"vue": "^3.2.47"
+	},
+	"peerDependencies": {
+		"vue": "^3.2.47"
+	}
+}
