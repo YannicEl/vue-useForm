@@ -15,11 +15,12 @@
     </pre> -->
 
 		<Form :form="form" @submit.prevent="onSubmit" class="mt-6 grid gap-4">
-			<label for="firstname">
-				<div>Firstname:</div>
-				<FormInput id="firstname" type="text" :field="form.fields.firstname" />
-			</label>
+			<FormInput :field="form.fields.firstname" v-slot="props">
+				<label for="firstname">Firstname:</label>
+				<input v-bind="props" id="firstname" name="firstname" type="text" />
+			</FormInput>
 
+			<!-- 
 			<label for="email">
 				<div>Email:</div>
 				<FormInput id="email" type="email" :field="form.fields.email" />
@@ -72,7 +73,7 @@
 					<option value="2">2</option>
 					<option value="3">3</option>
 				</FormSelect>
-			</label>
+			</label> -->
 
 			<button>Submit</button>
 		</Form>
@@ -86,10 +87,9 @@
 
 <script setup lang="ts">
 import {
+	AsyncValidator,
 	email,
-	min,
 	required,
-	storagePlugin,
 	useField,
 	useForm,
 } from '@yannicel/vue-useform';
@@ -104,21 +104,34 @@ function remove() {
 	field.validators.delete(email);
 }
 
-const form = useForm(
-	{
-		firstname: ['', [required]],
-		email: ['', [required, email]],
-		count: [0, [min(2)]],
-		radio: ['', [required]],
-		select: ['', [required]],
-		checkbox: ['', []],
+function timeout(ms: number): Promise<void> {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve();
+		}, ms);
+	});
+}
+
+const asyncValidator: AsyncValidator = {
+	name: 'asyncError',
+	validate: async (value) => {
+		await timeout(1000);
+		return typeof value === 'string' && value.length < 4;
 	},
-	{ plugins: [storagePlugin({ key: 'test' })] }
-);
+};
+
+const form = useForm({
+	firstname: ['', [required], [asyncValidator]],
+	// email: ['', [required, email]],
+	// count: [0, [min(2)]],
+	// radio: ['', [required]],
+	// select: ['', [required]],
+	// checkbox: ['', []],
+});
 
 function onSubmit() {
-	const { firstname, email, count, radio, select, checkbox } = form.values;
-	console.log({ firstname, email, count, radio, select, checkbox });
+	const { firstname } = form.values;
+	console.log({ firstname });
 }
 </script>
 

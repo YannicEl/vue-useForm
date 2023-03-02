@@ -16,8 +16,10 @@ export interface Field<T = any> {
 	disabled: boolean;
 	enabled: boolean;
 	dirty: boolean;
+	pending: boolean;
 
 	validators: Set<Validator>;
+	asyncValidators: Set<AsyncValidator>;
 	errors: string[];
 
 	// functions
@@ -33,8 +35,9 @@ export function useField<T>(
 	// This ref is used for v-model on form inputs
 	const value = shallowRef(initialValue);
 	const validators = ref(new Set<Validator>(options.validators));
+	const asyncValidators = ref(new Set<AsyncValidator>(options.asyncValidators));
 
-	const errors = computed(() => {
+	const syncErrors = computed(() => {
 		const ret: string[] = [];
 		validators.value.forEach((validator) => {
 			if (validator.validate(value.value)) ret.push(validator.name);
@@ -42,6 +45,26 @@ export function useField<T>(
 
 		return ret;
 	});
+
+	const pending = ref(false);
+	const asyncErrors = ref([]);
+	watch(value, async (value) => {
+		if (asyncValidators.value.size === 0) return;
+
+		pending.value = true;
+
+		const errors = await Promise.all(
+			Array.from(asyncValidators.value).map(async (validator) => {
+				if (await validator.validate(value)) return validator.name;
+			})
+		);
+
+		asyncErrors.value = errors.filter(Boolean) as any;
+		pending.value = false;
+	});
+
+	// combine async and sync errors
+	const errors = computed(() => [...syncErrors.value, ...asyncErrors.value]);
 
 	const invalid = computed(() => errors.value.length > 0);
 	const valid = computed(() => !invalid.value);
@@ -72,9 +95,11 @@ export function useField<T>(
 		disabled,
 		enabled,
 		dirty,
+		pending,
 
 		errors,
 		validators,
+		asyncValidators,
 
 		// functions
 		reset,

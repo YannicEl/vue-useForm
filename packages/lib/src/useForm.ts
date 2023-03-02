@@ -1,10 +1,14 @@
 import { computed, ComputedRef, reactive, ref, UnwrapRef } from 'vue';
 import { Plugin } from './plugins';
 import { Field, useField } from './useField';
-import { Validator } from './validators';
+import { AsyncValidator, Validator } from './validators';
 
 export type FieldOptions<T> = {
-	[Key in keyof T]: [initialValue: T[Key], validators?: Validator[]];
+	[Key in keyof T]: [
+		initialValue: T[Key],
+		validators?: Validator[],
+		asyncValidators?: AsyncValidator[]
+	];
 };
 
 export type UseFormOptions = {
@@ -37,9 +41,9 @@ export function useForm<T>(
 	const values: Values<T> = reactive({}) as any;
 
 	for (const key in fieldOptions) {
-		const [initialValue, validators = []] = fieldOptions[key];
+		const [initialValue, validators = [], asyncValidators = []] = fieldOptions[key];
 
-		const field = useField(initialValue, { validators });
+		const field = useField(initialValue, { validators, asyncValidators });
 
 		values[key] = computed(() => field.value);
 		fields[key] = field;
