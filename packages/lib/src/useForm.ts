@@ -1,88 +1,66 @@
-import {
-	computed,
-	ComputedRef,
-	reactive,
-	Ref,
-	ref,
-	ShallowRef,
-	shallowRef,
-	UnwrapNestedRefs,
-} from 'vue';
+import { computed, ComputedRef, reactive, ref, UnwrapRef } from 'vue';
+import { Plugin } from './plugins';
+import { Field, useField } from './useField';
 import { Validator } from './validators';
 
-export type FormOptions<T> = {
+export type FieldOptions<T> = {
 	[Key in keyof T]: [initialValue: T[Key], validators?: Validator[]];
 };
 
+export type UseFormOptions = {
+	plugins: Plugin[];
+};
+
 type Values<T> = {
-	[Key in keyof T]: Ref<T[Key]>;
+	[Key in keyof T]: ComputedRef<T[Key]>;
 };
 
-type Fields<T> = {
-	[Key in keyof T]: {
-		value: ShallowRef<T[Key]>;
-		hasError: ComputedRef<boolean>;
-		errors: ComputedRef<string[]>;
-	};
+export type Fields<T> = {
+	[Key in keyof T]: Field<T[Key]>;
 };
 
-export type Return<T> = {
-	values: Values<T>;
-	fields: Fields<T>;
-	isValid: ComputedRef<boolean>;
-	submitted: Ref<boolean>;
+export interface Form<T = any> {
+	values: UnwrapRef<Values<T>>;
+	fields: UnwrapRef<Fields<T>>;
+	invalid: boolean;
+	valid: boolean;
+	submitted: boolean;
 	setValues: (values: Partial<{ [Key in keyof T]: T[Key] }>) => void;
 	reset: () => void;
-};
+}
 
-export function useForm<T>(options: FormOptions<T>): UnwrapNestedRefs<Return<T>> {
+export function useForm<T>(
+	fieldOptions: FieldOptions<T>,
+	options: UseFormOptions = { plugins: [] }
+): Form<T> {
 	const fields: Fields<T> = {} as any;
-	const values: Values<T> = {} as any;
+	const values: Values<T> = reactive({}) as any;
 
-	for (const key in options) {
-		const [initialValue, validators = []] = options[key];
+	for (const key in fieldOptions) {
+		const [initialValue, validators = []] = fieldOptions[key];
 
-		// This ref is used for v-model on form inputs
-		const value = shallowRef(initialValue);
+		const field = useField(initialValue, { validators });
 
-		const errors = computed(() => {
-			const ret: string[] = [];
-			validators.forEach((validator) => {
-				if (!validator.validate(value.value)) ret.push(validator.name);
-			});
-
-			return ret;
-		});
-
-		const hasError = computed(() => {
-			// If a field is not required and empty it cannot have errors
-			if (!errors.value.includes('required') && value?.value === '') {
-				return false;
-			} else {
-				return errors.value.length > 0;
-			}
-		});
-
-		values[key] = value;
-		fields[key] = { value, hasError, errors };
+		values[key] = computed(() => field.value);
+		fields[key] = field;
 	}
 
 	// Checks if all fields in the form are valid
-	const isValid = computed(() => {
-		let isValid = true;
+	const invalid = computed(() => {
+		let invalid = false;
 		for (const key in fields) {
-			const { hasError } = fields[key];
-			if (isValid) {
-				isValid = !hasError.value;
+			if (!invalid) {
+				invalid = fields[key].invalid;
 			}
 		}
-		return isValid;
+		return invalid;
 	});
+	const valid = computed(() => !invalid.value);
 
 	const setValues = (setValues: Partial<{ [Key in keyof T]: T[Key] }>) => {
 		for (const key in setValues) {
 			const value = setValues[key];
-			values[key].value = value!;
+			fields[key].value = value!;
 		}
 	};
 
@@ -92,19 +70,21 @@ export function useForm<T>(options: FormOptions<T>): UnwrapNestedRefs<Return<T>>
 	const reset = () => {
 		submitted.value = false;
 		for (const key in values) {
-			const [initialValue] = options[key];
-			values[key].value = initialValue;
+			fields[key].reset();
 		}
 	};
 
-	const ret = {
-		isValid,
+	const form: Form<T> = reactive({
+		invalid,
+		valid,
+		submitted,
 		values,
 		fields,
-		submitted,
 		setValues,
 		reset,
-	};
+	});
 
-	return reactive(ret);
+	options.plugins.forEach((plugin) => plugin(form));
+
+	return form;
 }

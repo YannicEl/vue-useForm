@@ -5,6 +5,13 @@ export type Validator = {
 
 export type ValidatorGenerator = (...params: any[]) => Validator;
 
+export type AsyncValidator = {
+	name: string;
+	validate: (value: unknown) => Promise<boolean>;
+};
+
+export type AsyncValidatorGenerator = (...params: any[]) => AsyncValidator;
+
 function isString(value: unknown): value is string {
 	return typeof value === 'string';
 }
