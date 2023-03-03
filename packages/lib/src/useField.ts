@@ -40,7 +40,8 @@ export function useField<T>(
 	const syncErrors = computed(() => {
 		const ret: string[] = [];
 		validators.value.forEach((validator) => {
-			if (validator.validate(value.value)) ret.push(validator.name);
+			const isValid = validator.validate(value.value);
+			if (!isValid) ret.push(validator.name);
 		});
 
 		return ret;
@@ -55,7 +56,8 @@ export function useField<T>(
 
 		const errors = await Promise.all(
 			Array.from(asyncValidators.value).map(async (validator) => {
-				if (await validator.validate(value)) return validator.name;
+				const isValid = await validator.validate(value);
+				if (!isValid) return validator.name;
 			})
 		);
 

@@ -29,6 +29,7 @@ export interface Form<T = any> {
 	invalid: boolean;
 	valid: boolean;
 	submitted: boolean;
+	pending: boolean;
 	setValues: (values: Partial<{ [Key in keyof T]: T[Key] }>) => void;
 	reset: () => void;
 }
@@ -70,6 +71,17 @@ export function useForm<T>(
 
 	const submitted = ref(false);
 
+	const pending = computed(() => {
+		let pending = false;
+		for (const key in fields) {
+			if (!pending) {
+				pending = fields[key].pending;
+			}
+		}
+
+		return pending;
+	});
+
 	// Reset the form back to initial state
 	const reset = () => {
 		submitted.value = false;
@@ -82,6 +94,7 @@ export function useForm<T>(
 		invalid,
 		valid,
 		submitted,
+		pending,
 		values,
 		fields,
 		setValues,
