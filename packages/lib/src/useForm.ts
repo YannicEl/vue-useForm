@@ -1,4 +1,4 @@
-import { computed, ComputedRef, reactive, ref, UnwrapRef } from 'vue';
+import { computed, ComputedRef, reactive, ref, UnwrapRef, watch } from 'vue';
 import { Plugin } from './plugins';
 import { Field, useField } from './useField';
 import { AsyncValidator, Validator } from './validators';
@@ -32,6 +32,7 @@ export interface Form<T = any> {
 	pending: boolean;
 	setValues: (values: Partial<{ [Key in keyof T]: T[Key] }>) => void;
 	reset: () => void;
+	awaitValidation: () => Promise<void>;
 }
 
 export function useForm<T>(
@@ -83,12 +84,25 @@ export function useForm<T>(
 	});
 
 	// Reset the form back to initial state
-	const reset = () => {
+	function reset(): void {
 		submitted.value = false;
 		for (const key in values) {
 			fields[key].reset();
 		}
-	};
+	}
+
+	async function awaitValidation(): Promise<void> {
+		if (!pending.value) return;
+
+		return new Promise((resolve) => {
+			const unwatch = watch(pending, (pending) => {
+				if (!pending) {
+					unwatch();
+					resolve();
+				}
+			});
+		});
+	}
 
 	const form: Form<T> = reactive({
 		invalid,
@@ -99,6 +113,7 @@ export function useForm<T>(
 		fields,
 		setValues,
 		reset,
+		awaitValidation,
 	});
 
 	options.plugins.forEach((plugin) => plugin(form));

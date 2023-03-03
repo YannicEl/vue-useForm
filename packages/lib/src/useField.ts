@@ -16,6 +16,7 @@ export interface Field<T = any> {
 	disabled: boolean;
 	enabled: boolean;
 	dirty: boolean;
+	async: boolean;
 	pending: boolean;
 
 	validators: Set<Validator>;
@@ -26,6 +27,7 @@ export interface Field<T = any> {
 	reset: () => void;
 	disable: () => void;
 	enable: () => void;
+	awaitValidation: () => Promise<void>;
 }
 
 export function useField<T>(
@@ -47,8 +49,9 @@ export function useField<T>(
 		return ret;
 	});
 
+	const async = computed(() => asyncValidators.value.size > 0);
 	const pending = ref(false);
-	const asyncErrors = ref([]);
+	const asyncErrors = ref<string[]>([]);
 	watch(value, async (value) => {
 		if (asyncValidators.value.size === 0) return;
 
@@ -61,7 +64,7 @@ export function useField<T>(
 			})
 		);
 
-		asyncErrors.value = errors.filter(Boolean) as any;
+		asyncErrors.value = errors.filter(Boolean) as string[];
 		pending.value = false;
 	});
 
@@ -81,11 +84,24 @@ export function useField<T>(
 		dirty.value = true;
 	});
 
-	const reset = () => {
+	function reset(): void {
 		value.value = initialValue;
 		disabled.value = false;
 		dirty.value = false;
-	};
+	}
+
+	async function awaitValidation(): Promise<void> {
+		if (!pending.value) return;
+
+		return new Promise((resolve) => {
+			const unwatch = watch(pending, (pending) => {
+				if (!pending) {
+					unwatch();
+					resolve();
+				}
+			});
+		});
+	}
 
 	return reactive({
 		// v-model value
@@ -97,6 +113,7 @@ export function useField<T>(
 		disabled,
 		enabled,
 		dirty,
+		async,
 		pending,
 
 		errors,
@@ -107,5 +124,6 @@ export function useField<T>(
 		reset,
 		disable,
 		enable,
+		awaitValidation,
 	});
 }
