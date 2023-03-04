@@ -1,4 +1,4 @@
-name: Release
+name: Release DEV
 
 on:
   push:
@@ -8,12 +8,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
-    name: Release
-    permissions:
-      contents: write # to create release (changesets/action)
-      pull-requests: write # to create pull request (changesets/action)
-
+  release_dev:
+    name: Release DEV
     runs-on: ubuntu-latest
 
     steps:
@@ -40,11 +36,7 @@ jobs:
       - name: Build lib
         run: pnpm --filter @yannicel/vue-useform build
 
-      - name: Create release pull request or publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm run release
+      - name: Create dev release
+        run: pnpm changeset version --snapshot dev && pnpm chnageset publish --tag dev
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
