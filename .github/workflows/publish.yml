@@ -1,4 +1,5 @@
 name: Publish
+
 on:
   push:
     branches:
@@ -7,7 +8,9 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
+  publish:
+    name: Publish
+
     defaults:
       run:
         working-directory: packages/lib
@@ -15,20 +18,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
+      - name: Setup Pnpm
       - uses: pnpm/action-setup@v2
         with:
           version: latest
 
+      - name: Setup Node
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: 'pnpm'
 
+      - name: Install Dependencies
       - run: pnpm --filter @yannicel/vue-useform install
 
-      - name: Create Release Pull Request or Publish
+      - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
