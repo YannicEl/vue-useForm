@@ -18,7 +18,7 @@
 		"build": "tsup",
 		"build:watch": "tsup --watch",
 		"add-changeset": "changeset add",
-		"publish": "pnpm run build && pnpm changeset publish"
+		"publish": "pnpm changeset publish"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.0",
