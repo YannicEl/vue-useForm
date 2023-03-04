@@ -20,6 +20,7 @@
 		"publish": "pnpm run build && pnpm publish --no-git-checks"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.26.0",
 		"tsup": "^6.6.3",
 		"vue": "^3.2.47"
 	},
