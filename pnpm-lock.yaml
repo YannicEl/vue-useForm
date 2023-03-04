@@ -31,7 +31,7 @@ importers:
         version: 4.9.5
       unocss:
         specifier: ^0.50.0
-        version: 0.50.3(vite@4.1.2)
+        version: 0.50.3(postcss@8.4.21)(vite@4.1.2)
       unplugin-auto-import:
         specifier: ^0.14.3
         version: 0.14.3
@@ -869,9 +869,11 @@ packages:
       sirv: 2.0.2
     dev: true
 
-  /@unocss/postcss@0.50.3:
+  /@unocss/postcss@0.50.3(postcss@8.4.21):
     resolution: {integrity: sha512-8XLwWyy2aC0pgoIzsaasrTy0rv8SVGqmlN2y9jYUAAXHPkSoTVuELXcvWf9WKVuSR1Qa1AIzm9kN0K29CLx92Q==}
     engines: {node: '>=14'}
+    peerDependencies:
+      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.50.3
       '@unocss/core': 0.50.3
@@ -2453,7 +2455,7 @@ packages:
       - rollup
     dev: true
 
-  /unocss@0.50.3(vite@4.1.2):
+  /unocss@0.50.3(postcss@8.4.21)(vite@4.1.2):
     resolution: {integrity: sha512-6quL19+WPJeuQmVdDIbSSXARHUhIvJSyJQYzHVlZRX4tv9fb+ZeZ2o8upRWodlIT2ulmDRnhXcUQyVdSRnRDDA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2465,7 +2467,7 @@ packages:
       '@unocss/astro': 0.50.3(vite@4.1.2)
       '@unocss/cli': 0.50.3
       '@unocss/core': 0.50.3
-      '@unocss/postcss': 0.50.3
+      '@unocss/postcss': 0.50.3(postcss@8.4.21)
       '@unocss/preset-attributify': 0.50.3
       '@unocss/preset-icons': 0.50.3
       '@unocss/preset-mini': 0.50.3
@@ -2481,6 +2483,7 @@ packages:
       '@unocss/transformer-variant-group': 0.50.3
       '@unocss/vite': 0.50.3(vite@4.1.2)
     transitivePeerDependencies:
+      - postcss
       - rollup
       - supports-color
       - vite
