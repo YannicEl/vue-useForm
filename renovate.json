@@ -1,6 +1,6 @@
 {
 	"extends": ["@nuxtjs"],
-	"baseBranches": ["dev"],
+	"baseBranches": ["main"],
 	"ignorePaths": [],
 	"ignoreDeps": []
 }

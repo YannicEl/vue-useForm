@@ -10,7 +10,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: frontend
+        working-directory: packages/lib
 
     runs-on: ubuntu-latest
 
@@ -19,7 +19,7 @@ jobs:
 
       - uses: pnpm/action-setup@v2
         with:
-          version: 8.0.0-alpha.0
+          version: latest
 
       - uses: actions/setup-node@v3
         with:
