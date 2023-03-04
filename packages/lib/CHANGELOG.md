@@ -1,5 +1,13 @@
 # @yannicel/vue-useform
 
+## 0.0.20
+
+### Patch Changes
+
+- 8d61360: change test a
+- 62ba8ef: change test b
+- ae1031b: change test c
+
 ## 0.0.19
 
 ### Patch Changes
