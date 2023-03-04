@@ -1,5 +1,11 @@
 # @yannicel/vue-useform
 
+## 0.0.15
+
+### Patch Changes
+
+- updated dependencies
+
 ## 0.0.14
 
 ### Patch Changes
