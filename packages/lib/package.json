@@ -17,7 +17,8 @@
 	"scripts": {
 		"build": "tsup",
 		"build:watch": "tsup --watch",
-		"publish": "pnpm run build && pnpm publish --no-git-checks"
+		"add-changeset": "changeset add",
+		"publish": "pnpm run build && pnpm changeset publish"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.0",
