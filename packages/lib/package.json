@@ -1,6 +1,6 @@
 {
 	"name": "@yannicel/vue-useform",
-	"version": "0.0.12",
+	"version": "0.0.18",
 	"license": "MIT",
 	"files": [
 		"dist"
@@ -16,11 +16,9 @@
 	},
 	"scripts": {
 		"build": "tsup",
-		"build:watch": "tsup --watch",
-		"publish": "pnpm run build && pnpm publish --no-git-checks"
+		"build:watch": "tsup --watch"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.26.0",
 		"tsup": "^6.6.3",
 		"typescript": "^4.9.5",
 		"vue": "^3.2.47"
