@@ -1,5 +1,11 @@
 # @yannicel/vue-useform
 
+## 0.0.21
+
+### Patch Changes
+
+- 83d2f25: added package metadata
+
 ## 0.0.20
 
 ### Patch Changes
