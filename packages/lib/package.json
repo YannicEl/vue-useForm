@@ -2,17 +2,10 @@
 	"name": "@yannicel/vue-useform",
 	"version": "0.0.20",
 	"license": "MIT",
-	"files": [
-		"dist"
-	],
-	"module": "./dist/index.mjs",
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		".": {
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
-		}
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YannicEl/vue-useForm",
+		"directory": "packages/lib"
 	},
 	"scripts": {
 		"build": "tsup",
@@ -25,5 +18,17 @@
 	},
 	"peerDependencies": {
 		"vue": "^3.2.47"
+	},
+	"files": [
+		"dist"
+	],
+	"module": "./dist/index.mjs",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		}
 	}
 }
