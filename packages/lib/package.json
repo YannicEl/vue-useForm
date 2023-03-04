@@ -1,6 +1,6 @@
 {
 	"name": "@yannicel/vue-useform",
-	"version": "0.0.13",
+	"version": "0.0.14",
 	"license": "MIT",
 	"files": [
 		"dist"
