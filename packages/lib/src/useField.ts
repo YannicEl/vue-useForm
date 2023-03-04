@@ -19,6 +19,7 @@ export interface Field<T = any> {
 	async: boolean;
 	pending: boolean;
 
+	// Validators and errors
 	validators: Set<Validator>;
 	asyncValidators: Set<AsyncValidator>;
 	errors: string[];
