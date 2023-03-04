@@ -37,6 +37,6 @@ jobs:
         run: pnpm --filter @yannicel/vue-useform build
 
       - name: Create dev release
-        run: pnpm changeset version --snapshot dev && pnpm chnageset publish --tag dev
+        run: pnpm changeset version --snapshot dev && pnpm changeset publish --tag dev
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
