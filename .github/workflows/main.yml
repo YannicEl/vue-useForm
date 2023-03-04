@@ -24,6 +24,6 @@ jobs:
           node-version: 18.x
           cache: 'pnpm'
 
-      - run: pnpm --filter @yannicel/vue-useform install
+      - run: pnpm install
 
       - run: pnpm run build
