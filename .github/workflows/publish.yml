@@ -10,7 +10,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: frontend
+        working-directory: packages/lib
 
     runs-on: ubuntu-latest
 
