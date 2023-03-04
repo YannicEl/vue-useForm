@@ -33,7 +33,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install Dependencies
-      - run: pnpm --filter @yannicel/vue-useform install
+        run: pnpm --filter @yannicel/vue-useform install
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
