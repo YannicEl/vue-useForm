@@ -1,5 +1,11 @@
 # @yannicel/vue-useform
 
+## 0.0.22
+
+### Patch Changes
+
+- b140847: test branch protection
+
 ## 0.0.21
 
 ### Patch Changes
