@@ -34,10 +34,10 @@ importers:
         version: 4.9.5
       unocss:
         specifier: ^0.50.3
-        version: 0.50.3(postcss@8.4.21)(vite@4.1.4)
+        version: 0.50.3(vite@4.1.4)
       unplugin-auto-import:
-        specifier: ^0.15.0
-        version: 0.15.0
+        specifier: ^0.15.1
+        version: 0.15.1
       unplugin-vue-components:
         specifier: ^0.24.0
         version: 0.24.0(vue@3.2.47)
@@ -1109,11 +1109,9 @@ packages:
       sirv: 2.0.2
     dev: true
 
-  /@unocss/postcss@0.50.3(postcss@8.4.21):
+  /@unocss/postcss@0.50.3:
     resolution: {integrity: sha512-8XLwWyy2aC0pgoIzsaasrTy0rv8SVGqmlN2y9jYUAAXHPkSoTVuELXcvWf9WKVuSR1Qa1AIzm9kN0K29CLx92Q==}
     engines: {node: '>=14'}
-    peerDependencies:
-      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.50.3
       '@unocss/core': 0.50.3
@@ -3772,7 +3770,7 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
-  /unocss@0.50.3(postcss@8.4.21)(vite@4.1.4):
+  /unocss@0.50.3(vite@4.1.4):
     resolution: {integrity: sha512-6quL19+WPJeuQmVdDIbSSXARHUhIvJSyJQYzHVlZRX4tv9fb+ZeZ2o8upRWodlIT2ulmDRnhXcUQyVdSRnRDDA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -3784,7 +3782,7 @@ packages:
       '@unocss/astro': 0.50.3(vite@4.1.4)
       '@unocss/cli': 0.50.3
       '@unocss/core': 0.50.3
-      '@unocss/postcss': 0.50.3(postcss@8.4.21)
+      '@unocss/postcss': 0.50.3
       '@unocss/preset-attributify': 0.50.3
       '@unocss/preset-icons': 0.50.3
       '@unocss/preset-mini': 0.50.3
@@ -3800,23 +3798,24 @@ packages:
       '@unocss/transformer-variant-group': 0.50.3
       '@unocss/vite': 0.50.3(vite@4.1.4)
     transitivePeerDependencies:
-      - postcss
       - rollup
       - supports-color
       - vite
     dev: true
 
-  /unplugin-auto-import@0.15.0:
-    resolution: {integrity: sha512-TYlqpTiX1jlbc2+EVaM0jfwdvbIdDWLHAPqw/l+7+QRm9rkqK2j8LQGjY3tAPbe66r5EirgTlrrXQG/MNVTv7w==}
+  /unplugin-auto-import@0.15.1:
+    resolution: {integrity: sha512-xLS+BfVNy00Y3IkqBmEd0IThvjx8kSGIgSuf/1kETttiENK8sHrDA+poKkQxRCPTKYH4yWM6txGQANPTzwpUWQ==}
     engines: {node: '>=14'}
     peerDependencies:
+      '@nuxt/kit': ^3.2.2
       '@vueuse/core': '*'
     peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
       '@vueuse/core':
         optional: true
     dependencies:
       '@antfu/utils': 0.7.2
-      '@nuxt/kit': 3.2.3
       '@rollup/pluginutils': 5.0.2
       local-pkg: 0.4.3
       magic-string: 0.30.0
@@ -3825,7 +3824,6 @@ packages:
       unplugin: 1.1.0
     transitivePeerDependencies:
       - rollup
-      - supports-color
     dev: true
 
   /unplugin-vue-components@0.24.0(vue@3.2.47):
