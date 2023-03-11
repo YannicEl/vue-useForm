@@ -27,8 +27,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(vite@4.1.4)(vue@3.2.47)
       sass:
-        specifier: ^1.58.3
-        version: 1.58.3
+        specifier: ^1.59.2
+        version: 1.59.2
       typescript:
         specifier: ^4.9.5
         version: 4.9.5
@@ -43,7 +43,7 @@ importers:
         version: 0.24.1(vue@3.2.47)
       vite:
         specifier: ^4.1.4
-        version: 4.1.4(sass@1.58.3)
+        version: 4.1.4(sass@1.59.2)
       vue-tsc:
         specifier: ^1.2.0
         version: 1.2.0(typescript@4.9.5)
@@ -1010,7 +1010,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      vite: 4.1.4(sass@1.58.3)
+      vite: 4.1.4(sass@1.59.2)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -1022,7 +1022,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.4(sass@1.58.3)
+      vite: 4.1.4(sass@1.59.2)
       vue: 3.2.47
     dev: true
 
@@ -2770,8 +2770,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass@1.58.3:
-    resolution: {integrity: sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==}
+  /sass@1.59.2:
+    resolution: {integrity: sha512-jJyO6SmbzkJexF8MUorHx5tAilcgabioYxT/BHbY4+OvoqmbHxsYlrjZ8Adhqcgl6Zqwie0TgMXLCAmPFxXOuw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -3286,7 +3286,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite@4.1.4(sass@1.58.3):
+  /vite@4.1.4(sass@1.59.2):
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3315,7 +3315,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.18.0
-      sass: 1.58.3
+      sass: 1.59.2
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
