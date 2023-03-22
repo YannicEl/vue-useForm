@@ -1,5 +1,12 @@
 # @yannicel/vue-useform
 
+## 0.0.24
+
+### Patch Changes
+
+- c2fbe10: added emoji validator
+- 921ec35: Empty optional fields with validators are no longer flagged as invalid
+
 ## 0.0.23
 
 ### Patch Changes
