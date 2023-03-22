@@ -76,7 +76,7 @@ export function useField<T>(
 		if (value.value === initialValue && !validators.value.has(required)) {
 			return false;
 		} else {
-			errors.value.length > 0;
+			return errors.value.length > 0;
 		}
 	});
 	const valid = computed(() => !invalid.value);
