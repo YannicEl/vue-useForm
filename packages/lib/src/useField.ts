@@ -1,5 +1,5 @@
 import { computed, reactive, ref, shallowRef, watch } from 'vue';
-import { AsyncValidator, Validator } from './validators';
+import { AsyncValidator, required, Validator } from './validators';
 
 export interface UseFieldOptions {
 	validators?: Validator[];
@@ -72,7 +72,13 @@ export function useField<T>(
 	// combine async and sync errors
 	const errors = computed(() => [...syncErrors.value, ...asyncErrors.value]);
 
-	const invalid = computed(() => errors.value.length > 0);
+	const invalid = computed(() => {
+		if (value.value === initialValue && !validators.value.has(required)) {
+			return false;
+		} else {
+			return errors.value.length > 0;
+		}
+	});
 	const valid = computed(() => !invalid.value);
 
 	const disabled = ref(false);
