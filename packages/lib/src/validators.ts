@@ -77,3 +77,11 @@ export const email: Validator = {
 	name: 'email',
 	validate: (value) => regex(emailRegex).validate(value),
 };
+
+// https://github.com/colinhacks/zod
+const emojiRegex = /^(\p{Extended_Pictographic}|\p{Emoji_Component})+$/u;
+
+export const emoji: Validator = {
+	name: 'emoji',
+	validate: (value) => regex(emojiRegex).validate(value),
+};
