@@ -1,5 +1,11 @@
 # @yannicel/vue-useform
 
+## 0.0.25
+
+### Patch Changes
+
+- d663e1c: potential fix for misssing types
+
 ## 0.0.24
 
 ### Patch Changes
