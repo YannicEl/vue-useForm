@@ -34,11 +34,11 @@ importers:
         specifier: ^1.63.6
         version: 1.63.6
       typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
+        specifier: ^5.1.6
+        version: 5.1.6
       unocss:
         specifier: ^0.53.5
-        version: 0.53.5(postcss@8.4.23)(vite@4.4.3)
+        version: 0.53.5(postcss@8.4.25)(vite@4.4.3)
       unplugin-auto-import:
         specifier: ^0.16.6
         version: 0.16.6
@@ -50,16 +50,16 @@ importers:
         version: 4.4.3(sass@1.63.6)
       vue-tsc:
         specifier: ^1.8.4
-        version: 1.8.4(typescript@4.9.5)
+        version: 1.8.4(typescript@5.1.6)
 
   packages/lib:
     devDependencies:
       tsup:
         specifier: ^7.1.0
-        version: 7.1.0(typescript@4.9.5)
+        version: 7.1.0(typescript@5.1.6)
       typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
+        specifier: ^5.1.6
+        version: 5.1.6
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -908,7 +908,7 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/postcss@0.53.5(postcss@8.4.23):
+  /@unocss/postcss@0.53.5(postcss@8.4.25):
     resolution: {integrity: sha512-IfZl4GxrpegP/861bp3e0X3VcQJ9/M3VxC9UQ7zzxkOz/E8R09iMpbnznVLrTiLp2r96p5k/ggXLoadFm1FxGA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -919,7 +919,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.3.0
       magic-string: 0.30.1
-      postcss: 8.4.23
+      postcss: 8.4.25
     dev: true
 
   /@unocss/preset-attributify@0.53.5:
@@ -1101,7 +1101,7 @@ packages:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
 
-  /@vue/language-core@1.8.4(typescript@4.9.5):
+  /@vue/language-core@1.8.4(typescript@5.1.6):
     resolution: {integrity: sha512-pnNtNcJVfkGYluW0vsVO+Y1gyX+eA0voaS7+1JOhCp5zKeCaL/PAmGYOgfvwML62neL+2H8pnhY7sffmrGpEhw==}
     peerDependencies:
       typescript: '*'
@@ -1116,7 +1116,7 @@ packages:
       '@vue/shared': 3.3.4
       minimatch: 9.0.0
       muggle-string: 0.3.1
-      typescript: 4.9.5
+      typescript: 5.1.6
       vue-template-compiler: 2.7.14
     dev: true
 
@@ -1159,11 +1159,11 @@ packages:
   /@vue/shared@3.3.4:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
 
-  /@vue/typescript@1.8.4(typescript@4.9.5):
+  /@vue/typescript@1.8.4(typescript@5.1.6):
     resolution: {integrity: sha512-sioQfIY5xcmEAz+cPLvv6CtzGPtGhIdR0Za87zB8M4mPe4OSsE3MBGkXcslf+EzQgF+fm6Gr1SRMSX8r5ZmzDA==}
     dependencies:
       '@volar/typescript': 1.8.1
-      '@vue/language-core': 1.8.4(typescript@4.9.5)
+      '@vue/language-core': 1.8.4(typescript@5.1.6)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -3158,7 +3158,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /tsup@7.1.0(typescript@4.9.5):
+  /tsup@7.1.0(typescript@5.1.6):
     resolution: {integrity: sha512-mazl/GRAk70j8S43/AbSYXGgvRP54oQeX8Un4iZxzATHt0roW0t6HYDVZIXMw0ZQIpvr1nFMniIVnN5186lW7w==}
     engines: {node: '>=16.14'}
     hasBin: true
@@ -3188,7 +3188,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.29.0
       tree-kill: 1.2.2
-      typescript: 4.9.5
+      typescript: 5.1.6
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3231,9 +3231,9 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  /typescript@5.1.6:
+    resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
+    engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 
@@ -3281,7 +3281,7 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
-  /unocss@0.53.5(postcss@8.4.23)(vite@4.4.3):
+  /unocss@0.53.5(postcss@8.4.25)(vite@4.4.3):
     resolution: {integrity: sha512-LXAdtzAaH8iEDWxW4t9i6TvJNw0OSrgdN+jw8rAZAWb73Nx51ZLoKPUB1rFvQMr2Li7LcsUj5hYpOrQbhhafYg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -3294,7 +3294,7 @@ packages:
       '@unocss/cli': 0.53.5
       '@unocss/core': 0.53.5
       '@unocss/extractor-arbitrary-variants': 0.53.5
-      '@unocss/postcss': 0.53.5(postcss@8.4.23)
+      '@unocss/postcss': 0.53.5(postcss@8.4.25)
       '@unocss/preset-attributify': 0.53.5
       '@unocss/preset-icons': 0.53.5
       '@unocss/preset-mini': 0.53.5
@@ -3438,16 +3438,16 @@ packages:
       he: 1.2.0
     dev: true
 
-  /vue-tsc@1.8.4(typescript@4.9.5):
+  /vue-tsc@1.8.4(typescript@5.1.6):
     resolution: {integrity: sha512-+hgpOhIx11vbi8/AxEdaPj3fiRwN9wy78LpsNNw2V995/IWa6TMyQxHbaw2ZKUpdwjySSHgrT6ohDEhUgFxGYw==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@vue/language-core': 1.8.4(typescript@4.9.5)
-      '@vue/typescript': 1.8.4(typescript@4.9.5)
+      '@vue/language-core': 1.8.4(typescript@5.1.6)
+      '@vue/typescript': 1.8.4(typescript@5.1.6)
       semver: 7.5.0
-      typescript: 4.9.5
+      typescript: 5.1.6
     dev: true
 
   /vue@3.3.4:
