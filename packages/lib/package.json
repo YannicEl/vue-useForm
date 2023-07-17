@@ -12,9 +12,9 @@
 		"build:watch": "tsup --watch"
 	},
 	"devDependencies": {
-		"tsup": "^6.7.0",
-		"typescript": "^4.9.5",
-		"vue": "^3.2.47"
+		"tsup": "^7.1.0",
+		"typescript": "^5.1.6",
+		"vue": "^3.3.4"
 	},
 	"peerDependencies": {
 		"vue": "3.x"
