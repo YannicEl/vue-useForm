@@ -1,5 +1,11 @@
 # @yannicel/vue-useform
 
+## 0.0.26
+
+### Patch Changes
+
+- a58e9b0: add releae with provenance
+
 ## 0.0.25
 
 ### Patch Changes
