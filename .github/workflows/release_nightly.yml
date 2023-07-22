@@ -44,5 +44,5 @@ jobs:
 
       - name: Publish nightly release
         run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
-        # env:
-        #   NPM_CONFIG_PROVENANCE: true
+        env:
+          NPM_CONFIG_PROVENANCE: false
