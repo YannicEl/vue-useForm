@@ -41,6 +41,15 @@ jobs:
       - name: Build lib
         run: pnpm --filter @vuetils/vue-useform build
 
+      # - name: Creating .npmrc
+      #   run: |
+      #     cat << EOF > "$HOME/.npmrc"
+      #       //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      #     EOF
+
+      - name: Set npm token
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+
       - name: Create nightly release
         run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
         env:
