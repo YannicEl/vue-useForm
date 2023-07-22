@@ -41,8 +41,8 @@ jobs:
       - name: Build lib
         run: pnpm --filter @yannicel/vue-useform build
 
-      - name: Create dev release
-        run: pnpm changeset version --snapshot dev && pnpm changeset publish --tag nightly
+      - name: Create nightly release
+        run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
 
       - name: Create release pull request or publish to npm
         id: changesets
