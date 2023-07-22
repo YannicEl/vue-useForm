@@ -9,6 +9,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release_nightly:
+    if: !endsWith(github.event.head_commit.message , 'changeset-release/main')
     name: Release nightly
     runs-on: ubuntu-latest
 
@@ -36,12 +37,6 @@ jobs:
       - name: Build lib
         run: pnpm --filter @vuetils/vue-useform build
 
-      - name: echo
-        run: echo ${{ github.event.head_commit.message }}
-
-      - name: echo
-        run: echo ${{ github.event.head_commit }}
-
       - name: Set npm token
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
@@ -49,3 +44,5 @@ jobs:
 
       - name: Publish nightly release
         run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
+        env:
+          NPM_CONFIG_PROVENANCE: true

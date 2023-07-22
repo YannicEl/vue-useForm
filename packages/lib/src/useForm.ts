@@ -7,7 +7,7 @@ export type FieldOptions<T> = {
 	[Key in keyof T]: [
 		initialValue: T[Key],
 		validators?: Validator[],
-		asyncValidators?: AsyncValidator[]
+		asyncValidators?: AsyncValidator[],
 	];
 };
 
@@ -15,7 +15,7 @@ export type UseFormOptions = {
 	plugins: Plugin[];
 };
 
-type Values<T> = {
+export type Values<T> = {
 	[Key in keyof T]: ComputedRef<T[Key]>;
 };
 

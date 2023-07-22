@@ -1,5 +1,6 @@
 export type Validator = {
 	name: string;
+	value?: any;
 	validate: (value: unknown) => boolean;
 };
 
@@ -28,6 +29,7 @@ export const required: Validator = {
 export const maxLength: ValidatorGenerator = (maxLength: number) => {
 	return {
 		name: 'maxLength',
+		value: maxLength,
 		validate: (value) => isString(value) && value?.length <= maxLength,
 	};
 };
@@ -35,6 +37,7 @@ export const maxLength: ValidatorGenerator = (maxLength: number) => {
 export const minLength: ValidatorGenerator = (minLength: number) => {
 	return {
 		name: 'minLength',
+		value: minLength,
 		validate: (value) => isString(value) && value?.length >= minLength,
 	};
 };
@@ -42,6 +45,7 @@ export const minLength: ValidatorGenerator = (minLength: number) => {
 export const min: ValidatorGenerator = (min: number) => {
 	return {
 		name: 'min',
+		value: min,
 		validate: (value) => isNumber(value) && value >= min,
 	};
 };
@@ -49,6 +53,7 @@ export const min: ValidatorGenerator = (min: number) => {
 export const max: ValidatorGenerator = (max: number) => {
 	return {
 		name: 'max',
+		value: max,
 		validate: (value) => isNumber(value) && value <= max,
 	};
 };
@@ -57,8 +62,7 @@ export const startWith: ValidatorGenerator = (startsWith: string) => {
 	return {
 		name: 'startWith',
 		validate: (value) =>
-			isString(value) &&
-			value.toLocaleLowerCase().startsWith(startsWith.toLocaleLowerCase()),
+			isString(value) && value.toLocaleLowerCase().startsWith(startsWith.toLocaleLowerCase()),
 	};
 };
 

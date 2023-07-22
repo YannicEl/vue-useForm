@@ -2,78 +2,18 @@
 	<div class="w-screen-md mx-auto">
 		<h1 class="mt-20">Demo</h1>
 
-		<!-- <label class="mt-6">
-			<div>Field:</div>
-			<input type="text" v-model="field.value" />
-		</label>
+		<Form :form="form" @vSubmit="customSubmit" class="mt-6 grid gap-4">
+			<FormGroup>
+				Firstname:
+				<input name="firstname" type="text" />
+			</FormGroup>
 
-		<button @click="add">Add validator</button>
-		<button @click="remove">Remove validator</button>
+			<button type="button" @click="form.fields.firstname.value = 'ouch'">help</button>
 
-		<pre>
-      {{ field }}
-    </pre> -->
-
-		<Form :form="form" @submit.prevent="onSubmit" class="mt-6 grid gap-4">
-			<FormInput :field="form.fields.firstname" v-slot="props">
-				<label for="firstname">Firstname:</label>
-				<input v-bind="props" id="firstname" name="firstname" type="text" />
-			</FormInput>
-
-			<!-- 
-			<label for="email">
-				<div>Email:</div>
-				<FormInput id="email" type="email" :field="form.fields.email" />
-			</label>
-
-			<label for="count">
-				<div>Count:</div>
-				<FormInput id="count" type="number" :field="form.fields.count" />
-			</label>
-
-			<div class="flex">
-				<label for="o1" class="flex gap-2">
-					<div class="flex-shrink-0">Option 1</div>
-					<FormInput
-						id="o1"
-						type="radio"
-						name="radio"
-						value="Option 1"
-						:field="form.fields.radio"
-					/>
-				</label>
-
-				<label for="o2" class="flex gap-2">
-					<div class="flex-shrink-0">Option 2</div>
-					<FormInput
-						id="o2"
-						type="radio"
-						name="radio"
-						value="Option 2"
-						:field="form.fields.radio"
-					/>
-				</label>
-
-				<label for="o3" class="flex gap-2">
-					<div class="flex-shrink-0">Option 3</div>
-					<FormInput
-						id="o3"
-						type="radio"
-						name="radio"
-						value="Option 3"
-						:field="form.fields.radio"
-					/>
-				</label>
-			</div>
-
-			<label for="select">
-				<div>Select:</div>
-				<FormSelect :field="form.fields.select">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-				</FormSelect>
-			</label> -->
+			<!-- <FormGroup>
+				Email:
+				<input name="email" type="email" />
+			</FormGroup> -->
 
 			<button>Submit</button>
 		</Form>
@@ -89,12 +29,18 @@
 import {
 	AsyncValidator,
 	email,
+	max,
+	maxLength,
+	min,
+	minLength,
 	required,
 	useField,
 	useForm,
 } from '@yannicel/vue-useform';
 
 const field = useField('initial', { validators: [required] });
+
+const formControlName = ref('firstname');
 
 function add() {
 	field.validators.add(email);
@@ -121,17 +67,17 @@ const asyncValidator: AsyncValidator = {
 };
 
 const form = useForm({
-	firstname: ['', [required], [asyncValidator]],
-	// email: ['', [required, email]],
+	firstname: ['initial value', [min(1), max(10), minLength(5), maxLength(15)], [asyncValidator]],
+	// email: ['initial value', [required, email]],
 	// count: [0, [min(2)]],
-	// radio: ['', [required]],
+	// radio: ['two', [required]],
 	// select: ['', [required]],
 	// checkbox: ['', []],
 });
 
-function onSubmit() {
-	const { firstname } = form.values;
-	console.log({ firstname });
+function customSubmit(values: typeof form.values) {
+	console.log('custom submit');
+	console.log(values);
 }
 </script>
 
