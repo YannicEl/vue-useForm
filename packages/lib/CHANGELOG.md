@@ -1,5 +1,11 @@
 # @yannicel/vue-useform
 
+## 0.0.36
+
+### Patch Changes
+
+- 7bbe7ea: tets
+
 ## 0.0.35
 
 ### Patch Changes
