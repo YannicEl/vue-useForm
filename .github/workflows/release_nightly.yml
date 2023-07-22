@@ -9,7 +9,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release_nightly:
-    if: endsWith(github.event.head_commit.message , 'changeset-release/main') != true
+    if: endsWith(github.event.head_commit.message , 'changeset-release/main') != 'true'
     name: Release nightly
     runs-on: ubuntu-latest
 
