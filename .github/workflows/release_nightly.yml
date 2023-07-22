@@ -1,15 +1,15 @@
-name: Release DEV
+name: Release nightly
 
 on:
   push:
     branches:
-      - 'dev'
+      - 'main'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release_dev:
-    name: Release DEV
+  release_nightly:
+    name: Release nightly
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 18
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -36,13 +36,10 @@ jobs:
       - name: Build lib
         run: pnpm --filter @vuetils/vue-useform build
 
-      - name: Creating .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
+      - name: Set npm token
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create dev release
-        run: pnpm changeset version --snapshot dev && pnpm changeset publish --tag dev
+      - name: Publish nightly release
+        run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
