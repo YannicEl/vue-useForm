@@ -1,5 +1,5 @@
 {
-  "type": "module",
+	"type": "module",
 	"scripts": {
 		"release": "changeset publish",
 		"changeset:add": "changeset add",
