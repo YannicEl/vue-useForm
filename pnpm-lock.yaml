@@ -20,7 +20,7 @@ importers:
       '@unocss/reset':
         specifier: ^0.53.5
         version: 0.53.5
-      '@yannicel/vue-useform':
+      '@vuetils/vue-useform':
         specifier: workspace:latest
         version: link:../lib
       vue:

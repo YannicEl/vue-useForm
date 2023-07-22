@@ -32,7 +32,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 18
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -40,6 +40,9 @@ jobs:
 
       - name: Build lib
         run: pnpm --filter @yannicel/vue-useform build
+
+      - name: Create dev release
+        run: pnpm changeset version --snapshot dev && pnpm changeset publish --tag nightly
 
       - name: Create release pull request or publish to npm
         id: changesets
