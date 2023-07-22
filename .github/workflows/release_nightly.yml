@@ -18,7 +18,7 @@ jobs:
         run: ${{ github.event.head_commit.message }}
 
       - name: echo 2
-        run: ${{ endsWith(github.event.head_commit.message , 'changeset-release/main') != 'true' }}
+        run: ${{ contains(github.event.head_commit.message , 'changeset-release/main') != 'true' }}
 
       - name: Checkout repository
         uses: actions/checkout@v3
