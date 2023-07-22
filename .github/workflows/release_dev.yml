@@ -31,10 +31,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm --filter @yannicel/vue-useform install
+        run: pnpm --filter @vuetils/vue-useform install
 
       - name: Build lib
-        run: pnpm --filter @yannicel/vue-useform build
+        run: pnpm --filter @vuetils/vue-useform build
 
       - name: Creating .npmrc
         run: |
