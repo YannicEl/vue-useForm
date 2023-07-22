@@ -46,6 +46,10 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Publish nightly release
+        # if: steps.changesets.outputs.published == 'false'
+        run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
+
       - name: Create release pull request or publish to npm
         id: changesets
         uses: changesets/action@v1
@@ -55,10 +59,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-
-      # - name: echo
-      #   run: echo ${{ steps.changesets.outputs.published }}
-
-      - name: Publish nightly release
-        if: steps.changesets.outputs.published == 'false'
-        run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
