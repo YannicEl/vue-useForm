@@ -36,10 +36,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm --filter @yannicel/vue-useform install
+        run: pnpm --filter @vuetils/vue-useform install
 
       - name: Build lib
-        run: pnpm --filter @yannicel/vue-useform build
+        run: pnpm --filter @vuetils/vue-useform build
 
       - name: Create nightly release
         run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
