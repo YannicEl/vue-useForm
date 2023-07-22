@@ -50,10 +50,16 @@ jobs:
       - name: Set npm token
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
 
-      - name: Create nightly release
-        run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
+      - name: Version
+        run: pnpm changeset version --snapshot nightly
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Release
+        run: pnpm changeset publish --tag nightly
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       # - name: Create release pull request or publish to npm
       #   id: changesets
       #   uses: changesets/action@v1
