@@ -41,33 +41,21 @@ jobs:
       - name: Build lib
         run: pnpm --filter @vuetils/vue-useform build
 
-      # - name: Creating .npmrc
-      #   run: |
-      #     cat << EOF > "$HOME/.npmrc"
-      #       //registry.npmjs.org/:_authToken=$NPM_TOKEN
-      #     EOF
-
       - name: Set npm token
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Version
-        run: pnpm changeset version --snapshot nightly
+      - name: Create release pull request or publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm run release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
 
-      - name: Release
-        run: pnpm changeset publish --tag nightly
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # - name: Create release pull request or publish to npm
-      #   id: changesets
-      #   uses: changesets/action@v1
-      #   with:
-      #     publish: pnpm run release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #     NPM_CONFIG_PROVENANCE: true
+      - name: Publish nightly release
+        if: steps.changesets.outputs.published == 'false'
+        run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
