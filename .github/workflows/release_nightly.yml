@@ -4,14 +4,12 @@ on:
   push:
     branches:
       - 'main'
-    tags-ignore:
-      - 'v*'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release_nightly:
-    if: startsWith(github.ref_name, 'v') == false
+    if: false
     name: Release nightly
     runs-on: ubuntu-latest
 
@@ -43,6 +41,12 @@ jobs:
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish canary release
+        if: startsWith(github.ref_name, 'v') == false
+        run: pnpm run release:canary
+        env:
+          NPM_CONFIG_PROVENANCE: false
 
       - name: Publish canary release
         run: pnpm run release:canary
