@@ -1,12 +1,12 @@
 {
 	"type": "module",
 	"scripts": {
-		"release": "changeset publish",
-		"changeset:add": "changeset add",
-		"changeset:publish": "pnpm run build && pnpm changeset publish"
+		"release": "changelogen --dir packages/lib --release --push",
+		"release:canary": "changelogen --dir packages/lib --canary"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.2",
+		"changelogen": "^0.5.4",
 		"prettier": "^3.0.0"
 	}
 }
