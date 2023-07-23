@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - 'main'
-    # tags:
-    #   - 'v*'
+    tags:
+      - 'v*'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -51,14 +51,7 @@ jobs:
       - name: echo
         run: echo ${{ github.ref_name }} ${{ github.ref }}
 
-      - name: Publish canary release
-        if: startsWith(github.ref_name, 'v') == false
-        run: pnpm run release:canary
-        env:
-          NPM_CONFIG_PROVENANCE: false
-
       - name: Publish release
-        if: startsWith(github.ref_name, 'v') == true
         run: pnpm publish --filter @vuetils/vue-useform
         env:
-          NPM_CONFIG_PROVENANCE: false
+          NPM_CONFIG_PROVENANCE: true
