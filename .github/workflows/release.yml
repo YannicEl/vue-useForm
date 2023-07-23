@@ -13,8 +13,7 @@ jobs:
   release:
     name: Release
     permissions:
-      contents: write # to create release (changesets/action)
-      pull-requests: write # to create pull request (changesets/action)
+      contents: write # to create release
       id-token: write # to create releae with provenance
 
     runs-on: ubuntu-latest
