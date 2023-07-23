@@ -42,6 +42,9 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: echo
+        run: echo ${{ github.ref_name }} ${{ github.ref }}
+
       - name: Publish canary release
         if: startsWith(github.ref_name, 'v') == false
         run: pnpm run release:canary
