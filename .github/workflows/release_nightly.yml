@@ -11,8 +11,10 @@ jobs:
   release_nightly:
     name: Release nightly
     if: startsWith(github.event.head_commit.message, 'chore(release)') == false
+
     permissions:
       id-token: write # to create releae with provenance
+
     runs-on: ubuntu-latest
 
     steps:
