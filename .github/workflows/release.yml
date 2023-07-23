@@ -52,4 +52,4 @@ jobs:
       - name: Publish canary release
         run: pnpm publish --filter @vuetils/vue-useform
         env:
-          NPM_CONFIG_PROVENANCE: false
+          NPM_CONFIG_PROVENANCE: true
