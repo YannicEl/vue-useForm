@@ -2,7 +2,7 @@
 	"type": "module",
 	"scripts": {
 		"release": "changelogen --dir packages/lib --release --push",
-		"release:canary": "changelogen --dir packages/lib --canary"
+		"release:canary": "changelogen --dir packages/lib --canary && pnpm publish --filter @vuetils/vue-useform"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.2",
