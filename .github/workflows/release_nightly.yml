@@ -9,8 +9,8 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release_nightly:
-    if: startsWith(github.ref_name, 'v') == false
     name: Release nightly
+    if: startsWith(github.event.head_commit.message, 'chore(release)') == false
     permissions:
       id-token: write # to create releae with provenance
     runs-on: ubuntu-latest
@@ -21,9 +21,6 @@ jobs:
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
-
-      - name: echo
-        run: echo ${{ github.event.head_commit.message }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
