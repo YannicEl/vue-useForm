@@ -44,12 +44,12 @@ jobs:
       - name: Build lib
         run: pnpm --filter @vuetils/vue-useform build
 
-      - name: Create release pull request or publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm run release
+      - name: Set npm token
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+
+      - name: Publish canary release
+        run: pnpm publish --filter @vuetils/vue-useform
+        env:
+          NPM_CONFIG_PROVENANCE: false
