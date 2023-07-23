@@ -22,6 +22,9 @@ jobs:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
+      - name: echo
+        run: echo ${{ github.event.head_commit.message }}
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
