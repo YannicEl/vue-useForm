@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.46
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.45...v0.0.46)
+
+### 🩹 Fixes
+
+- !?!? ([ea29d17](https://github.com/YannicEl/vue-useForm/commit/ea29d17))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.0.45
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.43...v0.0.45)
