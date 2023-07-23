@@ -9,6 +9,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release_nightly:
+    if: startsWith(github.ref_name, 'v') == false
     name: Release nightly
     runs-on: ubuntu-latest
 
