@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.52
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.51...v0.0.52)
+
+### 🩹 Fixes
+
+- CI ([c41c6ab](https://github.com/YannicEl/vue-useForm/commit/c41c6ab))
+- CI ([57d5585](https://github.com/YannicEl/vue-useForm/commit/57d5585))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.0.51
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.50...v0.0.51)
