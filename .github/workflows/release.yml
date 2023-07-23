@@ -40,15 +40,11 @@ jobs:
       - name: Build lib
         run: pnpm --filter @vuetils/vue-useform build
 
-      - name: Set npm token
-        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: echo
-        run: echo ${{ github.ref_name }} ${{ github.ref }}
+        run: echo ${{ github.ref_name }}
 
       - name: Publish release
-        run: pnpm publish --filter @vuetils/vue-useform
+        run: pnpm publish --filter @vuetils/vue-useform --no-git-checks
         env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_CONFIG_PROVENANCE: true
