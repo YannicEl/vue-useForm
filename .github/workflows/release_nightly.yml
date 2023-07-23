@@ -9,7 +9,6 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release_nightly:
-    if: false # contains(github.event.head_commit.message , 'changeset-release/main') != true
     name: Release nightly
     runs-on: ubuntu-latest
 
@@ -42,7 +41,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish nightly release
-        run: pnpm changeset version --snapshot nightly && pnpm changeset publish --tag nightly
+      - name: Publish canary release
+        run: changelogen --dir packages/lib --canary
         env:
-          NPM_CONFIG_PROVENANCE: false
+          NPM_CONFIG_PROVENANCE: true

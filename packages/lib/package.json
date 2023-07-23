@@ -1,35 +1,35 @@
 {
-  "name": "@vuetils/vue-useform",
-  "version": "0.0.43",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YannicEl/vue-useForm",
-    "directory": "packages/lib"
-  },
-  "scripts": {
-    "build": "tsup",
-    "build:watch": "tsup --watch"
-  },
-  "devDependencies": {
-    "tsup": "^7.1.0",
-    "typescript": "^5.1.6",
-    "vue": "^3.3.4"
-  },
-  "peerDependencies": {
-    "vue": "3.x"
-  },
-  "files": [
-    "dist"
-  ],
-  "module": "./dist/index.mjs",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
-  }
+	"name": "@vuetils/vue-useform",
+	"version": "0.0.44",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YannicEl/vue-useForm",
+		"directory": "packages/lib"
+	},
+	"scripts": {
+		"build": "tsup",
+		"build:watch": "tsup --watch"
+	},
+	"devDependencies": {
+		"tsup": "^7.1.0",
+		"typescript": "^5.1.6",
+		"vue": "^3.3.4"
+	},
+	"peerDependencies": {
+		"vue": "3.x"
+	},
+	"files": [
+		"dist"
+	],
+	"module": "./dist/index.mjs",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		}
+	}
 }
