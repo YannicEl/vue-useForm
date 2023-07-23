@@ -13,7 +13,6 @@ jobs:
     name: Release nightly
     permissions:
       id-token: write # to create releae with provenance
-
     runs-on: ubuntu-latest
 
     steps:
