@@ -44,4 +44,4 @@ jobs:
       - name: Publish canary release
         run: pnpm run release:canary
         env:
-          NPM_CONFIG_PROVENANCE: true
+          NPM_CONFIG_PROVENANCE: false
