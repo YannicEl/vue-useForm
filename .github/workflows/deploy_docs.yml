@@ -29,9 +29,6 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
-
       - name: Restore dist cache
         uses: actions/download-artifact@v3
         with:
