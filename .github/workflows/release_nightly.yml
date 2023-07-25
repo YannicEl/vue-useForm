@@ -11,7 +11,11 @@ jobs:
   test:
     name: Run Tests
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - name: Checkout repository
@@ -27,6 +31,9 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm --filter @vuetils/vue-useform install
 
       - name: Run tests
         run: pnpm --filter @vuetils/vue-useform test
