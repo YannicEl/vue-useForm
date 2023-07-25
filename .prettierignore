@@ -2,3 +2,5 @@
 
 **/CHANGELOG.md
 **/pnpm-lock.yaml
+
+/packages/lib/package.json
