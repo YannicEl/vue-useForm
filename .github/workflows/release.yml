@@ -1,15 +1,16 @@
-name: Release
+name: Build
 
 on:
-  push:
-    tags:
-      - 'v*'
+  - workflow_call
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+# on:
+#   push:
+#     tags:
+#       - 'v*'
 
 jobs:
-  release:
-    name: Release
+  canary:
+    name: Canary
 
     permissions:
       id-token: write # to create releae with provenance
@@ -35,14 +36,56 @@ jobs:
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Restore dist cache
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: packages/lib/dist
+
       - name: Install dependencies
         run: pnpm --filter @vuetils/vue-useform install
 
-      - name: Build lib
-        run: pnpm --filter @vuetils/vue-useform build
-
-      - name: Publish release
-        run: pnpm publish --filter @vuetils/vue-useform --no-git-checks
+      - name: Publish canary release
+        run: pnpm run release:canary
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_CONFIG_PROVENANCE: true
+
+  # production:
+  #   name: Production
+
+  #   permissions:
+  #     id-token: write # to create releae with provenance
+
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #       with:
+  #         # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+  #         fetch-depth: 0
+
+  #     - name: Setup pnpm
+  #       uses: pnpm/action-setup@v2
+  #       with:
+  #         version: 8
+
+  #     - name: Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18
+  #         cache: 'pnpm'
+  #         registry-url: 'https://registry.npmjs.org'
+
+  #     - name: Install dependencies
+  #       run: pnpm --filter @vuetils/vue-useform install
+
+  #     - name: Build lib
+  #       run: pnpm --filter @vuetils/vue-useform build
+
+  #     - name: Publish release
+  #       run: pnpm publish --filter @vuetils/vue-useform --no-git-checks
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  #         NPM_CONFIG_PROVENANCE: true

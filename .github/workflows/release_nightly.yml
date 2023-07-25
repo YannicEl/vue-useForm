@@ -1,84 +1,8 @@
 name: Release nightly
 
-on:
-  push:
-    branches:
-      - 'main'
-
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
-    name: Build lib
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
-
-      - name: Build lib
-        run: pnpm --filter @vuetils/vue-useform build
-
-      - name: Cache dist
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: packages/lib/dist
-
-  test:
-    name: Run Tests
-
-    runs-on: ${{ matrix.os }}
-
-    needs:
-      - build
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Restore dist cache
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: packages/lib/dist
-
-      - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
-
-      - name: Run tests
-        run: pnpm --filter @vuetils/vue-useform test
-
   release_nightly:
     if: startsWith(github.event.head_commit.message, 'chore(release)') == false
     name: Release nightly
