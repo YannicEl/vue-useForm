@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'main'
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
+
+  test:
+    name: Test
+    uses: ./.github/workflows/test.yml

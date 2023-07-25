@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  - workflow_call
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: pnpm --filter @vuetils/vue-useform install
+
+      - name: Build lib
+        run: pnpm --filter @vuetils/vue-useform build
+
+      - name: Cache dist
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: packages/lib/dist

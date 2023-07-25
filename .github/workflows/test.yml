@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  - workflow_call
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Restore dist cache
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: packages/lib/dist
+
+      - name: Install dependencies
+        run: pnpm --filter @vuetils/vue-useform install
+
+      - name: Run tests
+        run: pnpm --filter @vuetils/vue-useform test
