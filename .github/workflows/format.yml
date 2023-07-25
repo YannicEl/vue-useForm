@@ -4,7 +4,7 @@ on:
   - workflow_call
 
 jobs:
-  check:
+  format:
     name: Check
 
     runs-on: ubuntu-latest
