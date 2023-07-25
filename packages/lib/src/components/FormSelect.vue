@@ -14,7 +14,8 @@
 </template>
 
 <script lang="ts" setup>
-import { Field } from '@yannicel/vue-useform';
+import { toRefs } from 'vue';
+import type { Field } from '../useField';
 
 const { field } = defineProps<{
 	field: Field;

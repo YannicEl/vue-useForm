@@ -12,7 +12,9 @@
 </template>
 
 <script setup lang="ts" generic="T">
-import { Form } from '@yannicel/vue-useform';
+import { toRefs } from 'vue';
+import type { Form } from '../useForm';
+import { provideForm } from '../composables/useFormInject';
 
 const { form } = defineProps<{
 	form: Form<T>;

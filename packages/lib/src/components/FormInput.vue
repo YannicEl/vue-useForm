@@ -19,7 +19,9 @@
 </template>
 
 <script lang="ts" setup>
-import { Field, Validator } from '@yannicel/vue-useform';
+import { Ref, computed, toRefs } from 'vue';
+import type { Field } from '../useField';
+import type { Validator } from '../validators';
 
 const { field } = defineProps<{
 	field: Field;

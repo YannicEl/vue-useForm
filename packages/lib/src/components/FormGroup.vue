@@ -4,7 +4,9 @@
 </template>
 
 <script setup lang="ts">
-import { Field } from '@yannicel/vue-useform';
+import { computed, h, useSlots, watch } from 'vue';
+import { injectForm } from '../composables/useFormInject';
+import type { Field } from '../useField';
 
 const props = defineProps<{
 	field?: Field;

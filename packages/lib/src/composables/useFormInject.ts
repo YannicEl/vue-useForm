@@ -1,4 +1,5 @@
-import { Form } from '@yannicel/vue-useform';
+import { inject, provide } from 'vue';
+import type { Form } from '../useForm';
 
 export const formInjectKey = Symbol();
 
