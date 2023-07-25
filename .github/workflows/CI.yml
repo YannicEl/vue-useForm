@@ -20,12 +20,13 @@ jobs:
     name: Test
     needs:
       - build
-      - format
     uses: ./.github/workflows/test.yml
 
   release:
     name: Release
-    needs: test
+    needs:
+      - test
+      - format
     uses: ./.github/workflows/release.yml
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
