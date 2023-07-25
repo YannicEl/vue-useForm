@@ -85,7 +85,7 @@ importers:
         specifier: ^3.3.4
         version: 3.3.4
       vue-tsc:
-        specifier: ^1.8.6
+        specifier: ^1.8.5
         version: 1.8.6(typescript@5.1.6)
 
   packages/test:
