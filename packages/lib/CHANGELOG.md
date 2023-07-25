@@ -1,6 +1,45 @@
 # Changelog
 
 
+## v0.0.54
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.53...v0.0.54)
+
+### 🩹 Fixes
+
+- Ci? ([2f70788](https://github.com/YannicEl/vue-useForm/commit/2f70788))
+- CI ([de521c9](https://github.com/YannicEl/vue-useForm/commit/de521c9))
+- CI ([6b34369](https://github.com/YannicEl/vue-useForm/commit/6b34369))
+- CI ([230724f](https://github.com/YannicEl/vue-useForm/commit/230724f))
+- Ci ([8487281](https://github.com/YannicEl/vue-useForm/commit/8487281))
+- CI ([34ee8a2](https://github.com/YannicEl/vue-useForm/commit/34ee8a2))
+- CI ([af8d7da](https://github.com/YannicEl/vue-useForm/commit/af8d7da))
+- CI ([2e0b271](https://github.com/YannicEl/vue-useForm/commit/2e0b271))
+- CI ([a1c3a91](https://github.com/YannicEl/vue-useForm/commit/a1c3a91))
+- CI ([ab0d876](https://github.com/YannicEl/vue-useForm/commit/ab0d876))
+- Ci ([59816b4](https://github.com/YannicEl/vue-useForm/commit/59816b4))
+- CI ([2f0b845](https://github.com/YannicEl/vue-useForm/commit/2f0b845))
+- CI ([76ee4cb](https://github.com/YannicEl/vue-useForm/commit/76ee4cb))
+- CI ([3cd9867](https://github.com/YannicEl/vue-useForm/commit/3cd9867))
+- CI ([f307941](https://github.com/YannicEl/vue-useForm/commit/f307941))
+- CI ([f3793f4](https://github.com/YannicEl/vue-useForm/commit/f3793f4))
+- CI ([6566118](https://github.com/YannicEl/vue-useForm/commit/6566118))
+- Ci ([8dc2b64](https://github.com/YannicEl/vue-useForm/commit/8dc2b64))
+- CI ([8e82e99](https://github.com/YannicEl/vue-useForm/commit/8e82e99))
+- CI ([e2763c6](https://github.com/YannicEl/vue-useForm/commit/e2763c6))
+- Ci ([2810193](https://github.com/YannicEl/vue-useForm/commit/2810193))
+- CI ([f5f5970](https://github.com/YannicEl/vue-useForm/commit/f5f5970))
+- CI ([122af94](https://github.com/YannicEl/vue-useForm/commit/122af94))
+- CI ([8d727b4](https://github.com/YannicEl/vue-useForm/commit/8d727b4))
+- CI ([f7e7768](https://github.com/YannicEl/vue-useForm/commit/f7e7768))
+- CI ([53ece87](https://github.com/YannicEl/vue-useForm/commit/53ece87))
+- CI ([295d6d8](https://github.com/YannicEl/vue-useForm/commit/295d6d8))
+- CI ([ca64cf7](https://github.com/YannicEl/vue-useForm/commit/ca64cf7))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.0.53
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.52...v0.0.53)
