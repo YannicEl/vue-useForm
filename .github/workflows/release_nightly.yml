@@ -8,7 +8,6 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  if: startsWith(github.event.head_commit.message, 'chore(release)') == false
   build:
     name: Build lib
 
@@ -81,6 +80,7 @@ jobs:
         run: pnpm --filter @vuetils/vue-useform test
 
   release_nightly:
+    if: startsWith(github.event.head_commit.message, 'chore(release)') == false
     name: Release nightly
 
     permissions:
