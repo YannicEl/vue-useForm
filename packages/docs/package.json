@@ -9,9 +9,9 @@
 		"deploy:dev": "wrangler pages deploy .output/public --project-name=vuetils-form-docs"
 	},
 	"devDependencies": {
-		"@nuxt-themes/docus": "^1.13.1",
+		"@nuxt-themes/docus": "^1.14.3",
 		"@types/node": "^18.17.1",
-		"nuxt": "^3.6.2",
+		"nuxt": "^3.6.5",
 		"wrangler": "^3.3.0"
 	}
 }
