@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: pnpm --filter @vuetils/vue-useform install
 
+      - name: Build lib
+        run: pnpm --filter @vuetils/vue-useform build
+
       - name: Run tests
         run: pnpm --filter @vuetils/vue-useform test
 
