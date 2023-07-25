@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.55
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.54...v0.0.55)
+
+### 🩹 Fixes
+
+- CI ([76e0410](https://github.com/YannicEl/vue-useForm/commit/76e0410))
+- CI ([2f0f001](https://github.com/YannicEl/vue-useForm/commit/2f0f001))
+- Ci ([e077ac2](https://github.com/YannicEl/vue-useForm/commit/e077ac2))
+- CI ([f97afd4](https://github.com/YannicEl/vue-useForm/commit/f97afd4))
+- Format files ([80c8383](https://github.com/YannicEl/vue-useForm/commit/80c8383))
+- Added prettier plugins ([750ecd1](https://github.com/YannicEl/vue-useForm/commit/750ecd1))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.0.54
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.53...v0.0.54)
