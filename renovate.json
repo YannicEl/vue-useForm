@@ -2,5 +2,8 @@
 	"extends": ["@nuxtjs"],
 	"baseBranches": ["main"],
 	"ignorePaths": [],
-	"ignoreDeps": []
+	"ignoreDeps": [],
+	"lockFileMaintenance": {
+		"enabled": true
+	}
 }
