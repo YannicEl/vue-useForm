@@ -116,6 +116,9 @@ jobs:
           name: dist
           path: packages/lib/dist
 
+      - name: Install dependencies
+        run: pnpm --filter @vuetils/vue-useform install
+
       - name: Publish canary release
         run: pnpm run release:canary
         env:
