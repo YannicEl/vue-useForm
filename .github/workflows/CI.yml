@@ -21,3 +21,5 @@ jobs:
     name: Release
     needs: test
     uses: ./.github/workflows/release.yml
+    with:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
