@@ -1,10 +1,10 @@
 h1 {
-	@apply font-bold text-3xl;
+	@apply text-3xl font-bold;
 }
 
 input,
 select {
-	@apply px-4 py-2  rounded-md border-black border-1 w-full;
+	@apply border-1 w-full  rounded-md border-black px-4 py-2;
 
 	&:hover {
 		@apply border-blue-500;
@@ -22,11 +22,11 @@ form.submitted {
 }
 
 label div {
-	@apply pl-4 mb-1 font-sm;
+	@apply font-sm mb-1 pl-4;
 }
 
 button {
-	@apply px-4 py-2 font-medium relative inline-flex justify-center rounded-md border border-transparent bg-gray-300  text-black;
+	@apply relative inline-flex justify-center rounded-md border border-transparent bg-gray-300 px-4 py-2 font-medium  text-black;
 
 	&:hover {
 		@apply bg-gray-400;

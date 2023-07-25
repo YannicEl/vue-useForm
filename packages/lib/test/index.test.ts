@@ -1,5 +1,5 @@
-import { assert, it } from 'vitest';
 import { useField } from '@vuetils/vue-useform';
+import { assert, it } from 'vitest';
 
 it('should pass', async () => {
 	const field = useField('test');

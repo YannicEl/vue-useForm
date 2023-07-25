@@ -1,5 +1,5 @@
 import { computed, reactive, ref, shallowRef, watch } from 'vue';
-import { AsyncValidator, required, Validator } from './validators';
+import { AsyncValidator, Validator, required } from './validators';
 
 export interface UseFieldOptions {
 	validators?: Validator[];
