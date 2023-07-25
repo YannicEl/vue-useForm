@@ -3,4 +3,8 @@
 **/CHANGELOG.md
 **/pnpm-lock.yaml
 
+**/.output
+**/.nuxt
+**/dist
+
 /packages/lib/package.json
