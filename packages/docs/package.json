@@ -5,8 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite --port 3000",
-		"build": "vue-tsc && vite build",
-		"preview": "vite preview"
+		"build": "vue-tsc && vite build"
 	},
 	"dependencies": {
 		"@unocss/reset": "^0.53.6",

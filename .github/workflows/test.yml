@@ -4,8 +4,8 @@ on:
   - workflow_call
 
 jobs:
-  test:
-    name: Test
+  lib:
+    name: Lib
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

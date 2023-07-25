@@ -12,9 +12,15 @@ jobs:
     name: Build
     uses: ./.github/workflows/build.yml
 
+  format:
+    name: Format
+    uses: ./.github/workflows/format.yml
+
   test:
     name: Test
-    needs: build
+    needs:
+      - build
+      - format
     uses: ./.github/workflows/test.yml
 
   release:

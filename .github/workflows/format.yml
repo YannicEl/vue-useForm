@@ -1,11 +1,11 @@
-name: Build
+name: Format
 
 on:
   - workflow_call
 
 jobs:
-  lib:
-    name: Lib
+  check:
+    name: Check
 
     runs-on: ubuntu-latest
 
@@ -27,11 +27,5 @@ jobs:
       - name: Install dependencies
         run: pnpm --filter @vuetils/vue-useform install
 
-      - name: Build lib
-        run: pnpm --filter @vuetils/vue-useform build
-
-      - name: Cache dist
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: packages/lib/dist
+      - name: Format Check
+        run: pnpm run format:check

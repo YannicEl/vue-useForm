@@ -2,7 +2,9 @@
 	"type": "module",
 	"scripts": {
 		"release": "changelogen --dir packages/lib --release --push",
-		"release:canary": "changelogen --dir packages/lib --canary && pnpm publish --filter @vuetils/vue-useform --no-git-checks --tag canary"
+		"release:canary": "changelogen --dir packages/lib --canary && pnpm publish --filter @vuetils/vue-useform --no-git-checks --tag canary",
+		"format": "prettier .",
+		"format:check": "prettier . --check"
 	},
 	"devDependencies": {
 		"changelogen": "^0.5.4",
