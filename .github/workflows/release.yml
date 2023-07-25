@@ -6,11 +6,6 @@ on:
       NPM_TOKEN:
         required: true
 
-# on:
-#   push:
-#     tags:
-#       - 'v*'
-
 jobs:
   canary:
     name: Canary
