@@ -63,6 +63,9 @@ importers:
       '@types/node':
         specifier: ^18.17.0
         version: 18.17.0
+      '@vuetils/vue-useform':
+        specifier: workspace:latest
+        version: 'link:'
       tsup:
         specifier: ^7.1.0
         version: 7.1.0(typescript@5.1.6)
