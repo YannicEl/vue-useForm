@@ -7,15 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    copy: typeof import('./components/FormGroup2.js')['default']
     Form: typeof import('./components/Form.vue')['default']
     FormGroup: typeof import('./components/FormGroup.vue')['default']
     FormInput: typeof import('./components/FormInput.vue')['default']
-    FormInput_: typeof import('./components/FormInput_.vue')['default']
     FormSelect: typeof import('./components/FormSelect.vue')['default']
-    Label: typeof import('./components/Label.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-    ULabel: typeof import('./components/ULabel.vue')['default']
   }
 }

@@ -2,6 +2,8 @@
 	<div class="w-screen-md mx-auto">
 		<h1 class="mt-20">Demo</h1>
 
+		<UButton text="hiii"></UButton>
+
 		<Form :form="form" @vSubmit="customSubmit" class="mt-6 grid gap-4">
 			<FormGroup>
 				Firstname:
@@ -36,7 +38,11 @@ import {
 	required,
 	useField,
 	useForm,
-} from '@yannicel/vue-useform';
+} from '@vuetils/vue-useform';
+
+import { UButton, add as add2 } from '@vuetils/form';
+
+console.log(add2(1, 2));
 
 const field = useField('initial', { validators: [required] });
 

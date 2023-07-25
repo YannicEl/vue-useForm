@@ -8,6 +8,28 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
+  test:
+    name: Run Tests
+
+    runs-on: ubuntu-latest
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Run tests
+        run: pnpm --filter @vuetils/vue-useform test
+
   release_nightly:
     name: Release nightly
     if: startsWith(github.event.head_commit.message, 'chore(release)') == false
@@ -16,6 +38,9 @@ jobs:
       id-token: write # to create releae with provenance
 
     runs-on: ubuntu-latest
+
+    needs:
+     - test
 
     steps:
       - name: Checkout repository
@@ -27,7 +52,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: latest
+          version: 8
 
       - name: Setup node
         uses: actions/setup-node@v3
