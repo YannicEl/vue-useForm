@@ -9,7 +9,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   build:
-    name: Run Lib
+    name: Build lib
 
     runs-on: ubuntu-latest
 
@@ -67,14 +67,14 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
-
       - name: Restore dist cache
         uses: actions/download-artifact@v3
         with:
           name: dist
-          path: packages/lib
+          path: packages/lib/dist
+
+      - name: Install dependencies
+        run: pnpm --filter @vuetils/vue-useform install
 
       - name: Run tests
         run: pnpm --filter @vuetils/vue-useform test
@@ -110,11 +110,14 @@ jobs:
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Restore dist cache
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: packages/lib/dist
+
       - name: Install dependencies
         run: pnpm --filter @vuetils/vue-useform install
-
-      - name: Build lib
-        run: pnpm --filter @vuetils/vue-useform build
 
       - name: Publish canary release
         run: pnpm run release:canary
