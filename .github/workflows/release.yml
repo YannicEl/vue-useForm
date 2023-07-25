@@ -1,7 +1,10 @@
 name: Build
 
 on:
-  - workflow_call
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
 
 # on:
 #   push:
