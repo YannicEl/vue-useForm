@@ -8,13 +8,13 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
+  cinit_env:
+    uses: .github/workflows/init_env.yml
+
   build:
     name: Build lib
 
     runs-on: ubuntu-latest
-
-    call-workflow-1-in-local-repo:
-      uses: .github/workflows/init_env.yml
 
     steps:
       - name: Install dependencies
