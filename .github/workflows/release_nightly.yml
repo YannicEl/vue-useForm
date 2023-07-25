@@ -8,6 +8,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
+  if: startsWith(github.event.head_commit.message, 'chore(release)') == false
   build:
     name: Build lib
 
@@ -81,7 +82,6 @@ jobs:
 
   release_nightly:
     name: Release nightly
-    if: startsWith(github.event.head_commit.message, 'chore(release)') == false
 
     permissions:
       id-token: write # to create releae with provenance
@@ -115,9 +115,6 @@ jobs:
         with:
           name: dist
           path: packages/lib/dist
-
-      - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
 
       - name: Publish canary release
         run: pnpm run release:canary
