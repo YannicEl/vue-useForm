@@ -34,7 +34,7 @@ jobs:
           path: packages/lib/dist
 
       - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
+        run: pnpm --filter @vuetils/form install
 
       - name: Run tests
-        run: pnpm --filter @vuetils/vue-useform test
+        run: pnpm --filter @vuetils/form test

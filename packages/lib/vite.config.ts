@@ -19,7 +19,7 @@ export default defineConfig({
 		lib: {
 			// src/indext.ts is where we have exported the component(s)
 			entry: resolve(__dirname, 'src/index.ts'),
-			name: '@vuetils/vue-useform',
+			name: '@vuetils/form',
 			// the name of the output files when the build is run
 			fileName: 'index',
 		},

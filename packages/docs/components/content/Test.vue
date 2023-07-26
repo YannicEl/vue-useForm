@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { VForm, useForm, FormGroup } from '@vuetils/vue-useform';
+import { VForm, useForm, FormGroup } from '@vuetils/form';
 
 const form = useForm({
 	test: [''],

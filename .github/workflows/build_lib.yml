@@ -25,10 +25,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
+        run: pnpm --filter @vuetils/form install
 
       - name: Build lib
-        run: pnpm --filter @vuetils/vue-useform build
+        run: pnpm --filter @vuetils/form build
 
       - name: Cache build
         uses: actions/upload-artifact@v3

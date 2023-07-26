@@ -2,7 +2,7 @@
 	"type": "module",
 	"scripts": {
 		"release": "changelogen --dir packages/lib --release --push",
-		"release:canary": "changelogen --dir packages/lib --canary && pnpm publish --filter @vuetils/vue-useform --no-git-checks --tag canary",
+		"release:canary": "changelogen --dir packages/lib --canary && pnpm publish --filter @vuetils/form --no-git-checks --tag canary",
 		"format": "prettier --write . ",
 		"format:check": "prettier --check ."
 	},

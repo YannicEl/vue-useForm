@@ -23,7 +23,7 @@ importers:
 
   packages/docs:
     dependencies:
-      '@vuetils/vue-useform':
+      '@vuetils/form':
         specifier: workspace:latest
         version: link:../lib
     devDependencies:
@@ -45,7 +45,7 @@ importers:
       '@types/node':
         specifier: ^18.17.1
         version: 18.17.1
-      '@vuetils/vue-useform':
+      '@vuetils/form':
         specifier: workspace:latest
         version: 'link:'
       typescript:

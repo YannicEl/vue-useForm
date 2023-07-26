@@ -43,7 +43,7 @@ jobs:
           path: packages/lib/dist
 
       - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
+        run: pnpm --filter @vuetils/form install
 
       - name: Publish canary release
         run: pnpm run release:canary
@@ -87,10 +87,10 @@ jobs:
           path: packages/lib/dist
 
       - name: Install dependencies
-        run: pnpm --filter @vuetils/vue-useform install
+        run: pnpm --filter @vuetils/form install
 
       - name: Publish release
-        run: pnpm publish --filter @vuetils/vue-useform --no-git-checks
+        run: pnpm publish --filter @vuetils/form --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_CONFIG_PROVENANCE: true

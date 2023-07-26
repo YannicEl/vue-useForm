@@ -1,4 +1,4 @@
-import { useField } from '@vuetils/vue-useform';
+import { useField } from '@vuetils/form';
 import { assert, it } from 'vitest';
 
 it('should pass', async () => {
