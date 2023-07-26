@@ -90,7 +90,7 @@ jobs:
         run: pnpm --filter @vuetils/form install
 
       - name: Publish release
-        run: pnpm publish --filter @vuetils/form --no-git-checks
+        run: pnpm publish --filter @vuetils/form --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_CONFIG_PROVENANCE: true
