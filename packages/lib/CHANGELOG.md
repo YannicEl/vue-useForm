@@ -1,6 +1,37 @@
 # Changelog
 
 
+## v0.0.57
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.56...v0.0.57)
+
+### 🩹 Fixes
+
+- CI ([ea54f4d](https://github.com/YannicEl/vue-useForm/commit/ea54f4d))
+- CI ([a0fd688](https://github.com/YannicEl/vue-useForm/commit/a0fd688))
+- CI ([feac77d](https://github.com/YannicEl/vue-useForm/commit/feac77d))
+- Added docus ([741b57a](https://github.com/YannicEl/vue-useForm/commit/741b57a))
+- CI ([d5901f9](https://github.com/YannicEl/vue-useForm/commit/d5901f9))
+- Dependencies ([235e4e2](https://github.com/YannicEl/vue-useForm/commit/235e4e2))
+- Prettier ([fc818ff](https://github.com/YannicEl/vue-useForm/commit/fc818ff))
+- Ci ([79a1bf3](https://github.com/YannicEl/vue-useForm/commit/79a1bf3))
+- CI ([065d4fa](https://github.com/YannicEl/vue-useForm/commit/065d4fa))
+- Refactor ([23aafeb](https://github.com/YannicEl/vue-useForm/commit/23aafeb))
+- Lockfile ([2be5afb](https://github.com/YannicEl/vue-useForm/commit/2be5afb))
+- CI ([88ad6f4](https://github.com/YannicEl/vue-useForm/commit/88ad6f4))
+- Format ([3636f35](https://github.com/YannicEl/vue-useForm/commit/3636f35))
+- CI ([34cf793](https://github.com/YannicEl/vue-useForm/commit/34cf793))
+- CI ([503706a](https://github.com/YannicEl/vue-useForm/commit/503706a))
+- CI ([ef436b6](https://github.com/YannicEl/vue-useForm/commit/ef436b6))
+- CI ([652fbeb](https://github.com/YannicEl/vue-useForm/commit/652fbeb))
+- CI ([2fc3add](https://github.com/YannicEl/vue-useForm/commit/2fc3add))
+- CI ([263ae4f](https://github.com/YannicEl/vue-useForm/commit/263ae4f))
+- Ci ([aadcf0e](https://github.com/YannicEl/vue-useForm/commit/aadcf0e))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.0.56
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.54...v0.0.56)

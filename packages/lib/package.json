@@ -1,31 +1,31 @@
 {
   "name": "@vuetils/vue-useform",
-  "version": "0.0.56",
+  "version": "0.0.57",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/YannicEl/vue-useForm",
     "directory": "packages/lib"
-  },	
+  },
   "type": "module",
   "files": [
     "dist"
   ],
-	"main": "./dist/index.umd.cjs",
-	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.umd.cjs"
-		},
-		"./style.css": "./dist/style.css"
-	},
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "scripts": {
-		"build": "vite build",
-		"build:watch": "vite build --watch",
-		"build:types": "vue-tsc --emitDeclarationOnly --noEmit false",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "build:types": "vue-tsc --emitDeclarationOnly --noEmit false",
     "test": "vitest run",
     "test:watch": "vitest"
   },
