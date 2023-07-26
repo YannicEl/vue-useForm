@@ -40,7 +40,6 @@ jobs:
     name: Deploy
     needs:
       - build
-      - release
     uses: ./.github/workflows/deploy_docs.yml
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
