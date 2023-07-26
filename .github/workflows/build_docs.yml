@@ -24,6 +24,12 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
+      - name: Restore build cache
+        uses: actions/download-artifact@v3
+        with:
+          name: lib-build
+          path: packages/lib/dist
+
       - name: Install dependencies
         run: pnpm --filter docs install
 
