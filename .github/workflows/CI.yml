@@ -35,12 +35,13 @@ jobs:
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  # deploy_docs:
-  #   name: Deploy
-  #   needs:
-  #     - build
-  #     - release
-  #   uses: ./.github/workflows/deploy_docs.yml
-  #   secrets:
-  #     CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-  #     CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  deploy_docs:
+    if: github.event_name == 'push'
+    name: Deploy
+    needs:
+      - build
+      - release
+    uses: ./.github/workflows/deploy_docs.yml
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
