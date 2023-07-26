@@ -41,7 +41,15 @@ jobs:
       - name: Build docs
         run: pnpm --filter docs build
 
-      - name: Deploy docs
+      - name: Deploy docs canary
+        if: startsWith(github.event.head_commit.message, 'chore(release)') == false
+        run: pnpm --filter docs deploy:dev
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Deploy docs prod
+        if: startsWith(github.event.head_commit.message, 'chore(release)') == true
         run: pnpm --filter docs deploy:prod
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

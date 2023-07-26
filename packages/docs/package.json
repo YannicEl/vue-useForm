@@ -5,8 +5,8 @@
 	"scripts": {
 		"dev": "nuxi dev",
 		"build": "nuxi generate",
-		"deploy:prod": "wrangler pages deploy .output/public --project-name=vuetils-form-docs",
-		"deploy:dev": "wrangler pages deploy .output/public --project-name=vuetils-form-docs"
+		"deploy:prod": "wrangler pages deploy .output/public --project-name=vuetils-form-docs-prod",
+		"deploy:dev": "wrangler pages deploy .output/public --project-name=vuetils-form-docs-dev"
 	},
 	"dependencies": {
 		"@vuetils/vue-useform": "workspace:latest"
