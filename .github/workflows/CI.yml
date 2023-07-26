@@ -28,7 +28,7 @@ jobs:
 
   release:
     if: github.event_name == 'push'
-    name: Release
+    name: Release lib
     needs:
       - test
     uses: ./.github/workflows/release_lib.yml
@@ -43,7 +43,7 @@ jobs:
 
   deploy_docs:
     if: github.event_name == 'push'
-    name: Deploy
+    name: Deploy docs
     needs:
       - test
       - build_docs
