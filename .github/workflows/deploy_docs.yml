@@ -36,13 +36,13 @@ jobs:
           path: packages/lib/dist
 
       - name: Install dependencies
-        run: pnpm --filter docs2 install
+        run: pnpm --filter docs install
 
       - name: Build docs
-        run: pnpm --filter docs2 build
+        run: pnpm --filter docs build
 
       - name: Deploy docs
-        run: pnpm --filter docs2 deploy:prod
+        run: pnpm --filter docs deploy:prod
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

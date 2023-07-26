@@ -23,6 +23,7 @@ jobs:
     name: Test
     needs:
       - build
+      - format
     uses: ./.github/workflows/test_lib.yml
 
   release:
@@ -30,7 +31,6 @@ jobs:
     name: Release
     needs:
       - test
-      - format
     uses: ./.github/workflows/release_lib.yml
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
     if: github.event_name == 'push'
     name: Deploy
     needs:
-      - build
+      - test
     uses: ./.github/workflows/deploy_docs.yml
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
