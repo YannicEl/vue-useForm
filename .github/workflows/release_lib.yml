@@ -36,10 +36,10 @@ jobs:
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Restore dist cache
+      - name: Restore build cache
         uses: actions/download-artifact@v3
         with:
-          name: dist
+          name: lib-build
           path: packages/lib/dist
 
       - name: Install dependencies
@@ -80,10 +80,10 @@ jobs:
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Restore dist cache
+      - name: Restore build cache
         uses: actions/download-artifact@v3
         with:
-          name: dist
+          name: lib-build
           path: packages/lib/dist
 
       - name: Install dependencies

@@ -11,7 +11,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
+  build_lib:
     name: Build
     uses: ./.github/workflows/build_lib.yml
 
@@ -22,7 +22,7 @@ jobs:
   test:
     name: Test
     needs:
-      - build
+      - build_lib
       - format
     uses: ./.github/workflows/test_lib.yml
 
@@ -35,11 +35,18 @@ jobs:
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  build_docs:
+    name: Build
+    needs:
+      - build_lib
+    uses: ./.github/workflows/build_docs.yml
+
   deploy_docs:
     if: github.event_name == 'push'
     name: Deploy
     needs:
       - test
+      - build_docs
     uses: ./.github/workflows/deploy_docs.yml
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

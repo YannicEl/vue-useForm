@@ -29,17 +29,14 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Restore dist cache
+      - name: Restore docs-build cache
         uses: actions/download-artifact@v3
         with:
-          name: dist
-          path: packages/lib/dist
+          name: docs-build
+          path: packages/docs/.output
 
       - name: Install dependencies
         run: pnpm --filter docs install
-
-      - name: Build docs
-        run: pnpm --filter docs build
 
       - name: Deploy docs canary
         if: startsWith(github.event.head_commit.message, 'chore(release)') == false
