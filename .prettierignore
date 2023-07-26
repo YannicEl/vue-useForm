@@ -7,4 +7,6 @@
 **/.nuxt
 **/dist
 
+/package/docs/content/*.md
+
 /packages/lib/package.json
