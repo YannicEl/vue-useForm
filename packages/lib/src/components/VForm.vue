@@ -1,20 +1,14 @@
 <template>
-	<form
-		@submit.prevent="onSubmit"
-		:class="{
-			valid,
-			invalid,
-			submitted,
-		}"
-	>
-		<slot :form="form"></slot>
+	<form @submit.prevent="onSubmit" :class="classNames">
+		<slot />
 	</form>
 </template>
 
 <script setup lang="ts" generic="T">
-import { toRefs } from 'vue';
 import type { Form } from '../useForm';
 import { provideForm } from '../composables/useFormInject';
+import { getClassnames } from '../utils';
+import { computed } from 'vue';
 
 const { form } = defineProps<{
 	form: Form<T>;
@@ -26,7 +20,7 @@ const emits = defineEmits<{
 
 provideForm(form);
 
-const { valid, invalid, submitted } = toRefs(form);
+const classNames = computed(() => getClassnames(form));
 
 function onSubmit() {
 	form.submitted = true;

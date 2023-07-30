@@ -10,8 +10,14 @@ export default defineConfig({
 		{
 			name: 'postbuild-types',
 			closeBundle: async () => {
-				console.log('postbuild-types');
-				execSync('pnpm run build:types');
+				const t1 = Date.now();
+				console.log('Building types...');
+				try {
+					execSync('pnpm run build:types');
+					console.log(`Types built in ${Date.now() - t1} ms`);
+				} catch (error) {
+					console.log(error);
+				}
 			},
 		},
 	],

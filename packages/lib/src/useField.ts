@@ -16,6 +16,7 @@ export interface Field<T = any> {
 	disabled: boolean;
 	enabled: boolean;
 	dirty: boolean;
+	pristine: boolean;
 	async: boolean;
 	pending: boolean;
 
@@ -87,6 +88,7 @@ export function useField<T>(
 	const enable = () => (disabled.value = false);
 
 	const dirty = ref(false);
+	const pristine = computed(() => !dirty.value);
 	watch(value, () => {
 		dirty.value = true;
 	});
@@ -120,6 +122,7 @@ export function useField<T>(
 		disabled,
 		enabled,
 		dirty,
+		pristine,
 		async,
 		pending,
 

@@ -26,12 +26,22 @@ export type Fields<T> = {
 export interface Form<T = any> {
 	values: UnwrapRef<Values<T>>;
 	fields: UnwrapRef<Fields<T>>;
+
+	// state
 	invalid: boolean;
 	valid: boolean;
-	submitted: boolean;
+	disabled: boolean;
+	enabled: boolean;
 	pending: boolean;
+	dirty: boolean;
+	pristine: boolean;
+	submitted: boolean;
+
+	// functions
 	setValues: (values: Partial<{ [Key in keyof T]: T[Key] }>) => void;
 	reset: () => void;
+	disable: () => void;
+	enable: () => void;
 	awaitValidation: () => Promise<void>;
 }
 
@@ -55,9 +65,7 @@ export function useForm<T>(
 	const invalid = computed(() => {
 		let invalid = false;
 		for (const key in fields) {
-			if (!invalid) {
-				invalid = fields[key].invalid;
-			}
+			if (!invalid) invalid = fields[key].invalid;
 		}
 		return invalid;
 	});
@@ -75,18 +83,48 @@ export function useForm<T>(
 	const pending = computed(() => {
 		let pending = false;
 		for (const key in fields) {
-			if (!pending) {
-				pending = fields[key].pending;
-			}
+			if (!pending) pending = fields[key].pending;
 		}
 
 		return pending;
 	});
 
+	const disabled = computed(() => {
+		let disabled = false;
+		for (const key in fields) {
+			if (!disabled) disabled = fields[key].disabled;
+		}
+
+		return disabled;
+	});
+	const enabled = computed(() => !disabled.value);
+
+	const dirty = computed(() => {
+		let dirty = false;
+		for (const key in fields) {
+			if (!dirty) dirty = fields[key].dirty;
+		}
+
+		return dirty;
+	});
+	const pristine = computed(() => !dirty.value);
+
+	function disable() {
+		for (const key in fields) {
+			fields[key].disable();
+		}
+	}
+
+	function enable() {
+		for (const key in fields) {
+			fields[key].enable();
+		}
+	}
+
 	// Reset the form back to initial state
 	function reset(): void {
 		submitted.value = false;
-		for (const key in values) {
+		for (const key in fields) {
 			fields[key].reset();
 		}
 	}
@@ -105,14 +143,24 @@ export function useForm<T>(
 	}
 
 	const form: Form<T> = reactive({
-		invalid,
-		valid,
-		submitted,
-		pending,
 		values,
 		fields,
-		setValues,
+
+		// state
+		invalid,
+		valid,
+		disabled,
+		enabled,
+		dirty,
+		pristine,
+		pending,
+		submitted,
+
+		// functions
 		reset,
+		disable,
+		enable,
+		setValues,
 		awaitValidation,
 	});
 
