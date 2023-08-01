@@ -6,30 +6,25 @@ This page demonstrates some of the built-in markdown extensions provided by Vite
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
 
-**Input**
-
-````
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
-
 **Output**
 
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+```vue
+<template>
+	<VForm :form="form">
+		<VLabel class="flex flex-col">
+			Label
+			<input type="text" name="field" />
+		</VLabel>
+	</VForm>
+</template>
+
+<script setup lang="ts">
+import { VForm, VLabel, useForm } from '@vuetils/form';
+
+const form = useForm({
+	field: [''],
+});
+</script>
 ```
 
 <script setup>

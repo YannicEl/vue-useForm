@@ -25,6 +25,8 @@ export default defineConfig({
 		socialLinks: [{ icon: 'github', link: 'https://github.com/YannicEl/vue-useForm' }],
 	},
 
+	cleanUrls: true,
+
 	sitemap: {
 		hostname: 'https://example.com',
 		lastmodDateOnly: true,
