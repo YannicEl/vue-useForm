@@ -1,11 +1,11 @@
 <template>
 	<VForm :form="form" class="flex flex-col gap-4" @submit="onSubmit" @v-submit="onVSubmit">
-		<VLabel class="flex flex-col">
+		<VLabel>
 			Label {{ form.fields.test.value }}
 			<input type="text" name="test" required />
 		</VLabel>
 
-		<VLabel fieldName="select" class="flex flex-col">
+		<VLabel fieldName="select">
 			Select
 			<select name="select2">
 				<option value="hallo">hallo</option>
@@ -31,7 +31,7 @@
   </pre>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { required } from '@vuetils/form';
 import { VForm, useForm, VLabel } from '@vuetils/form';
 

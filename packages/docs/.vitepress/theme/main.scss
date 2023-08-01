@@ -1,0 +1,14 @@
+.v-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.v-label {
+	display: flex;
+	flex-direction: column;
+
+	& input {
+		color: black;
+		background: white;
+	}
+}
