@@ -1,5 +1,5 @@
 <template>
-	<label>
+	<label class="v-label">
 		<LabelContent />
 		<Render />
 	</label>
