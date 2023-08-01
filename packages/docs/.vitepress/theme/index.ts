@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme';
 
-import 'uno.css';
+import 'virtual:uno.css';
 
 export default {
 	...DefaultTheme,
