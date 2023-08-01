@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: docs-build
-          path: packages/docs/.output
+          path: packages/docs/.vitepress
