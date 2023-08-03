@@ -11,8 +11,8 @@ hero:
       text: Markdown Examples
       link: /markdown-examples
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: View on GitHub
+      link: https://github.com/YannicEl/vue-useForm
 
 features:
   - title: Feature A

@@ -5,6 +5,10 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
 	title: '@vuetils/form',
 	description: 'Tiny form valdiation library for vue 3',
+
+	lastUpdated: true,
+	cleanUrls: true,
+
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
@@ -23,9 +27,16 @@ export default defineConfig({
 		],
 
 		socialLinks: [{ icon: 'github', link: 'https://github.com/YannicEl/vue-useForm' }],
-	},
 
-	cleanUrls: true,
+		editLink: {
+			pattern: 'https://github.com/YannicEl/vue-useForm/edit/main/packages/docs/:path',
+			text: 'Edit this page on GitHub',
+		},
+
+		search: {
+			provider: 'local',
+		},
+	},
 
 	sitemap: {
 		hostname: 'https://example.com',
