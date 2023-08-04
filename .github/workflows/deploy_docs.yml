@@ -22,10 +22,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Add preview URL to PR
-        uses: thollander/actions-comment-pull-request@v2
+        uses: mshick/add-pr-comment@v2
         with:
           message: A preview url will be shown here when the deployment finished.
-          comment_tag: preview-url
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -54,6 +53,6 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Add preview URL to PR
-        uses: thollander/actions-comment-pull-request@v2
+        uses: mshick/add-pr-comment@v2
         with:
-          filePath: preview_url.txt
+          message-path: preview_url.txt
