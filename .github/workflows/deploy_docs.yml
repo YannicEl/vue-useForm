@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy:
-    name: ${{ $environment == 'prod' && 'Production' || 'Canary'}}
+    name: ${{ env.environment == 'prod' && 'Production' || 'Canary'}}
     # name: ${{ startsWith(github.event.head_commit.message, 'chore(release)') && 'Production' || 'Canary'}}
 
     runs-on: ubuntu-latest
