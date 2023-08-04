@@ -22,9 +22,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Add preview URL to PR
-        uses: mshick/add-pr-comment@v2
+        uses: thollander/actions-comment-pull-request@v2
         with:
-          message: Wait for the deployment to finish...
+          message: A preview url will be shown here when the deployment finished.
+          comment_tag: preview-url
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -47,15 +48,15 @@ jobs:
         run: pnpm --filter docs install
 
       - name: Deploy docs canary
-        run: pnpm --filter docs deploy:dev > output.txt
+        run: pnpm --filter docs deploy:dev | tail -n 1 > preview_url.txt
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Echo preview URL
-        run: tail -n 1 output.txt
+        run: preview_url.txt
 
       - name: Add preview URL to PR
-        uses: mshick/add-pr-comment@v2
+        uses: thollander/actions-comment-pull-request@v2
         with:
-          message: tail -n 1 output.txt
+          filePath: preview_url.txt
