@@ -6,8 +6,8 @@
 		"dev": "vitepress dev --host --port 3000",
 		"build": "vitepress build",
 		"preview": "vitepress preview",
-		"deploy:prod": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-prod",
-		"deploy:dev": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-dev"
+		"deploy:dev": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-dev",
+		"deploy:prod": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-prod"
 	},
 	"dependencies": {
 		"@vuetils/form": "workspace:latest"
