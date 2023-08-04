@@ -17,6 +17,7 @@ runs:
   using: 'composite'
   steps:
     - name: Add or update comment
+      shell: bash
       run: |
         gh pr comment ${{github.event.number}} \
           --repo ${{github.repository}} \
