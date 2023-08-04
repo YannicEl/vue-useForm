@@ -5,14 +5,19 @@ on:
     inputs:
       body:
         required: true
+        type: string
       is_file:
         type: boolean
         default: false
+      update_comment:
+        type: boolean
+        default: true
 
 runs:
   using: 'composite'
   steps:
     - name: Try update comment
+      if: inputs.update_comment
       id: update
       continue-on-error: true
       shell: bash
@@ -25,7 +30,7 @@ runs:
         GH_TOKEN: ${{ github.token }}
 
     - name: Add new comment
-      if: steps.update.outcome != 'success'
+      if: steps.update.outcome != 'success' || !inputs.update_comment
       shell: bash
       run: |
         gh pr comment ${{github.event.number}} \

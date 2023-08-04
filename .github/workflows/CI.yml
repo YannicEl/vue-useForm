@@ -26,6 +26,7 @@ jobs:
         uses: ./.github/actions/pr_comment
         with:
           body: A preview url will be shown here when the deployment finished.
+          update_comment: false
 
   build_lib:
     name: Build
