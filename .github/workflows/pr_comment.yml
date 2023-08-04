@@ -1,0 +1,22 @@
+name: Comment
+
+on:
+  workflow_call:
+    inputs:
+    body:
+      required: true
+      type: string
+
+jobs:
+  comment:
+    name: PR
+
+    steps:
+      - name: Add or update comment
+        run: |
+          gh pr comment ${{github.event.number}} \
+            --repo ${{github.repository}} \
+            --body ${{ inputs.body }} \
+            --edit-last
+        env:
+          GH_TOKEN: ${{ github.token }}

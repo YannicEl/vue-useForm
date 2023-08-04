@@ -13,12 +13,10 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   comment:
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test Comment
-        run: gh pr comment ${{github.event.number}} --body "Hi from GitHub CLI" --repo ${{github.repository}}
-        env:
-          GH_TOKEN: ${{ github.token }}
+    name: Add preview url comment
+    uses: ./.github/workflows/pr_comment.yml
+    with:
+      config-path: A preview url will be shown here when the deployment finished.
 
   build_lib:
     name: Build
