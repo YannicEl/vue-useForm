@@ -9,10 +9,8 @@ on:
         required: true
 
 jobs:
-  canary:
-    name: Canary
-
-    if: startsWith(github.event.head_commit.message, 'chore(release)') == false
+  deploy:
+    name: ${{ startsWith(github.event.head_commit.message, 'chore(release)') && 'Production' || 'Canary'}}
 
     runs-on: ubuntu-latest
 
@@ -61,41 +59,3 @@ jobs:
         uses: mshick/add-pr-comment@v2
         with:
           message: tail -n 1 output.txt
-
-  production:
-    name: Production
-
-    if: startsWith(github.event.head_commit.message, 'chore(release)') == true
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Restore docs-build cache
-        uses: actions/download-artifact@v3
-        with:
-          name: docs-build
-          path: packages/docs/.vitepress
-
-      - name: Install dependencies
-        run: pnpm --filter docs install
-
-      - name: Deploy docs prod
-        if: startsWith(github.event.head_commit.message, 'chore(release)') == true
-        run: pnpm --filter docs deploy:prod
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
