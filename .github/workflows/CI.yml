@@ -13,6 +13,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   comment:
     if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
     steps:
       - name: Test Comment
         run: |
