@@ -6,6 +6,8 @@ on:
       body:
         required: true
         type: string
+      is_file:
+        type: boolean
 
 jobs:
   comment:
@@ -18,7 +20,7 @@ jobs:
         run: |
           gh pr comment ${{github.event.number}} \
             --repo ${{github.repository}} \
-            --body '${{ inputs.body }}' \
+            ${{ inputs.is_file && '--body-file' || '--body' }} '${{ inputs.body }}' \
             --edit-last
         env:
           GH_TOKEN: ${{ github.token }}
