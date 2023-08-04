@@ -49,7 +49,7 @@ jobs:
 
       - name: Add preview url comment
         if: github.event_name == 'pull_request'
-        uses: ./.github/actions/pr_comment.yml
+        uses: ./.github/actions/pr_comment
         with:
           body: preview_url.txt
           is_file: true

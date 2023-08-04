@@ -12,7 +12,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   comment:
-    name: Add PR comment
+    name: Add preview url comment
 
     if: github.event_name == 'pull_request'
 
@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Add preview url comment
-        uses: ./.github/actions/pr_comment.yml
+        uses: ./.github/actions/pr_comment
         with:
           body: A preview url will be shown here when the deployment finished.
 
