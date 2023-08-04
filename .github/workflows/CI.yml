@@ -25,7 +25,7 @@ jobs:
       - name: Add preview url comment
         uses: ./.github/actions/pr_comment
         with:
-          body: A preview url will be shown here when the deployment finished.
+          body: ⏳ Deployment in progress! A preview url will be shown here when the deployment has finished.
           update_comment: false
 
   build_lib:
