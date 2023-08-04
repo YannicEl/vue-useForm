@@ -53,4 +53,3 @@ jobs:
         with:
           body: preview_url.txt
           is_file: true
-          update_comment: true
