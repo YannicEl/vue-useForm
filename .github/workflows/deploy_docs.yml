@@ -54,7 +54,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Echo preview URL
-        run: preview_url.txt
+        run: cat preview_url.txt
 
       - name: Add preview URL to PR
         uses: thollander/actions-comment-pull-request@v2
