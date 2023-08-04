@@ -3,9 +3,9 @@ name: Comment
 on:
   workflow_call:
     inputs:
-    body:
-      required: true
-      type: string
+      body:
+        required: true
+        type: string
 
 jobs:
   comment:
