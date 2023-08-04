@@ -8,6 +8,10 @@ on:
         type: string
       is_file:
         type: boolean
+        default: false
+      update_comment:
+        type: boolean
+        default: false
 
 jobs:
   comment:
@@ -21,6 +25,6 @@ jobs:
           gh pr comment ${{github.event.number}} \
             --repo ${{github.repository}} \
             ${{ inputs.is_file && '--body-file' || '--body' }} '${{ inputs.body }}' \
-            --edit-last
+            ${{ inputs.update_comment && '--edit-last' }}
         env:
           GH_TOKEN: ${{ github.token }}

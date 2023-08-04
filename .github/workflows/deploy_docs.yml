@@ -53,6 +53,7 @@ jobs:
         with:
           body: preview_url.txt
           is_file: true
+          update_comment: true
 
       - name: Add preview URL to PR
         uses: mshick/add-pr-comment@v2
