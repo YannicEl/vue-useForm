@@ -16,7 +16,7 @@ jobs:
     name: Add preview url comment
     uses: ./.github/workflows/pr_comment.yml
     with:
-      config-path: A preview url will be shown here when the deployment finished.
+      body: A preview url will be shown here when the deployment finished.
 
   build_lib:
     name: Build
