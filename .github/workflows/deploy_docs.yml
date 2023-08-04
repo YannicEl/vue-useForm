@@ -16,9 +16,17 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      pull-requests: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Add preview URL to PR
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: Wait for the deployment to finish...
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -46,11 +54,14 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
-      - name: Echo output
-        run: cat output.txt
+      - uses: Echo preview URL
+        with:
+          message: tail -n 1 output.txt
 
-      - name: Echo preview URL
-        run: tail -n 1 output.txt
+      - name: Add preview URL to PR
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: tail -n 1 output.txt
 
   production:
     name: Production
