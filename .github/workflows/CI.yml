@@ -42,7 +42,7 @@ jobs:
     uses: ./.github/workflows/build_docs.yml
 
   deploy_docs:
-    if: github.event_name == 'push'
+    # if: github.event_name == 'push'
     name: Deploy docs
     needs:
       - test
