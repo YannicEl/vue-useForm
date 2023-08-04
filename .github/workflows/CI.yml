@@ -24,6 +24,9 @@ jobs:
             /repos/${{github.repository_owner}}/${{github.repository}}/issues/${{github.event.number}}/comments \
             -f body='Me too'
 
+        env:
+          GH_TOKEN: ${{ github.token }}
+
   build_lib:
     name: Build
     uses: ./.github/workflows/build_lib.yml
