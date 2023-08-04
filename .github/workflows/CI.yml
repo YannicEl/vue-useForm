@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test Comment
-        run: gh pr comment ${{github.event.number}} --body "Hi from GitHub CLI" --repo ${{github.repository_owner}}/${{github.repository}}
+        run: gh pr comment ${{github.event.number}} --body "Hi from GitHub CLI" --repo ${{github.repository}}
         env:
           GH_TOKEN: ${{ github.token }}
 
