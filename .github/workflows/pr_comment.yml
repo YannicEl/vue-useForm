@@ -25,6 +25,6 @@ jobs:
           gh pr comment ${{github.event.number}} \
             --repo ${{github.repository}} \
             ${{ inputs.is_file && '--body-file' || '--body' }} '${{ inputs.body }}' \
-            ${{ inputs.update_comment && '--edit-last' }}
+            ${{ inputs.update_comment && '--edit-last' || '' }}
         env:
           GH_TOKEN: ${{ github.token }}
