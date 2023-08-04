@@ -42,17 +42,17 @@ runs:
       run: |
         gh pr comment ${{github.event.number}} \
           --repo ${{github.repository}} \
-          ${{ inputs.is_file == true && '--body-file' || '--body' }} '${{ inputs.body }}' \
+          ${{ inputs.is_file == 'true' && '--body-file' || '--body' }} '${{ inputs.body }}' \
           --edit-last
       env:
         GH_TOKEN: ${{ github.token }}
 
     - name: Add new comment
-      if: steps.update.outcome != 'success' || inputs.update_comment == false
+      if: steps.update.outcome != 'success' || inputs.update_comment == 'false'
       shell: bash
       run: |
         gh pr comment ${{github.event.number}} \
           --repo ${{github.repository}} \
-          ${{ inputs.is_file == true && '--body-file' || '--body' }} '${{ inputs.body }}'
+          ${{ inputs.is_file == 'true' && '--body-file' || '--body' }} '${{ inputs.body }}'
       env:
         GH_TOKEN: ${{ github.token }}
