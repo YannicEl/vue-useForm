@@ -54,9 +54,8 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
-      - uses: Echo preview URL
-        with:
-          message: tail -n 1 output.txt
+      - name: Echo preview URL
+        run: tail -n 1 output.txt
 
       - name: Add preview URL to PR
         uses: mshick/add-pr-comment@v2
