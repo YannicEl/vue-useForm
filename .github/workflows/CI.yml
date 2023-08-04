@@ -8,6 +8,9 @@ on:
     branches:
       - 'main'
 
+env:
+  environment: ${{ startsWith(github.event.head_commit.message, 'chore(release)') && 'prod' || 'dev'}}
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:

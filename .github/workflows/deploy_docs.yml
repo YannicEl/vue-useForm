@@ -10,7 +10,8 @@ on:
 
 jobs:
   deploy:
-    name: ${{ startsWith(github.event.head_commit.message, 'chore(release)') && 'Production' || 'Canary'}}
+    name: ${{ $environment == 'prod' && 'Production' || 'Canary'}}
+    # name: ${{ startsWith(github.event.head_commit.message, 'chore(release)') && 'Production' || 'Canary'}}
 
     runs-on: ubuntu-latest
 
@@ -52,9 +53,6 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-
-      - name: Echo preview URL
-        run: cat preview_url.txt
 
       - name: Add preview URL to PR
         uses: thollander/actions-comment-pull-request@v2
