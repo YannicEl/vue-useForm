@@ -40,11 +40,11 @@ runs:
         GH_TOKEN: ${{ github.token }}
 
     - name: Add new comment
-      if: steps.update.outcome != 'success' || !inputs.update_comment
+      if: steps.update.outcome != 'success' || inputs.update_comment == false
       shell: bash
       run: |
         gh pr comment ${{github.event.number}} \
           --repo ${{github.repository}} \
-          ${{ inputs.is_file && '--body-file' || '--body' }} '${{ inputs.body }}'
+          ${{ inputs.is_file == true && '--body-file' || '--body' }} '${{ inputs.body }}'
       env:
         GH_TOKEN: ${{ github.token }}
