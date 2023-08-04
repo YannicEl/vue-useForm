@@ -1,0 +1,26 @@
+name: Comment PR
+
+on:
+  workflow_call:
+    inputs:
+      body:
+        required: true
+        type: string
+      is_file:
+        type: boolean
+        default: false
+      update_comment:
+        type: boolean
+        default: false
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Add or update comment
+      run: |
+        gh pr comment ${{github.event.number}} \
+          --repo ${{github.repository}} \
+          ${{ inputs.is_file && '--body-file' || '--body' }} '${{ inputs.body }}' \
+          ${{ inputs.update_comment && '--edit-last' || '' }}
+      env:
+        GH_TOKEN: ${{ github.token }}

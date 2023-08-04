@@ -49,13 +49,8 @@ jobs:
 
       - name: Add preview url comment
         if: github.event_name == 'pull_request'
-        uses: ./.github/workflows/pr_comment.yml
+        uses: ./.github/actions/pr_comment.yml
         with:
           body: preview_url.txt
           is_file: true
           update_comment: true
-
-      - name: Add preview URL to PR
-        uses: mshick/add-pr-comment@v2
-        with:
-          message-path: preview_url.txt

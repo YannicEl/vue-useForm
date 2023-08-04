@@ -12,11 +12,17 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   comment:
+    name: Add PR comment
+
     if: github.event_name == 'pull_request'
-    name: Add preview url comment
-    uses: ./.github/workflows/pr_comment.yml
-    with:
-      body: A preview url will be shown here when the deployment finished.
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add preview url comment
+        uses: ./.github/actions/pr_comment.yml
+        with:
+          body: A preview url will be shown here when the deployment finished.
 
   build_lib:
     name: Build
