@@ -41,23 +41,16 @@ jobs:
         run: pnpm --filter docs install
 
       - name: Deploy docs canary
-        run: pnpm --filter docs deploy:dev
+        run: pnpm --filter docs deploy:dev > output.txt
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
-      - name: Publish to Cloudflare Pages
-        id: deploy
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: vuetils-form-docs-dev
-          directory: .vitepress/dist
-          wranglerVersion: '3'
+      - name: Echo output
+        run: cat output.txt
 
       - name: Echo preview URL
-        run: echo ${{ steps.deploy.outputs.url }}
+        run: tail -n 1 output.txt
 
   production:
     name: Production
