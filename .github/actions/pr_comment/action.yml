@@ -27,11 +27,11 @@ runs:
       shell: bash
 
     - name: echo 4
-      run: echo ${{ inputs.is_file == true }}
+      run: echo ${{ inputs.is_file == 'true' }}
       shell: bash
 
     - name: echo 5
-      run: echo ${{ inputs.is_file == false }}
+      run: echo ${{ inputs.is_file == 'false' }}
       shell: bash
 
     - name: Try update comment
