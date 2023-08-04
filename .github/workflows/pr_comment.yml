@@ -11,6 +11,8 @@ jobs:
   comment:
     name: PR
 
+    runs-on: ubuntu-latest
+
     steps:
       - name: Add or update comment
         run: |
