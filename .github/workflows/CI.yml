@@ -11,6 +11,16 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
+  comment:
+    if: github.event_name == 'pull_request'
+    name: Test Comment
+    run: gh api \
+      --method POST \
+      -H "Accept: application/vnd.github+json" \
+      -H "X-GitHub-Api-Version: 2022-11-28" \
+      /repos/${{github.repository_owner}}/${{github.repository}}/issues/${{github.event.number}}/comments \
+      -f body='Me too' 
+
   build_lib:
     name: Build
     uses: ./.github/workflows/build_lib.yml
