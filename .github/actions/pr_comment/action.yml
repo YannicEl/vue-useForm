@@ -14,28 +14,8 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: echo 1
-      run: echo ${{ inputs.body }}
-      shell: bash
-
-    - name: echo 2
-      run: echo ${{ inputs.is_file }}
-      shell: bash
-
-    - name: echo 3
-      run: echo ${{ inputs.update_comment }}
-      shell: bash
-
-    - name: echo 4
-      run: echo ${{ inputs.is_file == 'true' }}
-      shell: bash
-
-    - name: echo 5
-      run: echo ${{ inputs.is_file == 'false' }}
-      shell: bash
-
     - name: Try update comment
-      if: inputs.update_comment == true
+      if: inputs.update_comment == 'true'
       id: update
       continue-on-error: true
       shell: bash
@@ -48,7 +28,7 @@ runs:
         GH_TOKEN: ${{ github.token }}
 
     - name: Add new comment
-      if: steps.update.outcome != 'success' || inputs.update_comment == false
+      if: steps.update.outcome != 'success' || inputs.update_comment == 'false'
       shell: bash
       run: |
         gh pr comment ${{github.event.number}} \
