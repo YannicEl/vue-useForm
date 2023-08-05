@@ -1,6 +1,7 @@
 {
 	"type": "module",
 	"scripts": {
+		"dev": "pnpm --parallel --filter * \"/watch|^dev/\"",
 		"release": "changelogen --dir packages/lib --release --push",
 		"release:canary": "changelogen --dir packages/lib --canary && pnpm publish --filter @vuetils/form --no-git-checks --access public --tag canary",
 		"format": "prettier --write . ",

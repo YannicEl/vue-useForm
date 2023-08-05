@@ -4,25 +4,36 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	title: '@vuetils/form',
-	description: 'Tiny form valdiation library for vue 3',
+	description: 'Vue form validation made easy',
 
 	lastUpdated: true,
 	cleanUrls: true,
 
 	themeConfig: {
-		// https://vitepress.dev/reference/default-theme-config
 		nav: [
-			{ text: 'Home', link: '/' },
-			{ text: 'Examples', link: '/markdown-examples' },
+			{ text: 'Guide', link: '/getting-started' },
+			{ text: 'API', link: '/api' },
 		],
 
 		sidebar: [
 			{
-				text: 'Examples',
+				text: 'Introduction',
 				items: [
-					{ text: 'Markdown Examples', link: '/markdown-examples' },
+					{ text: 'Getting Started', link: '/getting-started' },
 					{ text: 'Runtime API Examples', link: '/api-examples' },
 				],
+			},
+			{
+				text: 'Core Concepts',
+				items: [],
+			},
+			{
+				text: 'Plugins',
+				items: [],
+			},
+			{
+				text: 'API',
+				items: [],
 			},
 		],
 

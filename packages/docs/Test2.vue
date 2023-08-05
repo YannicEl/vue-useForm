@@ -1,14 +1,14 @@
 <template>
-	<VForm :form="form">
-		<VLabel class="flex flex-col">
+	<UForm :form="form">
+		<UField class="flex flex-col">
 			Label
 			<input type="text" name="field" />
-		</VLabel>
-	</VForm>
+		</UField>
+	</UForm>
 </template>
 
-<script setup lang="ts">
-import { VForm, VLabel, useForm } from '@vuetils/form';
+<script setup>
+import { UField, UForm, useForm } from '@vuetils/form';
 
 const form = useForm({
 	field: [''],

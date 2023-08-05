@@ -2,7 +2,7 @@ export * from './useField';
 export * from './useForm';
 export * from './validators';
 
-import VLabel from './components/FormGroup.vue';
-import VForm from './components/VForm.vue';
+import UField from './components/UField.vue';
+import UForm from './components/UForm.vue';
 
-export { VForm, VLabel };
+export { UField, UForm };

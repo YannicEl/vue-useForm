@@ -1,24 +1,23 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
   name: '@vuetils/form'
-  text: 'Tiny form valdiation library for vue 3'
-  tagline: My great project tagline
+  text: 'Vue form validation made easy'
+  tagline: A tiny yet powerful form valdiation library with a focus on typesafety and extensibility.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /getting-started
     - theme: alt
       text: View on GitHub
       link: https://github.com/YannicEl/vue-useForm
 
 features:
-  - title: Feature A
+  - title: ⚡️ Tiny
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
+  - title: 🔑 Typesafe
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - title: 🔌 Extensible
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---

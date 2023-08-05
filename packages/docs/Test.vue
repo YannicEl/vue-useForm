@@ -1,26 +1,26 @@
 <template>
-	<VForm :form="form" class="flex flex-col gap-4" @submit="onSubmit" @v-submit="onVSubmit">
-		<VLabel>
+	<UForm :form="form" class="flex flex-col gap-4" @submit="onSubmit" @v-submit="onVSubmit">
+		<UField>
 			Label {{ form.fields.test.value }}
 			<input type="text" name="test" required />
-		</VLabel>
+		</UField>
 
-		<VLabel fieldName="select">
+		<UField fieldName="select">
 			Select
 			<select name="select2">
 				<option value="hallo">hallo</option>
 				<option value="zwallo">zwallo</option>
 				<option value="drallo">drallo</option>
 			</select>
-		</VLabel>
+		</UField>
 
 		<button>submit</button>
-	</VForm>
+	</UForm>
 
-	<VLabel :field="form.fields.test2" class="flex flex-col mt-4">
-		Label
+	<UField :field="form.fields.test2" class="flex flex-col mt-4">
+		Label1
 		<input type="text" name="test2" disabled required />
-	</VLabel>
+	</UField>
 
 	<button @click="form.disabled ? form.enable() : form.disable()">
 		{{ form.disabled ? 'enable' : 'disable' }}
@@ -33,10 +33,10 @@
 
 <script setup>
 import { required } from '@vuetils/form';
-import { VForm, useForm, VLabel } from '@vuetils/form';
+import { UForm, useForm, UField } from '@vuetils/form';
 
 const form = useForm({
-	test: ['', [required]],
+	test: ['hallo', [required]],
 	test2: [''],
 	select: ['drallo'],
 });

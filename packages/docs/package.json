@@ -3,11 +3,11 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "vitepress dev --host --port 3000",
+		"dev": "vitepress dev --port 3000",
 		"build": "vitepress build",
 		"preview": "vitepress preview",
-		"deploy:dev": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-dev",
-		"deploy:prod": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-prod"
+		"deploy:dev": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-dev --commit-dirty",
+		"deploy:prod": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-prod --commit-dirty"
 	},
 	"dependencies": {
 		"@vuetils/form": "workspace:latest"
