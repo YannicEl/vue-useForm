@@ -27,7 +27,9 @@ export interface Form<T = any> {
 	values: UnwrapRef<Values<T>>;
 	fields: UnwrapRef<Fields<T>>;
 
-	// state
+	/**
+	 * State
+	 */
 	invalid: boolean;
 	valid: boolean;
 	disabled: boolean;

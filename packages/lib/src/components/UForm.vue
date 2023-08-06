@@ -1,5 +1,5 @@
 <template>
-	<form @submit.prevent="onSubmit" class="v-form" :class="classNames">
+	<form @submit.prevent="onSubmit" :class="classNames">
 		<slot />
 	</form>
 </template>
