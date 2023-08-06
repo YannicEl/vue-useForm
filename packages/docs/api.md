@@ -1,54 +1,12 @@
----
-outline: deep
----
+# API Reference
 
-# Runtime API Examples
+## useForm()
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+<<< @/node_modules/@vuetils/form/dist/useForm.d.ts
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+## useField()
 
-```md
-<script setup>
-import { useData } from 'vitepress'
-
-const { theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-
-<pre>{{ theme }}</pre>
-
-### Page Data
-
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
-```
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { site, theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-
-<pre>{{ theme }}</pre>
-
-### Page Data
-
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
+<<< @/node_modules/@vuetils/form/dist/useField.d.ts
 
 ## More
 

@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /getting-started
+      link: /introduction/getting-started
     - theme: alt
       text: View on GitHub
       link: https://github.com/YannicEl/vue-useForm

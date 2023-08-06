@@ -1,7 +1,5 @@
-import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vitepress';
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
 	title: '@vuetils/form',
 	description: 'Vue form validation made easy',
@@ -11,7 +9,7 @@ export default defineConfig({
 
 	themeConfig: {
 		nav: [
-			{ text: 'Guide', link: '/getting-started' },
+			{ text: 'Guide', link: '/introduction/getting-started' },
 			{ text: 'API', link: '/api' },
 		],
 
@@ -19,25 +17,31 @@ export default defineConfig({
 			{
 				text: 'Introduction',
 				items: [
-					{ text: 'Getting Started', link: '/getting-started' },
-					{ text: 'Runtime API Examples', link: '/api-examples' },
+					{ text: 'Why?', link: '/introduction/' },
+					{ text: 'Getting Started', link: '/introduction/getting-started' },
 				],
 			},
 			{
 				text: 'Core Concepts',
-				items: [],
+				items: [
+					{ text: 'Define a form', link: '/core-concepts/' },
+					{ text: 'Components', link: '/core-concepts/components' },
+					{ text: 'Validators', link: '/core-concepts/validators' },
+					{ text: 'Plugins', link: '/core-concepts/plugins' },
+				],
 			},
 			{
-				text: 'Plugins',
-				items: [],
-			},
-			{
-				text: 'API',
-				items: [],
+				text: 'API Reference',
+				link: '/api',
 			},
 		],
 
 		socialLinks: [{ icon: 'github', link: 'https://github.com/YannicEl/vue-useForm' }],
+
+		footer: {
+			copyright: 'Copyright © 2023-present Yannic Ellhotka',
+			message: 'Released under the MIT License.',
+		},
 
 		editLink: {
 			pattern: 'https://github.com/YannicEl/vue-useForm/edit/main/packages/docs/:path',
@@ -52,9 +56,5 @@ export default defineConfig({
 	sitemap: {
 		hostname: 'https://example.com',
 		lastmodDateOnly: true,
-	},
-
-	vite: {
-		plugins: [UnoCSS()],
 	},
 });
