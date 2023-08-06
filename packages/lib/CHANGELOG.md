@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.4...v0.1.0)
+
+### 🚀 Enhancements
+
+- ⚠️  V0.1.0 !!! ([c43624d](https://github.com/YannicEl/vue-useForm/commit/c43624d))
+
+### 🩹 Fixes
+
+- **CI:** Fix ([151ba34](https://github.com/YannicEl/vue-useForm/commit/151ba34))
+- **CI:** Fix ([7cd3ff8](https://github.com/YannicEl/vue-useForm/commit/7cd3ff8))
+
+### 🏡 Chore
+
+- **release:** V0.0.4 ([cf523e4](https://github.com/YannicEl/vue-useForm/commit/cf523e4))
+
+#### ⚠️  Breaking Changes
+
+- ⚠️  V0.1.0 !!! ([c43624d](https://github.com/YannicEl/vue-useForm/commit/c43624d))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.0.3...v0.0.4)
