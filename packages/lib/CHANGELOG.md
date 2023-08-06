@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.1...v0.1.2)
+
+### 🩹 Fixes
+
+- Small validation classes refactor ([85b352b](https://github.com/YannicEl/vue-useForm/commit/85b352b))
+
+### 🏡 Chore
+
+- **docs:** Docs work ([2b69187](https://github.com/YannicEl/vue-useForm/commit/2b69187))
+- **docs:** Fix broken links ([1320ec7](https://github.com/YannicEl/vue-useForm/commit/1320ec7))
+- **CI:** Log preview URL in console ([de4e7ee](https://github.com/YannicEl/vue-useForm/commit/de4e7ee))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.1.1
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.0...v0.1.1)
