@@ -9,7 +9,7 @@ on:
         required: true
 
 jobs:
-  deploy:
+  canary:
     name: Canary
 
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
           body: preview_url.txt
           is_file: true
 
-  deploy:
+  production:
     name: Production
 
     runs-on: ubuntu-latest
