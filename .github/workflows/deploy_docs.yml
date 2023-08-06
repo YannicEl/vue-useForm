@@ -12,6 +12,8 @@ jobs:
   canary:
     name: Canary
 
+    if: startsWith(github.event.head_commit.message, 'chore(release)') == false
+
     runs-on: ubuntu-latest
 
     permissions:
@@ -56,6 +58,8 @@ jobs:
 
   production:
     name: Production
+
+    if: startsWith(github.event.head_commit.message, 'chore(release)') == true
 
     runs-on: ubuntu-latest
 
