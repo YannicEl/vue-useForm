@@ -89,8 +89,8 @@ export function useField<T>(
 
 	const dirty = ref(false);
 	const pristine = computed(() => !dirty.value);
-	watch(value, () => {
-		dirty.value = true;
+	watch(value, (newValue) => {
+		if (newValue !== initialValue) dirty.value = true;
 	});
 
 	function reset(): void {
