@@ -1,3 +1,4 @@
+import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
@@ -56,5 +57,9 @@ export default defineConfig({
 	sitemap: {
 		hostname: 'https://example.com',
 		lastmodDateOnly: true,
+	},
+
+	vite: {
+		plugins: [UnoCSS()],
 	},
 });

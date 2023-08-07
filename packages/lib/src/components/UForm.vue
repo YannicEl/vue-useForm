@@ -5,10 +5,10 @@
 </template>
 
 <script setup lang="ts" generic="T">
-import type { Form } from '../useForm';
-import { provideForm } from '../composables/useFormInject';
-import { getClassnames } from '../utils';
 import { computed } from 'vue';
+import { provideForm } from '../composables/useFormInject';
+import type { Form } from '../useForm';
+import { getClassnames } from '../utils';
 
 const { form } = defineProps<{
 	form: Form<T>;

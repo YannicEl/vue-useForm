@@ -3,26 +3,7 @@ import { Plugin } from './plugins';
 import { Field, useField } from './useField';
 import { AsyncValidator, Validator } from './validators';
 
-export type FieldOptions<T> = {
-	[Key in keyof T]: [
-		initialValue: T[Key],
-		validators?: Validator[],
-		asyncValidators?: AsyncValidator[],
-	];
-};
-
-export type UseFormOptions = {
-	plugins: Plugin[];
-};
-
-export type Values<T> = {
-	[Key in keyof T]: ComputedRef<T[Key]>;
-};
-
-export type Fields<T> = {
-	[Key in keyof T]: Field<T[Key]>;
-};
-
+/// #region Form
 export interface Form<T = any> {
 	values: UnwrapRef<Values<T>>;
 	fields: UnwrapRef<Fields<T>>;
@@ -46,7 +27,33 @@ export interface Form<T = any> {
 	enable: () => void;
 	awaitValidation: () => Promise<void>;
 }
+/// #endregion Form
 
+export type Values<T> = {
+	[Key in keyof T]: ComputedRef<T[Key]>;
+};
+
+export type Fields<T> = {
+	[Key in keyof T]: Field<T[Key]>;
+};
+
+// #region FieldOptions
+export type FieldOptions<T> = {
+	[Key in keyof T]: [
+		initialValue: T[Key],
+		validators?: Validator[],
+		asyncValidators?: AsyncValidator[],
+	];
+};
+// #endregion FieldOptions
+
+// #region UseFormOptions
+export type UseFormOptions = {
+	plugins: Plugin[];
+};
+// #endregion UseFormOptions
+
+// #region useForm
 export function useForm<T>(
 	fieldOptions: FieldOptions<T>,
 	options: UseFormOptions = { plugins: [] }
@@ -170,3 +177,4 @@ export function useForm<T>(
 
 	return form;
 }
+// #endregion useForm

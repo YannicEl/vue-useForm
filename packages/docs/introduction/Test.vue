@@ -26,14 +26,13 @@
 		{{ form.disabled ? 'enable' : 'disable' }}
 	</button>
 
-	<pre class="mt-6"
-		>{{ form.values }}
+	<pre class="mt-6">
+    {{ form.values }}
   </pre>
 </template>
 
 <script setup>
-import { required } from '@vuetils/form';
-import { UForm, useForm, UField } from '@vuetils/form';
+import { UField, UForm, required, useForm } from '@vuetils/form';
 
 const form = useForm({
 	test: ['hallo', [required]],
