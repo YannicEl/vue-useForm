@@ -1,7 +1,7 @@
 {
   "name": "@vuetils/form",
   "description": "Tiny form validation library for Vue",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Yannic Ellhotka <https://github.com/YannicEl>",
   "license": "MIT",
   "homepage": "https://form.vuetils.dev/",
@@ -11,8 +11,14 @@
     "directory": "packages/lib"
   },
   "type": "module",
-  "files": ["dist"],
-  "keywords": ["vue", "form", "validation"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "form",
+    "validation"
+  ],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

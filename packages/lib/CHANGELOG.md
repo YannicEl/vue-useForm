@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.1.3
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.2...v0.1.3)
+
+### 🩹 Fixes
+
+- **docs:** Override tab size ([afbbf48](https://github.com/YannicEl/vue-useForm/commit/afbbf48))
+- **lib:** Reset() not marking field as pristine ([499a257](https://github.com/YannicEl/vue-useForm/commit/499a257))
+
+### 🏡 Chore
+
+- **docs:** Docs work ([7cff868](https://github.com/YannicEl/vue-useForm/commit/7cff868))
+- **docs:** Updated pakage info ([4d60147](https://github.com/YannicEl/vue-useForm/commit/4d60147))
+- Updated package info ([8485bee](https://github.com/YannicEl/vue-useForm/commit/8485bee))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.1.2
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.1...v0.1.2)
