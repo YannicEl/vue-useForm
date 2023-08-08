@@ -45,4 +45,4 @@ Refer to the [documentation](https://form.vuetils.dev/) for more details.
 
 ## License
 
-[MIT License](https://github.com/YannicEl/vue-useForm/blob/main/packages/lib/LICENSE) © 2023-PRESENT [Yannic Ellhotka](https://github.com/YannicEl)
+[MIT License](https://github.com/YannicEl/vue-useForm/blob/main/packages/lib/LICENSE) © 2023-present [Yannic Ellhotka](https://github.com/YannicEl)
