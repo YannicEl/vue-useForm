@@ -19,30 +19,30 @@ Check out the [interactive documentation and demos](https://form.vuetils.dev/)
 import { UField, UForm, email, minLength, required, useForm } from '@vuetils/form';
 
 const form = useForm({
-	email: ['', [required, email]],
-	password: ['', [required, minLength(6)]],
+  email: ['', [required, email]],
+  password: ['', [required, minLength(6)]],
 });
 </script>
 
 <template>
-	<UForm :form="form">
-		<UField>
-			Email:
-			<input type="email" name="email" />
-		</UField>
+  <UForm :form="form">
+    <UField>
+      Email:
+      <input type="email" name="email" />
+    </UField>
 
-		<UField>
-			Password:
-			<input type="password" name="password" />
-		</UField>
+    <UField>
+      Password:
+      <input type="password" name="password" />
+    </UField>
 
-		<button>Submit</button>
-	</UForm>
+    <button>Submit</button>
+  </UForm>
 </template>
 ```
 
 Refer to the [documentation](https://form.vuetils.dev/) for more details.
 
-## 📄 License
+## License
 
 [MIT License](https://github.com/YannicEl/vue-useForm/blob/main/packages/lib/LICENSE) © 2023-PRESENT [Yannic Ellhotka](https://github.com/YannicEl)

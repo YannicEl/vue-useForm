@@ -1,6 +1,7 @@
 **/*.d.ts
 
 **/CHANGELOG.md
+**/README.md
 **/pnpm-lock.yaml
 
 **/.output
