@@ -2,6 +2,7 @@
 	"name": "docs",
 	"version": "1.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vitepress dev --port 3000",
 		"build": "vitepress build",
