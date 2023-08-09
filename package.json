@@ -1,4 +1,5 @@
 {
+	"type": "module",
 	"scripts": {
 		"dev": "pnpm --parallel --filter * \"/watch|^dev/\"",
 		"release": "changelogen --dir packages/lib --release --push",
