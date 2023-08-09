@@ -26,6 +26,7 @@ export interface Form<T = any> {
 	disable: () => void;
 	enable: () => void;
 	awaitValidation: () => Promise<void>;
+	addPlugin: (plugin: Plugin) => void;
 }
 /// #endregion Form
 
@@ -151,6 +152,10 @@ export function useForm<T>(
 		});
 	}
 
+	function addPlugin(plugin: Plugin) {
+		plugin(form);
+	}
+
 	const form: Form<T> = reactive({
 		values,
 		fields,
@@ -171,6 +176,7 @@ export function useForm<T>(
 		enable,
 		setValues,
 		awaitValidation,
+		addPlugin,
 	});
 
 	options.plugins.forEach((plugin) => plugin(form));
