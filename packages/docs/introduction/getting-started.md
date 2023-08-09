@@ -55,8 +55,6 @@ const form = useForm({
 
 The rendered form will look something like this. Play around with it and see how the errors and state change while you are typing.
 
-When applicable `@vuetils/form` will use [native web valdiators](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation) like `required` or `minLength`. Try submitting the form in an invalid state and depending on your platform and browser a native validation warnign will appear.
-
 <script setup>
 import GettingStarted from './GettingStarted.vue'
 </script>

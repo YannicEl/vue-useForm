@@ -32,13 +32,20 @@
 </template>
 
 <script setup>
-import { UField, UForm, required, useForm } from '@vuetils/form';
+import { UField, UForm, definePlugin, required, useForm } from '@vuetils/form';
 
 const form = useForm({
 	test: ['hallo', [required]],
 	test2: [''],
 	select: ['drallo'],
 });
+
+const plugin = definePlugin((form, args) => {
+	console.log(args);
+	console.log(form);
+});
+
+form.addPlugin(plugin({ hello: 'world' }));
 
 function onSubmit() {
 	console.log('on submit');
