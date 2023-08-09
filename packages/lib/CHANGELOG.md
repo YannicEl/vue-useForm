@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v0.1.4
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.3...v0.1.4)
+
+### 🚀 Enhancements
+
+- **lib:** Added define plugin helper and storage plugins ([9045d12](https://github.com/YannicEl/vue-useForm/commit/9045d12))
+
+### 🩹 Fixes
+
+- **docs:** Mark docs package.json as type module ([a3011c9](https://github.com/YannicEl/vue-useForm/commit/a3011c9))
+
+### 📖 Documentation
+
+- Docs work ([7433eaa](https://github.com/YannicEl/vue-useForm/commit/7433eaa))
+
+### 🏡 Chore
+
+- Updated readme ([25b54c5](https://github.com/YannicEl/vue-useForm/commit/25b54c5))
+- Updated renovate config ([6532fb9](https://github.com/YannicEl/vue-useForm/commit/6532fb9))
+- Package.json config ([f76b4e0](https://github.com/YannicEl/vue-useForm/commit/f76b4e0))
+- **docs:** Docs work ([6211f06](https://github.com/YannicEl/vue-useForm/commit/6211f06))
+- Re added type: module to base package.json ([9039e63](https://github.com/YannicEl/vue-useForm/commit/9039e63))
+- **CI:** Updated node version in actions to 20 ([54fac10](https://github.com/YannicEl/vue-useForm/commit/54fac10))
+- **lib:** Updated @types/node to 20 ([c3d7daf](https://github.com/YannicEl/vue-useForm/commit/c3d7daf))
+
+### ❤️  Contributors
+
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.1.3
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.2...v0.1.3)
