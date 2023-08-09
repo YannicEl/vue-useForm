@@ -1,7 +1,5 @@
 {
 	"name": "docs",
-	"version": "1.0.0",
-	"private": true,
 	"type": "module",
 	"scripts": {
 		"dev": "vitepress dev --port 3000",
@@ -11,7 +9,7 @@
 		"deploy:prod": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-prod --commit-dirty"
 	},
 	"dependencies": {
-		"@vuetils/form": "workspace:latest"
+		"@vuetils/form": "workspace:*"
 	},
 	"devDependencies": {
 		"sass": "^1.64.2",
