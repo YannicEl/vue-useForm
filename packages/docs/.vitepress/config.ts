@@ -1,5 +1,6 @@
 import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vitepress';
+import pgk from '../../lib/package.json' assert { type: 'json' };
 
 export default defineConfig({
 	title: '@vuetils/form',
@@ -12,6 +13,7 @@ export default defineConfig({
 		nav: [
 			{ text: 'Guide', link: '/introduction/getting-started' },
 			{ text: 'API', link: '/api' },
+			{ text: `Changelog (v${pgk.version})`, link: '/changelog' },
 		],
 
 		sidebar: [
@@ -34,6 +36,10 @@ export default defineConfig({
 			{
 				text: 'API Reference',
 				link: '/api',
+			},
+			{
+				text: 'Changelog',
+				link: '/changelog',
 			},
 		],
 
