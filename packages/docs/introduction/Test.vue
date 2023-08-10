@@ -31,8 +31,27 @@
   </pre>
 </template>
 
-<script setup>
-import { UField, UForm, definePlugin, required, useForm } from '@vuetils/form';
+<script setup lang="ts">
+import {
+	UField,
+	UForm,
+	definePlugin,
+	email,
+	localStoragePlugin,
+	minLength,
+	required,
+	useForm,
+} from '@vuetils/form';
+
+const form2 = useForm(
+	{
+		email: ['', [required, email]],
+		password: ['', [required, minLength(6)]],
+	},
+	{
+		plugins: [localStoragePlugin('some-key')],
+	}
+);
 
 const form = useForm({
 	test: ['hallo', [required]],

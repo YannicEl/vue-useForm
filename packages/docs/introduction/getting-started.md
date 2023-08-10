@@ -69,4 +69,4 @@ import GettingStarted from './GettingStarted.vue'
 
 - Find out about all the [built in validators](../core-concepts/validators) or learn how you can easily [write your own validator](../core-concepts/validators#write-your-own-validator).
 
-- Explore [first party plugins](../core-concepts/plugins) or learn how you can [write your own plugin](../core-concepts/plugins#write-your-own-plugin).
+- Checkout [what plugins are](../core-concepts/plugins), explore a list of [first party plugins](../core-concepts/plugins#first-party-plugins) or learn how you can [write your own plugin](../core-concepts/plugins#write-your-own-plugin).
