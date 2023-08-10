@@ -20,7 +20,7 @@ $ yarn add @vuetils/form
 
 ## Usage
 
-You start of by creating a [`Form`](../api#form) object with [`useForm()`](../api#useForm). The function takes in an object where every property represents an input element in your form. The key of the property correlate to the name attribute of an input element and the value is and array where the first element is the initial value of the input and the second element is an array of [validators](../core-concepts/validators).
+You start of by creating a [`Form`](../api#form) instance with [`useForm()`](../api#useForm). The function takes in an object where every property represents an input element in your form. The key of the property correlate to the name attribute of an input element and the value is and array where the first element is the initial value of the input and the second element is an array of [validators](../core-concepts/validators).
 
 ```vue
 <script setup>
@@ -33,7 +33,7 @@ const form = useForm({
 </script>
 ```
 
-`@vuetils/form` provides two helper componets that automatically link a [`Form`](../api#form) object with your input elements. The components handle two-way data binding and add [validation classes](../core-concepts/components#validation-classes) like `v-valid` or `v-submitted`.
+`@vuetils/form` provides two helper componets that automatically link a [`Form`](../api#form) instance with your input elements. The components handle two-way data binding and add [validation classes](../core-concepts/components#validation-classes) like `v-valid` or `v-submitted`.
 
 ```vue
 <template>
@@ -63,7 +63,7 @@ import GettingStarted from './GettingStarted.vue'
 
 ## What's Next?
 
-- To discover more about what the `Form` and `Field` objects can do, check out the [composables guide](../core-concepts/).
+- To discover more about what the `Form` and `Field` instances can do, check out the [composables guide](../core-concepts/).
 
 - To better understand what is going on under the hood of `UForm` and `UField`, read about it in [the components guide](../core-concepts/components).
 
