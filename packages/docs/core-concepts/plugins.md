@@ -16,7 +16,7 @@ outline: deep
 
 ## How to use a plugin?
 
-Plugins can be added to a form in one of two ways. The easiest option is to pass the plugin to the [`useForm()`](../api#useForm) function.
+Plugins can be added to a form in one of two ways. The easiest option is to pass the plugin to the [`useForm()`](../api#useform) function.
 
 ```ts
 import { localStoragePlugin, useForm } from '@vuetils/form';
@@ -32,7 +32,7 @@ const form = useForm(
 );
 ```
 
-The second option is to dynamically add a plugin with the [`addPlugin()`](../api#addPlugin) function.
+The second option is to dynamically add a plugin with the [`addPlugin()`](../api#addplugin) function.
 
 ```ts
 import { localStoragePlugin, useForm } from '@vuetils/form';
