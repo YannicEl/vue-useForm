@@ -6,6 +6,7 @@ export interface UseFieldOptions {
 	asyncValidators?: AsyncValidator[];
 }
 
+// #region Field
 export interface Field<T = any> {
 	// v-model value
 	value: T;
@@ -31,6 +32,7 @@ export interface Field<T = any> {
 	enable: () => void;
 	awaitValidation: () => Promise<void>;
 }
+// #endregion Field
 
 export function useField<T>(
 	initialValue: T,

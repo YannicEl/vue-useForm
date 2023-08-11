@@ -3,7 +3,7 @@ import { Plugin } from './plugins';
 import { Field, useField } from './useField';
 import { AsyncValidator, Validator } from './validators';
 
-/// #region Form
+// #region Form
 export interface Form<T = any> {
 	values: UnwrapRef<Values<T>>;
 	fields: UnwrapRef<Fields<T>>;
@@ -28,7 +28,7 @@ export interface Form<T = any> {
 	awaitValidation: () => Promise<void>;
 	addPlugin: (plugin: Plugin) => void;
 }
-/// #endregion Form
+// #endregion Form
 
 export type Values<T> = {
 	[Key in keyof T]: ComputedRef<T[Key]>;
