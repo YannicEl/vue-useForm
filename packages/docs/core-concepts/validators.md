@@ -6,4 +6,6 @@ When applicable `@vuetils/form` will use [native web valdiators](https://develop
 
 ## Additional validators
 
+## Async validators
+
 ## Write your own validator

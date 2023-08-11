@@ -20,6 +20,10 @@
 
 <<< @/node_modules/@vuetils/form/dist/useField.d.ts
 
+## Field
+
+<<< ../lib/src/useField.ts#Field
+
 ## definePlugin()
 
 <<< @/node_modules/@vuetils/form/dist/plugins/index.d.ts

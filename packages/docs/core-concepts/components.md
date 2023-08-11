@@ -1,8 +1,30 @@
+---
+outline: deep
+---
+
 # Components
 
-`@vuetils/form` comes with two helper components [`UField`](#ufield) and [`UForm`](#uform) that make it easier to create forms.
+`@vuetils/form` comes with two helper components [`UField`](#ufield) and [`UForm`](#uform) that make it easier to create forms. These components handle the two-way data binding and add validation classes to the inputs and the `form` element so differnt form states can be styled with CSS.
 
 ## UField
+
+`UField` is the basic building block of a form. It is a wrapper around the native `label` element and can be used in the exact same way. `UField` needs exactly one `input` element as a slot and can have optional label content too. The label content can either be just plain text like in the [example](#ufield-example) below or any other Vue components or HTML elements.
+
+If used outside a `UForm` component `UField` needs a [`Field`](../api#field) instance as a prop.
+
+### Validation Classes
+
+Depending on the validation state of the [`Field`](../api#field) instance these classes are added to the `input` element:
+
+- `v-valid` - added when the field is valid
+- `v-invalid` - added when the field is invalid
+- `v-pristine` - added when the field's value has not been changed yet
+- `v-dirty` - added when the field's value has been changed
+- `v-pending` - added when the field has [`async validators`](./validators#async-validators) that are being resolved
+
+There are also the classes `v-label` and `v-input` that are added to the `label` and `input` elements respectively. Play around with the example and see how different classes get added or removed.
+
+### Example {#ufield-example}
 
 <<< ./UFieldExample.vue
 
@@ -43,6 +65,8 @@ const formClasses = computed(() => {
   </button>
 </div>
 
+### Markup {#ufield-markup}
+
 This will create the following clean and minimal HTML markup
 
 ```html-vue
@@ -60,6 +84,23 @@ This will create the following clean and minimal HTML markup
 
 ## UForm
 
+`UForm` is a wrapper around the native `form` element and can be used in the exact same way. `UForm` needs `UField` components as child slots. The name attribute of the `input` element is used to bind the input to the matching [`Field`](../api#field) instance.
+
+### Validation Classes
+
+Similar how it works with [`UField`](#ufield) these classes are added depending on the validation state of the [`Form`](../api#form) instance:
+
+- `v-valid` - added when **all** fields are valid
+- `v-invalid` - added when **on ore more** fields are invalid
+- `v-pristine` - added when **all** fields are pristine
+- `v-dirty` - added when **one or more** fields are dirty
+- `v-pending` - added when **one or more** fields are pending
+- `v-submitted` - added when the form has been submitted no matter if it was valid or not
+
+There is also the class `v-form` that is added to the `form` element. Play around with the example and see how differnt classes get added or removed.
+
+### Example {#uform-example}
+
 <<< ./UFormExample.vue
 
 <style>
@@ -73,6 +114,8 @@ This will create the following clean and minimal HTML markup
 <button class="button w-full mt-4" @click="form.reset()">
 Reset Form
 </button>
+
+### Markup {#uform-markup}
 
 This will create the following clean and minimal HTML markup
 
@@ -104,4 +147,33 @@ This will create the following clean and minimal HTML markup
 </form>
 ```
 
-## Validation Classes
+### Submit event
+
+`UForm` emits the custom event `v-submit` every time the form is submitted. The event handler receives the current values of the form. This can also be typed with `typeof form.values` as shown in the example below.
+
+If you want to you can also just listen to the native [`submit`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event) event.
+
+```vue
+<template>
+	<UForm :form="form" v-submit="onSubmit">
+		<!-- Form inputs -->
+	</UForm>
+</template>
+
+<script setup lang="ts">
+import { UForm, useForm } from '@vuetils/form';
+
+const form = useForm({
+	firstname: [''],
+	lastname: [''],
+});
+
+function onSubmit(values: typeof form.values) {
+	if (form.invalid) {
+		//handle errors
+	}
+
+	// do something with the values
+}
+</script>
+```
