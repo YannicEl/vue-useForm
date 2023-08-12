@@ -17,7 +17,7 @@
 		<button>submit</button>
 	</UForm>
 
-	<UField :field="form.fields.test2" class="flex flex-col mt-4">
+	<UField :field="form.fields.test2" class="mt-4 flex flex-col">
 		Label1
 		<input type="text" name="test2" disabled required />
 	</UField>
