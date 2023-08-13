@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.2.1
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.0...v0.2.1)
+
+### 📖 Documentation
+
+- Added placeholder plugin ideas ([6b1c726](https://github.com/YannicEl/vue-useForm/commit/6b1c726))
+- First draft done ([4b5bde8](https://github.com/YannicEl/vue-useForm/commit/4b5bde8))
+
+### 🏡 Chore
+
+- Changelog fix ([276c3aa](https://github.com/YannicEl/vue-useForm/commit/276c3aa))
+- Added contributing guide ([e77de18](https://github.com/YannicEl/vue-useForm/commit/e77de18))
+- Updated readme ([2826f8d](https://github.com/YannicEl/vue-useForm/commit/2826f8d))
+
+### ❤️  Contributors
+
+- Yannic ([@YannicEl](http://github.com/YannicEl))
+
 ## v0.2.0
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.4...v0.2.0)
