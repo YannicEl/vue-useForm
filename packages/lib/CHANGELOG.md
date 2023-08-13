@@ -1,6 +1,45 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.4...v0.2.0)
+
+### 🩹 Fixes
+
+- **lib:** Fix broken component exports ([c69a6eb](https://github.com/YannicEl/vue-useForm/commit/c69a6eb))
+- **lib:** ⚠️  Made type arguments optional on definePlugin ([09d9547](https://github.com/YannicEl/vue-useForm/commit/09d9547))
+- **lib:** Added utils export ([aa98e04](https://github.com/YannicEl/vue-useForm/commit/aa98e04))
+- **lib:** Region fixes ([16fcc73](https://github.com/YannicEl/vue-useForm/commit/16fcc73))
+
+### 💅 Refactors
+
+- **lib:** ⚠️  Refactored validator stuff ([dbba958](https://github.com/YannicEl/vue-useForm/commit/dbba958))
+
+### 📖 Documentation
+
+- Added plugin docs ([30fcca2](https://github.com/YannicEl/vue-useForm/commit/30fcca2))
+- Added component examples ([d71adcf](https://github.com/YannicEl/vue-useForm/commit/d71adcf))
+- Fix links ([ee376f9](https://github.com/YannicEl/vue-useForm/commit/ee376f9))
+- Updated component docs ([e115600](https://github.com/YannicEl/vue-useForm/commit/e115600))
+- Added validator docs ([61c9eeb](https://github.com/YannicEl/vue-useForm/commit/61c9eeb))
+- Added Why? page ([827c889](https://github.com/YannicEl/vue-useForm/commit/827c889))
+- Docs work ([4b3e240](https://github.com/YannicEl/vue-useForm/commit/4b3e240))
+
+### 🏡 Chore
+
+- Fix prettier plugin order ([df20082](https://github.com/YannicEl/vue-useForm/commit/df20082))
+
+#### ⚠️  Breaking Changes
+
+- **lib:** ⚠️  Made type arguments optional on definePlugin ([09d9547](https://github.com/YannicEl/vue-useForm/commit/09d9547))
+- **lib:** ⚠️  Refactored validator stuff ([dbba958](https://github.com/YannicEl/vue-useForm/commit/dbba958))
+
+### ❤️  Contributors
+
+- YannicEl <yannic.ellhotka@gmail.com>
+- Yannic <yannic.ellhotka@gmail.com>
+
 ## v0.1.4
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.1.3...v0.1.4)

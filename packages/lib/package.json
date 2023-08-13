@@ -1,7 +1,7 @@
 {
   "name": "@vuetils/form",
   "description": "Tiny form validation library for Vue",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "author": "Yannic Ellhotka <https://github.com/YannicEl>",
   "license": "MIT",
   "homepage": "https://form.vuetils.dev/",
