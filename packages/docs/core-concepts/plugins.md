@@ -85,14 +85,6 @@ import { sessionStoragePlugin } from '@vuetils/form';
 sessionStoragePlugin('some-key');
 ```
 
-### Zod Plugin
-
-// TODO
-
-### Valibot Plugin
-
-// TODO
-
 ## Write your own Plugin
 
 The best part about plugins is that you can easily write your own. `@vuetils/form` comes with the helper function [`definePlugin`](../api#defineplugin) that makes writing typesafe plugins a breeze.

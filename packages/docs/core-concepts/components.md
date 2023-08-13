@@ -60,7 +60,7 @@ const formClasses = computed(() => {
 
 <div class="flex gap-4 items-end">
   <UFieldExample class="w-full" :field="field" />
-  <button class="button min-w-max h-min" @click="field.reset()">
+  <button class="custom-button min-w-max h-min" @click="field.reset()">
     Reset Field
   </button>
 </div>
@@ -111,7 +111,7 @@ There is also the class `v-form` that is added to the `form` element. Play aroun
 
 <UFormExample :form="form" class="v-form-override grid! grid-cols-2"/>
 
-<button class="button w-full mt-4" @click="form.reset()">
+<button class="custom-button w-full mt-4" @click="form.reset()">
 Reset Form
 </button>
 

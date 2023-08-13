@@ -13,7 +13,16 @@ export default defineConfig({
 		nav: [
 			{ text: 'Guide', link: '/introduction/getting-started' },
 			{ text: 'API', link: '/api' },
-			{ text: `Changelog (v${pgk.version})`, link: '/changelog' },
+			{
+				text: pgk.version,
+				items: [
+					{ text: 'Changelog', link: '/changelog' },
+					{
+						text: 'Contributing',
+						link: 'https://github.com/YannicEl/vue-useForm/blob/main/.github/contributing.md',
+					},
+				],
+			},
 		],
 
 		sidebar: [
@@ -27,7 +36,7 @@ export default defineConfig({
 			{
 				text: 'Core Concepts',
 				items: [
-					{ text: 'Define a form', link: '/core-concepts/' },
+					{ text: 'Forms and Fields', link: '/core-concepts/' },
 					{ text: 'Components', link: '/core-concepts/components' },
 					{ text: 'Validators', link: '/core-concepts/validators' },
 					{ text: 'Plugins', link: '/core-concepts/plugins' },
@@ -40,6 +49,10 @@ export default defineConfig({
 			{
 				text: 'Changelog',
 				link: '/changelog',
+			},
+			{
+				text: 'Feature Ideas',
+				link: '/feature-ideas',
 			},
 		],
 

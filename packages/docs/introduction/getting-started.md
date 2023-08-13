@@ -20,7 +20,7 @@ $ yarn add @vuetils/form
 
 ## Usage
 
-You start of by creating a [`Form`](../api#form) instance with [`useForm()`](../api#useForm). The function takes in an object where every property represents an input element in your form. The key of the property correlate to the name attribute of an input element and the value is and array where the first element is the initial value of the input and the second element is an array of [validators](../core-concepts/validators).
+You start of by creating a [`Form`](../api#form) instance with [`useForm()`](../api#useForm). The function takes in an object where every property represents an input element in your form. The key of the property corresponds to the name attribute of an input element and the value is an array where the first element is the initial value of the input and the second element is an array of [validators](../core-concepts/validators).
 
 ```vue
 <script setup>
@@ -63,7 +63,7 @@ import GettingStarted from './GettingStarted.vue'
 
 ## What's Next?
 
-- To discover more about what the `Form` and `Field` instances can do, check out the [composables guide](../core-concepts/).
+- To discover more about what the `Form` and `Field` instances can do, check out the [`useForm` and `useField`](../core-concepts/) guide.
 
 - To better understand what is going on under the hood of `UForm` and `UField`, read about it in [the components guide](../core-concepts/components).
 
