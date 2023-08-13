@@ -45,9 +45,9 @@ const form = useForm({
 form.addPlugin(localStoragePlugin('some-key'));
 ```
 
-## First Party Plugins
+## Built-in Plugins
 
-`@vuetils/form` comes with a few first party plugins that can be used out of the box.
+`@vuetils/form` comes with a set of built-in plugins that can be used out of the box.
 
 ### Storage Plugin
 
