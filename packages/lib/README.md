@@ -1,6 +1,8 @@
 # Tiny form validation library for Vue
 
-<a href="https://pkg-size.dev/@vuetils/form?no-peers"><img src="https://pkg-size.dev/badge/bundle/4649" title="Bundle size for @vuetils/form"></a>
+[![pkg-size](https://pkg-size.dev/badge/bundle/5368)](https://pkg-size.dev/@vuetils/form?no-peers)
+[![npm](https://img.shields.io/npm/v/@vuetils/form)](https://www.npmjs.com/package/@vuetils/form)
+
 
 ## Documentation
 
@@ -42,6 +44,14 @@ const form = useForm({
 ```
 
 Refer to the [documentation](https://form.vuetils.dev/) for more details.
+
+## Changelog
+
+The up to date changelog can be found [here](https://github.com/YannicEl/vue-useForm/blob/main/packages/lib/CHANGELOG.md).
+
+## Contribution
+
+Please read the [Contributing Guide](https://github.com/YannicEl/vue-useForm/blob/main/.github/contributing.md) before making a pull request.
 
 ## License
 
