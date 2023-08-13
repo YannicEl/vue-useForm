@@ -11,13 +11,13 @@ export interface Form<T = any> {
 	/**
 	 * State
 	 */
-	invalid: boolean;
 	valid: boolean;
-	disabled: boolean;
+	invalid: boolean;
 	enabled: boolean;
-	pending: boolean;
-	dirty: boolean;
+	disabled: boolean;
 	pristine: boolean;
+	dirty: boolean;
+	pending: boolean;
 	submitted: boolean;
 
 	// functions
@@ -161,12 +161,12 @@ export function useForm<T>(
 		fields,
 
 		// state
-		invalid,
 		valid,
-		disabled,
+		invalid,
 		enabled,
-		dirty,
+		disabled,
 		pristine,
+		dirty,
 		pending,
 		submitted,
 

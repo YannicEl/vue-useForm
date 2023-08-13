@@ -12,12 +12,12 @@ export interface Field<T = any> {
 	value: T;
 
 	// state
-	invalid: boolean;
 	valid: boolean;
-	disabled: boolean;
+	invalid: boolean;
 	enabled: boolean;
-	dirty: boolean;
+	disabled: boolean;
 	pristine: boolean;
+	dirty: boolean;
 	async: boolean;
 	pending: boolean;
 
@@ -119,12 +119,12 @@ export function useField<T>(
 		value,
 
 		// state
-		invalid,
 		valid,
-		disabled,
+		invalid,
 		enabled,
-		dirty,
+		disabled,
 		pristine,
+		dirty,
 		async,
 		pending,
 
