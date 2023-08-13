@@ -37,8 +37,7 @@
 
 ### ❤️  Contributors
 
-- YannicEl <yannic.ellhotka@gmail.com>
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
 ## v0.1.4
 
@@ -68,7 +67,7 @@
 
 ### ❤️  Contributors
 
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
 ## v0.1.3
 
@@ -87,7 +86,7 @@
 
 ### ❤️  Contributors
 
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
 ## v0.1.2
 
@@ -105,7 +104,7 @@
 
 ### ❤️  Contributors
 
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
 ## v0.1.1
 
@@ -134,7 +133,7 @@
 
 ### ❤️  Contributors
 
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
 ## v0.0.4
 
@@ -206,7 +205,7 @@
 
 ### ❤️  Contributors
 
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
 ## v0.0.3
 
@@ -218,7 +217,7 @@
 
 ### ❤️  Contributors
 
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
 ## v0.0.2
 
@@ -230,5 +229,5 @@
 
 ### ❤️  Contributors
 
-- Yannic <yannic.ellhotka@gmail.com>
+- Yannic ([@YannicEl](http://github.com/YannicEl))
 
