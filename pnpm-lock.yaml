@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  prettier-plugin-tailwindcss@0.5.2:
-    hash: wg7oq4lecys2sp2gg24llsyzv4
-    path: patches/prettier-plugin-tailwindcss@0.5.2.patch
-
 importers:
 
   .:
@@ -26,8 +21,8 @@ importers:
         specifier: ^3.2.3
         version: 3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.1)(typescript@5.1.6)
       prettier-plugin-tailwindcss:
-        specifier: ^0.5.2
-        version: 0.5.2(patch_hash=wg7oq4lecys2sp2gg24llsyzv4)(prettier-plugin-organize-imports@3.2.3)(prettier@3.0.1)
+        specifier: 0.0.0-insiders.dad4b36
+        version: 0.0.0-insiders.dad4b36(prettier-plugin-organize-imports@3.2.3)(prettier@3.0.1)
 
   packages/docs:
     dependencies:
@@ -2524,8 +2519,8 @@ packages:
       typescript: 5.1.6
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.2(patch_hash=wg7oq4lecys2sp2gg24llsyzv4)(prettier-plugin-organize-imports@3.2.3)(prettier@3.0.1):
-    resolution: {integrity: sha512-i4swJk4f8YWK99BRPX3DdDNwMr6U1X8y9rvxGeX5zf090+SsHpPSVjgOb041Hh6/nZJWPi/JYno9UgBDm+/RxA==}
+  /prettier-plugin-tailwindcss@0.0.0-insiders.dad4b36(prettier-plugin-organize-imports@3.2.3)(prettier@3.0.1):
+    resolution: {integrity: sha512-bKG/ISPfXaEIjTA8wOXgum+ZtBA4tceIZ9ylJpG7ooGbudtH3FQu4AYTRTlcZeldxpZUDS2/kqwosMqqIuSfaw==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -2579,7 +2574,6 @@ packages:
       prettier: 3.0.1
       prettier-plugin-organize-imports: 3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.1)(typescript@5.1.6)
     dev: true
-    patched: true
 
   /prettier@3.0.1:
     resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
