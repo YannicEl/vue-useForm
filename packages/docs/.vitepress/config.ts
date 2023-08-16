@@ -69,7 +69,12 @@ export default defineConfig({
 		},
 
 		search: {
-			provider: 'local',
+			provider: 'algolia',
+			options: {
+				appId: '2BGIIBDV7T',
+				apiKey: '442cce0eaf51aa00b95644f003f47b54',
+				indexName: 'form',
+			},
 		},
 	},
 
