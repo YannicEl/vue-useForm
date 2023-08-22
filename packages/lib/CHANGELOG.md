@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.2.2
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.1...v0.2.2)
+
+### 🚀 Enhancements
+
+- Added zod and valibot validators ([b7e0b4a](https://github.com/YannicEl/vue-useForm/commit/b7e0b4a))
+
+### 📖 Documentation
+
+- Added algolia doc search ([d6688bd](https://github.com/YannicEl/vue-useForm/commit/d6688bd))
+
+### 🏡 Chore
+
+- Remove prettier-plugin-tailwindcss patch ([1ab68a2](https://github.com/YannicEl/vue-useForm/commit/1ab68a2))
+
+### ❤️ Contributors
+
+- Yannic ([@YannicEl](http://github.com/YannicEl))
+
 ## v0.2.1
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.0...v0.2.1)
