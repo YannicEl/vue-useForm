@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, h, useSlots } from 'vue';
+import { computed, h, ref, useSlots } from 'vue';
 import { injectForm } from '../composables/useFormInject';
 import type { Field } from '../useField';
 import { getClassnames } from '../utils';
@@ -18,6 +18,8 @@ const props = defineProps<{
 
 const slots = useSlots();
 const defaultSlots = computed(() => slots.default?.() ?? []);
+
+const touched = ref(false);
 
 const labelNodes = computed(() => {
 	return defaultSlots.value.filter((slot) => slot.type !== 'input' && slot.type !== 'select');
@@ -64,18 +66,21 @@ const Render = () => {
 	if (!inputNode.value) return;
 	if (!field.value) return;
 
+	const classes = getClassnames(field.value);
+	classes.push({ 'v-touched': touched.value });
+	classes.push({ 'v-untouched': !touched.value });
+
 	return h(inputNode.value, {
 		value: field.value.value,
 		onInput(event: InputEvent) {
 			if (!field.value) return;
 			field.value.value = (event.target as HTMLInputElement).value;
 		},
-		onChange(event: Event) {
-			if (!field.value) return;
-			field.value.value = (event.target as HTMLInputElement).value;
+		onBlur() {
+			touched.value = true;
 		},
 		disabled: field.value.disabled,
-		class: getClassnames(field.value),
+		class: classes,
 	});
 };
 </script>
