@@ -21,8 +21,8 @@ Depending on the validation state of the [`Field`](../api#field) instance these 
 - `v-pristine` - added when the field's value has not been changed yet
 - `v-dirty` - added when the field's value has been changed
 - `v-pending` - added when the field has [`async validators`](./validators#async-validators) that are being resolved
-- `v-untouched` - added when the field has not been focused yet
-- `v-touched` - added on the [blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event). Opposite of `v-untouched`
+- `v-touched` - added when the field **has** been [blurred](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) yet
+- `v-untouched` - added when the field **hasn't** been [blurred](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) yet
 
 There are also the classes `v-label` and `v-input` that are added to the `label` and `input` elements respectively. Play around with the example and see how different classes get added or removed.
 
@@ -98,6 +98,8 @@ Similar how it works with [`UField`](#ufield) these classes are added depending 
 - `v-dirty` - added when **one or more** fields are dirty
 - `v-pending` - added when **one or more** fields are pending
 - `v-submitted` - added when the form has been submitted no matter if it was valid or not
+- `v-touched` - added when **one or more** fields have been [blurred](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+- `v-untouched` - added when **no** fields haven been [blurred](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
 
 There is also the class `v-form` that is added to the `form` element. Play around with the example and see how differnt classes get added or removed.
 
