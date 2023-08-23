@@ -46,19 +46,10 @@ const emojiRegex = /^(\p{Extended_Pictographic}|\p{Emoji_Component})+$/u;
 
 export const emoji = defineValidator('emoji', (value) => regex(emojiRegex).validate(value));
 
-export const zodValidator = defineValidatorWithArgs(
-	'zodValidator',
-	(value, schema: ZodSchema) => schema.safeParse(value).success
-);
+export function zodValidator(name: string, schema: ZodSchema) {
+	return defineValidator(name, (value) => schema.safeParse(value).success);
+}
 
-export const valibotValidator = defineValidatorWithArgs(
-	'valibotValidator',
-	(value, schema: ValibotSchema) => {
-		try {
-			return !!schema.parse(value);
-		} catch (error) {
-			console.log('hi');
-			return false;
-		}
-	}
-);
+export function valibotValidator(name: string, schema: ValibotSchema) {
+	return defineValidator(name, (value) => !!schema._parse(value).output);
+}
