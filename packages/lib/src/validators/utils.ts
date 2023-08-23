@@ -1,20 +1,20 @@
 // #region Validator
-export type Validator = {
+export type Validator<TValue = unknown> = {
 	name: string;
-	validate: (value: unknown) => boolean;
+	validate: (value: TValue) => boolean;
 };
 // #endregion Validator
 
 // #region AsyncValidator
-export type AsyncValidator = {
+export type AsyncValidator<TValue = unknown> = {
 	name: string;
-	validate: (value: unknown) => Promise<boolean>;
+	validate: (value: TValue) => Promise<boolean>;
 };
 // #endregion AsyncValidator
 
-export function defineValidator<TReturn extends boolean | Promise<boolean>>(
+export function defineValidator<TReturn extends boolean | Promise<boolean>, TValue = unknown>(
 	name: string,
-	validate: (value: unknown) => TReturn
+	validate: (value: TValue) => TReturn
 ): TReturn extends boolean ? Validator : AsyncValidator {
 	return {
 		name,
@@ -22,14 +22,18 @@ export function defineValidator<TReturn extends boolean | Promise<boolean>>(
 	} as any;
 }
 
-export function defineValidatorWithArgs<Targs, TReturn extends boolean | Promise<boolean>>(
+export function defineValidatorWithArgs<
+	TArgs,
+	TReturn extends boolean | Promise<boolean>,
+	TValue = unknown,
+>(
 	name: string,
-	validate: (value: unknown, args: Targs) => TReturn
-): TReturn extends boolean ? (args: Targs) => Validator : (args: Targs) => AsyncValidator {
-	return (args: Targs) => {
+	validate: (value: TValue, args: TArgs) => TReturn
+): TReturn extends boolean ? (args: TArgs) => Validator : (args: TArgs) => AsyncValidator {
+	return (args: TArgs) => {
 		return {
 			name,
-			validate: (value: unknown) => validate(value, args),
+			validate: (value: TValue) => validate(value, args),
 		} as any;
 	};
 }

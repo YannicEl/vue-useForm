@@ -22,6 +22,11 @@ export interface Form<T = any> {
 	pending: boolean;
 	submitted: boolean;
 
+	// Validators and errors
+	validators: Set<Validator<UnwrappedValues<T>>>;
+	asyncValidators: Set<AsyncValidator<UnwrappedValues<T>>>;
+	errors: string[];
+
 	// functions
 	setValues: (values: Partial<{ [Key in keyof T]: T[Key] }>) => void;
 	reset: () => void;
@@ -35,6 +40,8 @@ export interface Form<T = any> {
 export type Values<T> = {
 	[Key in keyof T]: ComputedRef<T[Key]>;
 };
+
+export type UnwrappedValues<T> = UnwrapRef<Values<T>>;
 
 export type Fields<T> = {
 	[Key in keyof T]: Field<T[Key]>;
@@ -51,16 +58,17 @@ export type FieldOptions<T> = {
 // #endregion FieldOptions
 
 // #region UseFormOptions
-export type UseFormOptions = {
+export type UseFormOptions<T> = {
 	plugins?: Plugin[];
-	validators?: Validator[];
+	validators?: Validator<UnwrappedValues<T>>[];
+	asyncValidators?: AsyncValidator<UnwrappedValues<T>>[];
 };
 // #endregion UseFormOptions
 
 // #region useForm
 export function useForm<T>(
 	fieldOptions: FieldOptions<T>,
-	options: UseFormOptions = { plugins: [], validators: [] }
+	options: UseFormOptions<T> = {}
 ): Form<T> {
 	const fields: Fields<T> = {} as any;
 	const values: Values<T> = reactive({}) as any;
@@ -73,6 +81,24 @@ export function useForm<T>(
 		values[key] = computed(() => field.value);
 		fields[key] = field;
 	}
+
+	const validators = ref(new Set<Validator<UnwrappedValues<T>>>(options.validators));
+	const asyncValidators = ref(new Set<AsyncValidator<UnwrappedValues<T>>>(options.asyncValidators));
+
+	const syncErrors = computed(() => {
+		const ret: string[] = [];
+		validators.value.forEach((validator) => {
+			const isValid = validator.validate(values as any);
+			if (!isValid) ret.push(validator.name);
+		});
+
+		return ret;
+	});
+
+	const asyncErrors = ref<string[]>([]);
+
+	// combine async and sync errors
+	const errors = computed(() => [...syncErrors.value, ...asyncErrors.value]);
 
 	// Checks if all fields in the form are valid
 	const invalid = computed(() => {
@@ -165,9 +191,11 @@ export function useForm<T>(
 		});
 	}
 
-	function addPlugin(plugin: Plugin): void {
+	function addPlugin(plugin: Plugin<Form<T>>): void {
 		plugin(form);
 	}
+
+	options.plugins?.forEach((plugin) => plugin(form));
 
 	const form: Form<T> = reactive({
 		values,
@@ -185,6 +213,10 @@ export function useForm<T>(
 		touched,
 		submitted,
 
+		validators,
+		asyncValidators,
+		errors,
+
 		// functions
 		reset,
 		disable,
@@ -193,8 +225,6 @@ export function useForm<T>(
 		awaitValidation,
 		addPlugin,
 	});
-
-	options.plugins?.forEach((plugin) => plugin(form));
 
 	return form;
 }
