@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v0.2.5
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.4...v0.2.5)
+
+### 🚀 Enhancements
+
+- Added form wide sync validators ([e0cbb48](https://github.com/YannicEl/vue-useForm/commit/e0cbb48))
+
+### 🩹 Fixes
+
+- Removed old export in package.json ([68090f4](https://github.com/YannicEl/vue-useForm/commit/68090f4))
+- Added return types to some functions ([82afa69](https://github.com/YannicEl/vue-useForm/commit/82afa69))
+- Refactored zod and valibot validators ([026a0be](https://github.com/YannicEl/vue-useForm/commit/026a0be))
+
+### 📖 Documentation
+
+- Removed test component ([b761a2e](https://github.com/YannicEl/vue-useForm/commit/b761a2e))
+- Fix css ([d4790f3](https://github.com/YannicEl/vue-useForm/commit/d4790f3))
+
+### ❤️ Contributors
+
+- Yannic ([@YannicEl](http://github.com/YannicEl))
+
 ## v0.2.4
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.3...v0.2.4)
