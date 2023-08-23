@@ -21,6 +21,8 @@ Depending on the validation state of the [`Field`](../api#field) instance these 
 - `v-pristine` - added when the field's value has not been changed yet
 - `v-dirty` - added when the field's value has been changed
 - `v-pending` - added when the field has [`async validators`](./validators#async-validators) that are being resolved
+- `v-untouched` - added when the field has not been focused yet
+- `v-touched` - added on the [blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event). Opposite of `v-untouched`
 
 There are also the classes `v-label` and `v-input` that are added to the `label` and `input` elements respectively. Play around with the example and see how different classes get added or removed.
 
