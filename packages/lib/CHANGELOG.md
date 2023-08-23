@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.4
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.3...v0.2.4)
+
+### 🩹 Fixes
+
+- Reset method not resetting touched state correctly ([bd3a81b](https://github.com/YannicEl/vue-useForm/commit/bd3a81b))
+
+### ❤️ Contributors
+
+- Yannic ([@YannicEl](http://github.com/YannicEl))
+
 ## v0.2.3
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.2...v0.2.3)
