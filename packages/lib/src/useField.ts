@@ -104,7 +104,7 @@ export function useField<T>(
 		value.value = initialValue;
 		disabled.value = false;
 		dirty.value = false;
-		touched.value = true;
+		touched.value = false;
 	}
 
 	async function awaitValidation(): Promise<void> {
