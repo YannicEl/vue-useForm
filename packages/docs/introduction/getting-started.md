@@ -1,13 +1,10 @@
 <script setup>
 import GettingStarted from './GettingStarted.vue'
-import Test from './Test.vue';
 </script>
 
 # Getting Started
 
 ## Installation
-
-<Test />
 
 ::: code-group
 
