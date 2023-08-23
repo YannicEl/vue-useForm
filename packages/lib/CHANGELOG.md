@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.2.3
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.2...v0.2.3)
+
+### 🚀 Enhancements
+
+- Added v-untouched and v-touched validation calsses ([4ac927e](https://github.com/YannicEl/vue-useForm/commit/4ac927e))
+
+### 🩹 Fixes
+
+- Moved touched/untouched state into useField and useForm ([d385785](https://github.com/YannicEl/vue-useForm/commit/d385785))
+
+### 📖 Documentation
+
+- Updated touched/untouched docs ([fd22c9c](https://github.com/YannicEl/vue-useForm/commit/fd22c9c))
+
+### ❤️ Contributors
+
+- Yannic ([@YannicEl](http://github.com/YannicEl))
+
 ## v0.2.2
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.1...v0.2.2)

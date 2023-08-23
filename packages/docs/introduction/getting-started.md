@@ -1,6 +1,13 @@
+<script setup>
+import GettingStarted from './GettingStarted.vue'
+import Test from './Test.vue';
+</script>
+
 # Getting Started
 
 ## Installation
+
+<Test />
 
 ::: code-group
 
@@ -54,10 +61,6 @@ const form = useForm({
 ```
 
 The rendered form will look something like this. Play around with it and see how the errors and state change while you are typing.
-
-<script setup>
-import GettingStarted from './GettingStarted.vue'
-</script>
 
 <GettingStarted class="mt-12"/>
 

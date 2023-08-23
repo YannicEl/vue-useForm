@@ -51,16 +51,20 @@ pre * {
 	font-weight: 600;
 	padding-left: 1rem;
 
-	& .v-input {
-		font-family: inherit;
-		appearance: none;
-		border: 1px solid rgb(209, 213, 219);
-		border-radius: 0.375rem;
-		padding: 0.5rem 1rem;
-		margin-left: -1rem;
-		margin-top: 0.25rem;
-		font-size: 1rem;
-		line-height: 1.5rem;
-		box-shadow: 0 2px 2px #0000000d;
+	& input[type='text'],
+	select,
+	textarea {
+		&.v-input {
+			font-family: inherit;
+			appearance: none;
+			border: 1px solid rgb(209, 213, 219);
+			border-radius: 0.375rem;
+			padding: 0.5rem 1rem;
+			margin-left: -1rem;
+			margin-top: 0.25rem;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			box-shadow: 0 2px 2px #0000000d;
+		}
 	}
 }
