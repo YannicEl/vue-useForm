@@ -19,6 +19,8 @@ export interface Field<T = any> {
 	pristine: boolean;
 	dirty: boolean;
 	async: boolean;
+	untouched: boolean;
+	touched: boolean;
 	pending: boolean;
 
 	// Validators and errors
@@ -95,10 +97,14 @@ export function useField<T>(
 		if (newValue !== initialValue) dirty.value = true;
 	});
 
+	const touched = ref(false);
+	const untouched = computed(() => !touched.value);
+
 	function reset(): void {
 		value.value = initialValue;
 		disabled.value = false;
 		dirty.value = false;
+		touched.value = true;
 	}
 
 	async function awaitValidation(): Promise<void> {
@@ -126,6 +132,8 @@ export function useField<T>(
 		pristine,
 		dirty,
 		async,
+		untouched,
+		touched,
 		pending,
 
 		errors,

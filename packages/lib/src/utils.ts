@@ -2,7 +2,7 @@ import type { Field } from './useField';
 import type { Form } from './useForm';
 
 export function getClassnames(formOrField: Form | Field): Record<string, boolean>[] {
-	const { valid, invalid, pristine, dirty, pending } = formOrField;
+	const { valid, invalid, pristine, dirty, pending, untouched, touched } = formOrField;
 
 	const isForm = 'submitted' in formOrField;
 
@@ -12,6 +12,8 @@ export function getClassnames(formOrField: Form | Field): Record<string, boolean
 		pristine,
 		dirty,
 		pending,
+		untouched,
+		touched,
 		submitted: isForm ? formOrField.submitted : false,
 		input: !isForm,
 		form: isForm,

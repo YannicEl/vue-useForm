@@ -17,6 +17,8 @@ export interface Form<T = any> {
 	disabled: boolean;
 	pristine: boolean;
 	dirty: boolean;
+	untouched: boolean;
+	touched: boolean;
 	pending: boolean;
 	submitted: boolean;
 
@@ -50,14 +52,15 @@ export type FieldOptions<T> = {
 
 // #region UseFormOptions
 export type UseFormOptions = {
-	plugins: Plugin[];
+	plugins?: Plugin[];
+	validators?: Validator[];
 };
 // #endregion UseFormOptions
 
 // #region useForm
 export function useForm<T>(
 	fieldOptions: FieldOptions<T>,
-	options: UseFormOptions = { plugins: [] }
+	options: UseFormOptions = { plugins: [], validators: [] }
 ): Form<T> {
 	const fields: Fields<T> = {} as any;
 	const values: Values<T> = reactive({}) as any;
@@ -119,6 +122,16 @@ export function useForm<T>(
 	});
 	const pristine = computed(() => !dirty.value);
 
+	const touched = computed(() => {
+		let touched = false;
+		for (const key in fields) {
+			if (!touched) touched = fields[key].touched;
+		}
+
+		return touched;
+	});
+	const untouched = computed(() => !touched.value);
+
 	function disable() {
 		for (const key in fields) {
 			fields[key].disable();
@@ -168,6 +181,8 @@ export function useForm<T>(
 		pristine,
 		dirty,
 		pending,
+		untouched,
+		touched,
 		submitted,
 
 		// functions
@@ -179,7 +194,7 @@ export function useForm<T>(
 		addPlugin,
 	});
 
-	options.plugins.forEach((plugin) => plugin(form));
+	options.plugins?.forEach((plugin) => plugin(form));
 
 	return form;
 }

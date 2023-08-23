@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, h, ref, useSlots } from 'vue';
+import { computed, h, useSlots } from 'vue';
 import { injectForm } from '../composables/useFormInject';
 import type { Field } from '../useField';
 import { getClassnames } from '../utils';
@@ -19,10 +19,10 @@ const props = defineProps<{
 const slots = useSlots();
 const defaultSlots = computed(() => slots.default?.() ?? []);
 
-const touched = ref(false);
-
 const labelNodes = computed(() => {
-	return defaultSlots.value.filter((slot) => slot.type !== 'input' && slot.type !== 'select');
+	return defaultSlots.value.filter(
+		(slot) => slot.type !== 'input' && slot.type !== 'select' && slot.type !== 'textarea'
+	);
 });
 
 const LabelContent = () => {
@@ -30,7 +30,9 @@ const LabelContent = () => {
 };
 
 const inputNode = computed(() => {
-	return defaultSlots.value.find((slot) => slot.type === 'input' || slot.type === 'select');
+	return defaultSlots.value.find(
+		(slot) => slot.type === 'input' || slot.type === 'select' || slot.type === 'textarea'
+	);
 });
 
 const field = computed(() => {
@@ -66,22 +68,43 @@ const Render = () => {
 	if (!inputNode.value) return;
 	if (!field.value) return;
 
-	const classes = getClassnames(field.value);
-	classes.push({ 'v-touched': touched.value });
-	classes.push({ 'v-untouched': !touched.value });
-
-	return h(inputNode.value, {
-		value: field.value.value,
+	const props: any = {
 		onInput(event: InputEvent) {
 			if (!field.value) return;
-			field.value.value = (event.target as HTMLInputElement).value;
+			let value: any = (event.target as HTMLInputElement).value;
+
+			if (Array.isArray(field.value.value)) {
+				const set = new Set(field.value.value);
+				if (set.has(value)) {
+					set.delete(value);
+				} else {
+					set.add(value);
+				}
+				value = [...set];
+			}
+			field.value.value = value;
 		},
 		onBlur() {
-			touched.value = true;
+			if (!field.value) return;
+			field.value.touched = true;
 		},
 		disabled: field.value.disabled,
-		class: classes,
-	});
+		class: getClassnames(field.value),
+	};
+
+	const inputType = inputNode.value.props?.type;
+
+	if (inputType === 'text' || inputType === 'textarea') {
+		props.value = field.value.value;
+	}
+
+	if (inputType === 'radio' || inputType === 'checkbox') {
+		props.checked =
+			field.value.value === inputNode.value.props?.value ||
+			field.value.value?.includes(inputNode.value.props?.value);
+	}
+
+	return h(inputNode.value, props);
 };
 </script>
 
