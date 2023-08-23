@@ -132,13 +132,13 @@ export function useForm<T>(
 	});
 	const untouched = computed(() => !touched.value);
 
-	function disable() {
+	function disable(): void {
 		for (const key in fields) {
 			fields[key].disable();
 		}
 	}
 
-	function enable() {
+	function enable(): void {
 		for (const key in fields) {
 			fields[key].enable();
 		}
@@ -165,7 +165,7 @@ export function useForm<T>(
 		});
 	}
 
-	function addPlugin(plugin: Plugin) {
+	function addPlugin(plugin: Plugin): void {
 		plugin(form);
 	}
 
