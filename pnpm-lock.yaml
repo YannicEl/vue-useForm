@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@volar/vue-typescript':
         specifier: ^1.6.5
-        version: 1.6.5(typescript@5.1.6)
+        version: 1.6.5(typescript@5.2.2)
       changelogen:
         specifier: ^0.5.5
         version: 0.5.5
@@ -19,7 +19,7 @@ importers:
         version: 3.0.2
       prettier-plugin-organize-imports:
         specifier: ^3.2.3
-        version: 3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.2)(typescript@5.1.6)
+        version: 3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.2)(typescript@5.2.2)
       prettier-plugin-tailwindcss:
         specifier: 0.5.3
         version: 0.5.3(prettier-plugin-organize-imports@3.2.3)(prettier@3.0.2)
@@ -40,14 +40,14 @@ importers:
         specifier: 1.0.0-rc.4
         version: 1.0.0-rc.4(@algolia/client-search@4.19.1)(sass@1.66.1)(search-insights@2.7.0)
       wrangler:
-        specifier: ^3.5.1
-        version: 3.5.1
+        specifier: ^3.6.0
+        version: 3.6.0
 
   packages/lib:
     devDependencies:
       '@types/node':
-        specifier: ^20.5.3
-        version: 20.5.3
+        specifier: ^20.5.4
+        version: 20.5.4
       '@vitejs/plugin-vue':
         specifier: ^4.3.3
         version: 4.3.3(vite@4.4.9)(vue@3.3.4)
@@ -55,14 +55,14 @@ importers:
         specifier: workspace:*
         version: 'link:'
       typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
+        specifier: ^5.2.2
+        version: 5.2.2
       valibot:
         specifier: ^0.13.1
         version: 0.13.1
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.3)
+        version: 4.4.9(@types/node@20.5.4)
       vitest:
         specifier: ^0.34.2
         version: 0.34.2
@@ -71,7 +71,7 @@ importers:
         version: 3.3.4
       vue-tsc:
         specifier: ^1.8.8
-        version: 1.8.8(typescript@5.1.6)
+        version: 1.8.8(typescript@5.2.2)
       zod:
         specifier: ^3.22.2
         version: 3.22.2
@@ -874,8 +874,8 @@ packages:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: true
 
-  /@types/node@20.5.3:
-    resolution: {integrity: sha512-ITI7rbWczR8a/S6qjAW7DMqxqFMjjTo61qZVWJ1ubPvbIQsL5D/TvwjYEalM8Kthpe3hTzOGrF2TGbAu2uyqeA==}
+  /@types/node@20.5.4:
+    resolution: {integrity: sha512-Y9vbIAoM31djQZrPYjpTLo0XlaSwOIsrlfE3LpulZeRblttsLQRFRlBAppW0LOxyT3ALj2M5vU1ucQQayQH3jA==}
     dev: true
 
   /@types/web-bluetooth@0.0.17:
@@ -1094,7 +1094,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.9(@types/node@20.5.3)
+      vite: 4.4.9(@types/node@20.5.4)
       vue: 3.3.4
     dev: true
 
@@ -1166,13 +1166,13 @@ packages:
       '@volar/language-core': 1.10.0
     dev: true
 
-  /@volar/typescript@1.4.1-patch.2(typescript@5.1.6):
+  /@volar/typescript@1.4.1-patch.2(typescript@5.2.2):
     resolution: {integrity: sha512-lPFYaGt8OdMEzNGJJChF40uYqMO4Z/7Q9fHPQC/NRVtht43KotSXLrkPandVVMf9aPbiJ059eAT+fwHGX16k4w==}
     peerDependencies:
       typescript: '*'
     dependencies:
       '@volar/language-core': 1.4.1
-      typescript: 5.1.6
+      typescript: 5.2.2
     dev: true
 
   /@volar/vue-language-core@1.6.5:
@@ -1189,15 +1189,15 @@ packages:
       vue-template-compiler: 2.7.14
     dev: true
 
-  /@volar/vue-typescript@1.6.5(typescript@5.1.6):
+  /@volar/vue-typescript@1.6.5(typescript@5.2.2):
     resolution: {integrity: sha512-er9rVClS4PHztMUmtPMDTl+7c7JyrxweKSAEe/o/Noeq2bQx6v3/jZHVHBe8ZNUti5ubJL/+Tg8L3bzmlalV8A==}
     deprecated: 'WARNING: This project has been renamed to @vue/typescript. Install using @vue/typescript instead.'
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@volar/typescript': 1.4.1-patch.2(typescript@5.1.6)
+      '@volar/typescript': 1.4.1-patch.2(typescript@5.2.2)
       '@volar/vue-language-core': 1.6.5
-      typescript: 5.1.6
+      typescript: 5.2.2
     dev: true
 
   /@vue/compiler-core@3.3.4:
@@ -1242,7 +1242,7 @@ packages:
     resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==}
     dev: true
 
-  /@vue/language-core@1.8.8(typescript@5.1.6):
+  /@vue/language-core@1.8.8(typescript@5.2.2):
     resolution: {integrity: sha512-i4KMTuPazf48yMdYoebTkgSOJdFraE4pQf0B+FTOFkbB+6hAfjrSou/UmYWRsWyZV6r4Rc6DDZdI39CJwL0rWw==}
     peerDependencies:
       typescript: '*'
@@ -1257,7 +1257,7 @@ packages:
       '@vue/shared': 3.3.4
       minimatch: 9.0.3
       muggle-string: 0.3.1
-      typescript: 5.1.6
+      typescript: 5.2.2
       vue-template-compiler: 2.7.14
     dev: true
 
@@ -1306,11 +1306,11 @@ packages:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
     dev: true
 
-  /@vue/typescript@1.8.8(typescript@5.1.6):
+  /@vue/typescript@1.8.8(typescript@5.2.2):
     resolution: {integrity: sha512-jUnmMB6egu5wl342eaUH236v8tdcEPXXkPgj+eI/F6JwW/lb+yAU6U07ZbQ3MVabZRlupIlPESB7ajgAGixhow==}
     dependencies:
       '@volar/typescript': 1.10.0
-      '@vue/language-core': 1.8.8(typescript@5.1.6)
+      '@vue/language-core': 1.8.8(typescript@5.2.2)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -2267,7 +2267,7 @@ packages:
       workerd: 1.20230814.1
       ws: 8.13.0
       youch: 3.2.3
-      zod: 3.21.4
+      zod: 3.22.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -2543,7 +2543,7 @@ packages:
       tunnel-agent: 0.6.0
     dev: true
 
-  /prettier-plugin-organize-imports@3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.2)(typescript@5.1.6):
+  /prettier-plugin-organize-imports@3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.2)(typescript@5.2.2):
     resolution: {integrity: sha512-KFvk8C/zGyvUaE3RvxN2MhCLwzV6OBbFSkwZ2OamCrs9ZY4i5L77jQ/w4UmUr+lqX8qbaqVq6bZZkApn+IgJSg==}
     peerDependencies:
       '@volar/vue-language-plugin-pug': ^1.0.4
@@ -2556,9 +2556,9 @@ packages:
       '@volar/vue-typescript':
         optional: true
     dependencies:
-      '@volar/vue-typescript': 1.6.5(typescript@5.1.6)
+      '@volar/vue-typescript': 1.6.5(typescript@5.2.2)
       prettier: 3.0.2
-      typescript: 5.1.6
+      typescript: 5.2.2
     dev: true
 
   /prettier-plugin-tailwindcss@0.5.3(prettier-plugin-organize-imports@3.2.3)(prettier@3.0.2):
@@ -2614,7 +2614,7 @@ packages:
         optional: true
     dependencies:
       prettier: 3.0.2
-      prettier-plugin-organize-imports: 3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.2)(typescript@5.1.6)
+      prettier-plugin-organize-imports: 3.2.3(@volar/vue-typescript@1.6.5)(prettier@3.0.2)(typescript@5.2.2)
     dev: true
 
   /prettier@3.0.2:
@@ -2999,8 +2999,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /typescript@5.1.6:
-    resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
@@ -3077,7 +3077,7 @@ packages:
     resolution: {integrity: sha512-SG2W1RHqE2LShl3p6tyERt6I+G6PQa9ZFVfkyNKXz01HBzL+tBeH5kXw/5AQeAzPJSjI3djVGBl1CyozA1kyBQ==}
     dev: true
 
-  /vite-node@0.34.2(@types/node@20.5.3):
+  /vite-node@0.34.2(@types/node@20.5.4):
     resolution: {integrity: sha512-JtW249Zm3FB+F7pQfH56uWSdlltCo1IOkZW5oHBzeQo0iX4jtC7o1t9aILMGd9kVekXBP2lfJBEQt9rBh07ebA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -3087,7 +3087,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.9(@types/node@20.5.3)
+      vite: 4.4.9(@types/node@20.5.4)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3099,7 +3099,7 @@ packages:
       - terser
     dev: true
 
-  /vite@4.4.9(@types/node@20.5.3):
+  /vite@4.4.9(@types/node@20.5.4):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3127,7 +3127,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.5.3
+      '@types/node': 20.5.4
       esbuild: 0.18.20
       postcss: 8.4.27
       rollup: 3.28.0
@@ -3248,7 +3248,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.5
       '@types/chai-subset': 1.3.3
-      '@types/node': 20.5.3
+      '@types/node': 20.5.4
       '@vitest/expect': 0.34.2
       '@vitest/runner': 0.34.2
       '@vitest/snapshot': 0.34.2
@@ -3267,8 +3267,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.0
       tinypool: 0.7.0
-      vite: 4.4.9(@types/node@20.5.3)
-      vite-node: 0.34.2(@types/node@20.5.3)
+      vite: 4.4.9(@types/node@20.5.4)
+      vite-node: 0.34.2(@types/node@20.5.4)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
@@ -3310,16 +3310,16 @@ packages:
       he: 1.2.0
     dev: true
 
-  /vue-tsc@1.8.8(typescript@5.1.6):
+  /vue-tsc@1.8.8(typescript@5.2.2):
     resolution: {integrity: sha512-bSydNFQsF7AMvwWsRXD7cBIXaNs/KSjvzWLymq/UtKE36697sboX4EccSHFVxvgdBlI1frYPc/VMKJNB7DFeDQ==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@vue/language-core': 1.8.8(typescript@5.1.6)
-      '@vue/typescript': 1.8.8(typescript@5.1.6)
+      '@vue/language-core': 1.8.8(typescript@5.2.2)
+      '@vue/typescript': 1.8.8(typescript@5.2.2)
       semver: 7.5.4
-      typescript: 5.1.6
+      typescript: 5.2.2
     dev: true
 
   /vue@3.3.4:
@@ -3362,8 +3362,8 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20230814.1
     dev: true
 
-  /wrangler@3.5.1:
-    resolution: {integrity: sha512-CnrKId+pmjTfLSidM9Ut7lUDCFWEtJyY3JT3Dk+TgYHvu2zVmMgUeQQZHZfvpVN5eaEZifNQr90KEvMLy7MhHw==}
+  /wrangler@3.6.0:
+    resolution: {integrity: sha512-GWs4+gIUK+086svW/TgFhhxxrl/hdW2L7WASbdc10dJT7yFmCXse0SnHiqWUxbFu3ScP2t3a3LszJ08wwolWHg==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
@@ -3433,10 +3433,6 @@ packages:
       cookie: 0.5.0
       mustache: 4.2.0
       stacktracey: 2.1.8
-    dev: true
-
-  /zod@3.21.4:
-    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: true
 
   /zod@3.22.2:
