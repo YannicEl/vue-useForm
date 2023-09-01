@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.5.7",
-    "@vitejs/plugin-vue": "^4.3.3",
+    "@vitejs/plugin-vue": "^4.3.4",
     "@vuetils/form": "workspace:*",
     "typescript": "^5.2.2",
     "valibot": "^0.13.1",
