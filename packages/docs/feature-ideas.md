@@ -43,8 +43,7 @@ Stuff I'm thinking about but haven't implemented yet.
   When form wide validators are implemented a zod validator could look something like this:
 
   ```ts
-  import { define } from '@vuetils/form';
-  import { z, Schema } from 'zod';
+  import { Schema, z } from 'zod';
 
   const zodValidator = defineValidatorWithArgs('zod', (value, schema: Schema) => {
   	try {

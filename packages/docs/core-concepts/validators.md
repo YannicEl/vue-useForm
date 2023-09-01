@@ -18,7 +18,7 @@ Validators are simple functions that take in the current field's value as first 
 These validators can be added to any `form` or `field` like so:
 
 ```ts
-import { email, emoji, regex, startsWith, useForm, useField } from '@vuetils/form';
+import { email, emoji, regex, startsWith, useField, useForm } from '@vuetils/form';
 
 const form = useForm({
 	field: ['', [email, emoji, regex(/regexIHardlyKnowHer/), startsWith('zwallo')]],
