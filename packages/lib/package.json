@@ -38,7 +38,7 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@types/node": "^20.5.7",
+    "@types/node": "^20.5.8",
     "@vitejs/plugin-vue": "^4.3.4",
     "@vuetils/form": "workspace:*",
     "typescript": "^5.2.2",
