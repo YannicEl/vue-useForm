@@ -58,8 +58,8 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
       valibot:
-        specifier: ^0.14.0
-        version: 0.14.0
+        specifier: ^0.15.0
+        version: 0.15.0
       vite:
         specifier: ^4.4.9
         version: 4.4.9(@types/node@20.6.0)
@@ -3052,8 +3052,8 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /valibot@0.14.0:
-    resolution: {integrity: sha512-9so+LH7y5k7fSTvhShbvj38OQ/NU/61QBeR61ALU4Ee9L14/ysGy31KSYEw7fyOWe+fW9Pjo8Add/1m1/rVUvQ==}
+  /valibot@0.15.0:
+    resolution: {integrity: sha512-OOE8+EeR/TO/uks08FGYe/6DJVIgkD4Ap3dkd8M4ws/bCaQUg3XDk1PGDFiAUJqyQilW/QZ5buBEA3R1gIgQ0g==}
     dev: true
 
   /vite-node@0.34.4(@types/node@20.6.0):
