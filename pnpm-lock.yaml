@@ -15,14 +15,14 @@ importers:
         specifier: ^0.5.5
         version: 0.5.5
       prettier:
-        specifier: ^3.1.0
-        version: 3.1.0
+        specifier: ^3.1.1
+        version: 3.1.1
       prettier-plugin-organize-imports:
         specifier: ^3.2.4
-        version: 3.2.4(@volar/vue-typescript@1.6.5)(prettier@3.1.0)(typescript@5.3.3)
+        version: 3.2.4(@volar/vue-typescript@1.6.5)(prettier@3.1.1)(typescript@5.3.3)
       prettier-plugin-tailwindcss:
         specifier: 0.5.9
-        version: 0.5.9(prettier-plugin-organize-imports@3.2.4)(prettier@3.1.0)
+        version: 0.5.9(prettier-plugin-organize-imports@3.2.4)(prettier@3.1.1)
 
   packages/docs:
     dependencies:
@@ -58,8 +58,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
       valibot:
-        specifier: ^0.23.0
-        version: 0.23.0
+        specifier: ^0.24.1
+        version: 0.24.1
       vite:
         specifier: ^5.0.7
         version: 5.0.7(@types/node@20.10.4)
@@ -3191,7 +3191,7 @@ packages:
     resolution: {integrity: sha512-X9BODrvQ4Ekwv9GURm9AKAGaomqXmip7NQTZgY7gcNmr7XE83adOMJvd3N42id1tMFU7ojiynRsYnY6/BRFxLA==}
     dev: true
 
-  /prettier-plugin-organize-imports@3.2.4(@volar/vue-typescript@1.6.5)(prettier@3.1.0)(typescript@5.3.3):
+  /prettier-plugin-organize-imports@3.2.4(@volar/vue-typescript@1.6.5)(prettier@3.1.1)(typescript@5.3.3):
     resolution: {integrity: sha512-6m8WBhIp0dfwu0SkgfOxJqh+HpdyfqSSLfKKRZSFbDuEQXDDndb8fTpRWkUrX/uBenkex3MgnVk0J3b3Y5byog==}
     peerDependencies:
       '@volar/vue-language-plugin-pug': ^1.0.4
@@ -3205,11 +3205,11 @@ packages:
         optional: true
     dependencies:
       '@volar/vue-typescript': 1.6.5(typescript@5.3.3)
-      prettier: 3.1.0
+      prettier: 3.1.1
       typescript: 5.3.3
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.9(prettier-plugin-organize-imports@3.2.4)(prettier@3.1.0):
+  /prettier-plugin-tailwindcss@0.5.9(prettier-plugin-organize-imports@3.2.4)(prettier@3.1.1):
     resolution: {integrity: sha512-9x3t1s2Cjbut2QiP+O0mDqV3gLXTe2CgRlQDgucopVkUdw26sQi53p/q4qvGxMLBDfk/dcTV57Aa/zYwz9l8Ew==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
@@ -3258,12 +3258,12 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
-      prettier: 3.1.0
-      prettier-plugin-organize-imports: 3.2.4(@volar/vue-typescript@1.6.5)(prettier@3.1.0)(typescript@5.3.3)
+      prettier: 3.1.1
+      prettier-plugin-organize-imports: 3.2.4(@volar/vue-typescript@1.6.5)(prettier@3.1.1)(typescript@5.3.3)
     dev: true
 
-  /prettier@3.1.0:
-    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
+  /prettier@3.1.1:
+    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -3725,8 +3725,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /valibot@0.23.0:
-    resolution: {integrity: sha512-3draqnQrhygou2FUtVSfdzgCE4icqj6d4+Qg5ercN9WI/JI4hEMqvX2yQXyq7btlaobCGRgZAWMr7kWr3Dtxkw==}
+  /valibot@0.24.1:
+    resolution: {integrity: sha512-Toclbuy20XsECZiueh2dkQ63he2AGaBIj/FJRDAFti2kueFldm9bjJzSYvPaL5CE1HXDMRhq7olak8at7xCz5A==}
     dev: true
 
   /vfile-location@5.0.2:
