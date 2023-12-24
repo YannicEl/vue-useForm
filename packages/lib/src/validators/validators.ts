@@ -37,7 +37,7 @@ export const regex = defineValidatorWithArgs(
 
 // https://github.com/colinhacks/zod
 const emailRegex =
-	/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((?!-)([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{1,})[^-<>()[\].,;:\s@"]$/i;
+	/^(?!\.)(?!.*\.\.)([A-Z0-9_+-\.]*)[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\-]*\.)+[A-Z]{2,}$/i;
 
 export const email = defineValidator('email', (value) => regex(emailRegex).validate(value));
 
