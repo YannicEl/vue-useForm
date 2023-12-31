@@ -12,9 +12,9 @@
 		"@vuetils/form": "workspace:*"
 	},
 	"devDependencies": {
-		"sass": "^1.69.5",
+		"sass": "^1.69.6",
 		"unocss": "^0.58.2",
-		"vitepress": "1.0.0-rc.33",
+		"vitepress": "1.0.0-rc.34",
 		"wrangler": "^3.22.1"
 	}
 }
