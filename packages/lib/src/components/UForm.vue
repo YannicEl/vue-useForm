@@ -4,14 +4,14 @@
 	</form>
 </template>
 
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import { computed } from 'vue';
 import { provideForm } from '../composables/useFormInject';
 import type { Form } from '../useForm';
 import { getClassnames } from '../utils';
 
 const { form } = defineProps<{
-	form: Form<T>;
+	form: Form;
 }>();
 
 const emits = defineEmits<{
