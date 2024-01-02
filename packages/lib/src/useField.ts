@@ -58,21 +58,25 @@ export function useField<T>(
 	const async = computed(() => asyncValidators.value.size > 0);
 	const pending = ref(false);
 	const asyncErrors = ref<string[]>([]);
-	watch(value, async (value) => {
-		if (asyncValidators.value.size === 0) return;
+	watch(
+		value,
+		async (value) => {
+			if (asyncValidators.value.size === 0) return;
 
-		pending.value = true;
+			pending.value = true;
 
-		const errors = await Promise.all(
-			Array.from(asyncValidators.value).map(async (validator) => {
-				const isValid = await validator.validate(value);
-				if (!isValid) return validator.name;
-			})
-		);
+			const errors = await Promise.all(
+				Array.from(asyncValidators.value).map(async (validator) => {
+					const isValid = await validator.validate(value);
+					if (!isValid) return validator.name;
+				})
+			);
 
-		asyncErrors.value = errors.filter(Boolean) as string[];
-		pending.value = false;
-	});
+			asyncErrors.value = errors.filter(Boolean) as string[];
+			pending.value = false;
+		},
+		{ immediate: true }
+	);
 
 	// combine async and sync errors
 	const errors = computed(() => [...syncErrors.value, ...asyncErrors.value]);
