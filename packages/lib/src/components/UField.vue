@@ -1,7 +1,7 @@
 <template>
 	<label class="v-label">
 		<LabelContent />
-		<Render />
+		<InputElement />
 	</label>
 </template>
 
@@ -69,7 +69,7 @@ const field = computed(() => {
 	return field;
 });
 
-const Render = () => {
+const InputElement = () => {
 	if (!inputNode.value) return;
 	if (!field.value) return;
 
