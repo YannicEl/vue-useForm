@@ -106,7 +106,7 @@ const InputElement = () => {
 	if (inputType === 'radio' || inputType === 'checkbox') {
 		props.checked =
 			field.value.value === inputNode.value.props?.value ||
-			field.value.value?.includes(inputNode.value.props?.value);
+			field.value.value?.includes?.(inputNode.value.props?.value);
 	}
 
 	return h(inputNode.value, props);
