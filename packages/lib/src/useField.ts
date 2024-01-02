@@ -91,11 +91,8 @@ export function useField<T>(
 	const disable = () => (disabled.value = true);
 	const enable = () => (disabled.value = false);
 
-	const dirty = ref(false);
+	const dirty = computed(() => value.value !== initialValue);
 	const pristine = computed(() => !dirty.value);
-	watch(value, (newValue) => {
-		if (newValue !== initialValue) dirty.value = true;
-	});
 
 	const touched = ref(false);
 	const untouched = computed(() => !touched.value);
@@ -103,7 +100,6 @@ export function useField<T>(
 	function reset(): void {
 		value.value = initialValue;
 		disabled.value = false;
-		dirty.value = false;
 		touched.value = false;
 	}
 
