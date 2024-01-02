@@ -59,6 +59,11 @@ const field = computed(() => {
 		return;
 	}
 
+	if ('values' in field) {
+		console.warn('Field is actually a field group');
+		return;
+	}
+
 	field.disabled = 'disabled' in attributes;
 
 	return field;
