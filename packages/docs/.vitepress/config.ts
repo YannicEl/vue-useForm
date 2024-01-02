@@ -83,6 +83,11 @@ export default defineConfig({
 		lastmodDateOnly: true,
 	},
 
+	head: [
+		['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+		['link', { rel: 'icon', type: 'image/svg', href: '/favicon.svg' }],
+	],
+
 	vite: {
 		plugins: [UnoCSS()],
 	},
