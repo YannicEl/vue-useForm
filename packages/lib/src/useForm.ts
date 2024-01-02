@@ -1,10 +1,11 @@
-import { computed, ComputedRef, reactive, ref, UnwrapRef, watch } from 'vue';
+import type { ComputedRef, UnwrapRef } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
 import { Plugin } from './plugins';
 import { Field, useField } from './useField';
 import { AsyncValidator, Validator } from './validators';
 
 // #region Form
-export interface Form<T = any> {
+export interface Form<T extends {} = any> {
 	values: UnwrapRef<Values<T>>;
 	fields: UnwrapRef<Fields<T>>;
 
@@ -38,22 +39,34 @@ export interface Form<T = any> {
 // #endregion Form
 
 export type Values<T> = {
-	[Key in keyof T]: ComputedRef<T[Key]>;
+	[Key in keyof T]: T[Key] extends object ? Values<T[Key]> : ComputedRef<T[Key] | undefined>;
 };
 
 export type UnwrappedValues<T> = UnwrapRef<Values<T>>;
 
 export type Fields<T> = {
-	[Key in keyof T]: Field<T[Key]>;
+	[Key in keyof T]: T[Key] extends object ? Form<T[Key]> : Field<T[Key]>;
 };
 
 // #region FieldOptions
 export type FieldOptions<T> = {
-	[Key in keyof T]: [
-		initialValue: T[Key],
-		validators?: Validator[],
-		asyncValidators?: AsyncValidator[],
-	];
+	[Key in keyof T]:
+		| [initialValue: T[Key], validators?: Validator[], asyncValidators?: AsyncValidator[]]
+		| {
+				[Key2 in keyof T[Key]]:
+					| [
+							initialValue: T[Key][Key2],
+							validators?: Validator[],
+							asyncValidators?: AsyncValidator[],
+					  ]
+					| {
+							[Key3 in keyof T[Key][Key2]]: [
+								initialValue: T[Key][Key2][Key3],
+								validators?: Validator[],
+								asyncValidators?: AsyncValidator[],
+							];
+					  };
+		  };
 };
 // #endregion FieldOptions
 
@@ -66,20 +79,29 @@ export type UseFormOptions<T> = {
 // #endregion UseFormOptions
 
 // #region useForm
-export function useForm<T>(
+export function useForm<T extends {}>(
 	fieldOptions: FieldOptions<T>,
 	options: UseFormOptions<T> = {}
 ): Form<T> {
-	const fields: Fields<T> = {} as any;
-	const values: Values<T> = reactive({}) as any;
+	const fields = {} as Fields<T>;
+	const values = {} as Values<T>;
 
 	for (const key in fieldOptions) {
-		const [initialValue, validators = [], asyncValidators = []] = fieldOptions[key];
+		const fieldOrForm = fieldOptions[key];
+		if (!Array.isArray(fieldOrForm)) {
+			const form = useForm(fieldOrForm);
 
-		const field = useField(initialValue, { validators, asyncValidators });
+			// TODO fix any
+			values[key] = form.values as any;
+			fields[key] = form as any;
+		} else {
+			const [initialValue, validators = [], asyncValidators = []] = fieldOrForm;
+			const field = useField(initialValue, { validators, asyncValidators });
 
-		values[key] = computed(() => field.value);
-		fields[key] = field;
+			// TODO fix any
+			values[key] = computed(() => field.value) as any;
+			fields[key] = field as any;
+		}
 	}
 
 	const validators = ref(new Set<Validator<UnwrappedValues<T>>>(options.validators));
@@ -109,13 +131,6 @@ export function useForm<T>(
 		return invalid;
 	});
 	const valid = computed(() => !invalid.value);
-
-	const setValues = (setValues: Partial<{ [Key in keyof T]: T[Key] }>) => {
-		for (const key in setValues) {
-			const value = setValues[key];
-			fields[key].value = value!;
-		}
-	};
 
 	const submitted = ref(false);
 
@@ -157,6 +172,20 @@ export function useForm<T>(
 		return touched;
 	});
 	const untouched = computed(() => !touched.value);
+
+	function setValues(values: Partial<{ [Key in keyof T]: Partial<T[Key]> | T[Key] }>) {
+		for (const key in values) {
+			const value = values[key];
+			const fieldOrForm = fields[key];
+			if ('setValues' in fieldOrForm) {
+				// TODO figure out why ! is needed
+				fieldOrForm.setValues(value!);
+			} else {
+				// TODO fix any
+				fieldOrForm.value = value as any;
+			}
+		}
+	}
 
 	function disable(): void {
 		for (const key in fields) {
