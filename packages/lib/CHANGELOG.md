@@ -1,6 +1,37 @@
 # Changelog
 
 
+## v0.2.6
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.5...v0.2.6)
+
+### 🚀 Enhancements
+
+- Form nesting ([7c6dde5](https://github.com/YannicEl/vue-useForm/commit/7c6dde5))
+- Added UFormGroup component ([5af1089](https://github.com/YannicEl/vue-useForm/commit/5af1089))
+
+### 🩹 Fixes
+
+- Updated email regex ([74e2201](https://github.com/YannicEl/vue-useForm/commit/74e2201))
+- Make dirty on field a computed value ([6b4a4af](https://github.com/YannicEl/vue-useForm/commit/6b4a4af))
+- Check if field is a formgroup ([b990928](https://github.com/YannicEl/vue-useForm/commit/b990928))
+
+### 📖 Documentation
+
+- Updated vitepress and fixed css vars ([6dd8087](https://github.com/YannicEl/vue-useForm/commit/6dd8087))
+- Format ([de205f0](https://github.com/YannicEl/vue-useForm/commit/de205f0))
+- Remove already implemented features ([7b5f22c](https://github.com/YannicEl/vue-useForm/commit/7b5f22c))
+- Added favicon ([50a267e](https://github.com/YannicEl/vue-useForm/commit/50a267e))
+
+### 🏡 Chore
+
+- Updated prettier and fixed formatting ([cb20b02](https://github.com/YannicEl/vue-useForm/commit/cb20b02))
+- Remove unnecessary generic type ([a8b0a0d](https://github.com/YannicEl/vue-useForm/commit/a8b0a0d))
+
+### ❤️ Contributors
+
+- Yannic ([@YannicEl](http://github.com/YannicEl))
+
 ## v0.2.5
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.4...v0.2.5)
