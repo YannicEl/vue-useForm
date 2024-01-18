@@ -1,5 +1,5 @@
 <template>
-	<textarea v-model="field!.value" :class="classes">
+	<textarea v-model="field!.value" :class="classes" v-bind="$attrs">
 		<slot />
 	</textarea
 	>

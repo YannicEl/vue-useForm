@@ -1,5 +1,5 @@
 <template>
-	<select v-model="field!.value" :class="classes">
+	<select v-model="field!.value" :class="classes" v-bind="$attrs">
 		<slot />
 	</select>
 </template>
