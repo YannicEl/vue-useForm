@@ -9,7 +9,8 @@
 		"deploy:prod": "wrangler pages deploy .vitepress/dist --project-name=vuetils-form-docs-prod --commit-dirty"
 	},
 	"dependencies": {
-		"@vuetils/form": "workspace:*"
+		"@vuetils/form": "workspace:*",
+		"vue": "3.4.15"
 	},
 	"devDependencies": {
 		"sass": "1.70.0",
