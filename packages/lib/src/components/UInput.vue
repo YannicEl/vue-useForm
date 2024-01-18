@@ -1,15 +1,10 @@
 <template>
-	<input ref="input" v-model="field.value" :class="classes" />
+	<input ref="input" v-model="field!.value" :class="classes" />
 </template>
 
 <script setup lang="ts">
-import { Field } from '../useField';
-import { getFieldAndClasses } from './utils';
+import { getFieldAndClasses, type CustomInputProps } from './utils';
 
-const props = defineProps<{
-	field?: Field;
-	fieldName?: string;
-}>();
-
+const props = defineProps<CustomInputProps>();
 const { field, classes } = getFieldAndClasses(props);
 </script>

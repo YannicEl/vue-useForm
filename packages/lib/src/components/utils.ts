@@ -3,17 +3,21 @@ import { injectForm } from '../composables/useFormInject';
 import { Field } from '../useField';
 import { getClassnames } from '../utils';
 
-export function getFieldAndClasses(props: { field?: Field; fieldName?: string }): {
-	field: ComputedRef<Field>;
+export type CustomInputProps = {
+	field?: Field;
+	fieldName?: string;
+};
+
+export function getFieldAndClasses(props: CustomInputProps): {
+	field: ComputedRef<Field | undefined>;
 	classes: ComputedRef<Record<string, string>>;
 } {
 	const field = computed(() => {
 		if (props.field) return props.field;
 
-		const attributes = useAttrs();
-		const { name } = attributes;
+		const { name, disabled } = useAttrs();
 
-		if (!name && !props.fieldName) {
+		if (!props.fieldName && typeof name !== 'string') {
 			console.warn('Input has not name prop');
 			return;
 		}
@@ -24,7 +28,7 @@ export function getFieldAndClasses(props: { field?: Field; fieldName?: string })
 			return;
 		}
 
-		const field = form.fields[props.fieldName ?? name];
+		const field = form.fields[props.fieldName ?? (name as string)];
 
 		if (!field) {
 			console.warn(`Form has no field "${name}"`);
@@ -36,7 +40,7 @@ export function getFieldAndClasses(props: { field?: Field; fieldName?: string })
 			return;
 		}
 
-		field.disabled = 'disabled' in attributes;
+		field.disabled = !!disabled;
 
 		return field;
 	});
