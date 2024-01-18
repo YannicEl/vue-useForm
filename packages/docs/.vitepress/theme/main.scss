@@ -49,8 +49,8 @@ pre * {
 	font-weight: 600;
 	padding-left: 1rem;
 
-	& input,
-	select,
+	& select,
+	input:not([type='checkbox']):not([type='radio']),
 	textarea {
 		&.v-input {
 			font-family: inherit;
