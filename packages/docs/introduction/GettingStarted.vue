@@ -1,18 +1,18 @@
 <template>
 	<UForm :form="form">
-		<UField>
+		<label>
 			Email: // errors: [{{ form.fields.email.errors.join(', ') }}] state: [{{
 				getStateClasses(form.fields.email)
 			}}]
-			<input type="email" name="email" required />
-		</UField>
+			<UInput type="email" name="email" />
+		</label>
 
-		<UField>
+		<label>
 			Password: // errors: [{{ form.fields.password.errors.join(', ') }}] state: [{{
 				getStateClasses(form.fields.password)
 			}}]
-			<input type="password" name="password" required />
-		</UField>
+			<UInput type="password" name="password" />
+		</label>
 
 		<button>Submit</button>
 
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { UField, UForm, email, minLength, required, useForm } from '@vuetils/form';
+import { UForm, UInput, email, minLength, required, useForm } from '@vuetils/form';
 
 const form = useForm({
 	email: ['', [required, email]],

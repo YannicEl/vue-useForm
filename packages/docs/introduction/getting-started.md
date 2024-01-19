@@ -28,7 +28,7 @@ You start of by creating a [`Form`](../api#form) instance with [`useForm()`](../
 
 ```vue
 <script setup>
-import { UField, UForm, email, minLength, required, useForm } from '@vuetils/form';
+import { UForm, UInput, email, minLength, required, useForm } from '@vuetils/form';
 
 const form = useForm({
 	email: ['', [required, email]],
@@ -42,15 +42,15 @@ const form = useForm({
 ```vue
 <template>
 	<UForm :form="form">
-		<UField>
+		<label>
 			Email:
-			<input type="email" name="email" />
-		</UField>
+			<UInput type="email" name="email" />
+		</label>
 
-		<UField>
+		<label>
 			Password:
-			<input type="password" name="password" />
-		</UField>
+			<UInput type="password" name="password" />
+		</label>
 
 		<button>Submit</button>
 	</UForm>
