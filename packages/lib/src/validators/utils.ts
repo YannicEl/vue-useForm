@@ -1,6 +1,7 @@
 // #region Validator
 export type Validator<TValue = unknown> = {
 	name: string;
+	args?: any;
 	validate: (value: TValue) => boolean;
 };
 // #endregion Validator
@@ -8,6 +9,7 @@ export type Validator<TValue = unknown> = {
 // #region AsyncValidator
 export type AsyncValidator<TValue = unknown> = {
 	name: string;
+	args?: any;
 	validate: (value: TValue) => Promise<boolean>;
 };
 // #endregion AsyncValidator
@@ -33,6 +35,7 @@ export function defineValidatorWithArgs<
 	return (args: TArgs) => {
 		return {
 			name,
+			args,
 			validate: (value: TValue) => validate(value, args),
 		} as any;
 	};

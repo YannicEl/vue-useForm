@@ -11,6 +11,7 @@ export type CustomInputProps = {
 export function getFieldAndClasses(props: CustomInputProps): {
 	field: ComputedRef<Field | undefined>;
 	classes: ComputedRef<Record<string, string>>;
+	validationAttrs: ComputedRef<Record<string, number | boolean>>;
 } {
 	const field = computed(() => {
 		if (props.field) return props.field;
@@ -47,5 +48,17 @@ export function getFieldAndClasses(props: CustomInputProps): {
 
 	const classes = computed(() => (field.value ? getClassnames(field.value) : {}));
 
-	return { field, classes };
+	const validationAttrs = computed(() => {
+		const temp = Array.from(field.value?.validators ?? []);
+
+		return {
+			required: !!temp.find((validator) => validator.name === 'required') ?? null,
+			min: temp.find((validator) => validator.name === 'min')?.args ?? null,
+			max: temp.find((validator) => validator.name === 'max')?.args ?? null,
+			minLength: temp.find((validator) => validator.name === 'minLength')?.args ?? null,
+			maxLength: temp.find((validator) => validator.name === 'maxLength')?.args ?? null,
+		};
+	});
+
+	return { field, classes, validationAttrs };
 }
