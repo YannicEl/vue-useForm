@@ -1,6 +1,40 @@
 # Changelog
 
 
+## v0.2.7
+
+[compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.6...v0.2.7)
+
+### 🚀 Enhancements
+
+- Added custom input components ([a9d9ea1](https://github.com/YannicEl/vue-useForm/commit/a9d9ea1))
+- Added native html validation attributes on custom inputs ([19773ab](https://github.com/YannicEl/vue-useForm/commit/19773ab))
+
+### 🩹 Fixes
+
+- Run async validator on initialization too ([fb1d20f](https://github.com/YannicEl/vue-useForm/commit/fb1d20f))
+- Added more optional chaining ([2a2c500](https://github.com/YannicEl/vue-useForm/commit/2a2c500))
+- Small custom input component fixes ([09dd975](https://github.com/YannicEl/vue-useForm/commit/09dd975))
+- Explicitly bind host attributes on custom inputs ([564780b](https://github.com/YannicEl/vue-useForm/commit/564780b))
+
+### 📖 Documentation
+
+- Updated styles ([3a6f8e6](https://github.com/YannicEl/vue-useForm/commit/3a6f8e6))
+- Updated test component ([d04085d](https://github.com/YannicEl/vue-useForm/commit/d04085d))
+- Updated test page ([13b2806](https://github.com/YannicEl/vue-useForm/commit/13b2806))
+
+### 🏡 Chore
+
+- Small refactor ([ca5e1a8](https://github.com/YannicEl/vue-useForm/commit/ca5e1a8))
+
+### ✅ Tests
+
+- Added some tests ([677ec38](https://github.com/YannicEl/vue-useForm/commit/677ec38))
+
+### ❤️ Contributors
+
+- Yannic ([@YannicEl](http://github.com/YannicEl))
+
 ## v0.2.6
 
 [compare changes](https://github.com/YannicEl/vue-useForm/compare/v0.2.5...v0.2.6)
