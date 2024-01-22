@@ -15,7 +15,7 @@
 	"devDependencies": {
 		"sass": "1.70.0",
 		"unocss": "0.58.3",
-		"vitepress": "1.0.0-rc.39",
+		"vitepress": "1.0.0-rc.40",
 		"wrangler": "3.23.0"
 	}
 }
