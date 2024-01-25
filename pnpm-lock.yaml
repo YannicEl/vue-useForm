@@ -61,8 +61,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       valibot:
-        specifier: 0.26.0
-        version: 0.26.0
+        specifier: 0.27.0
+        version: 0.27.0
       vite:
         specifier: 5.0.12
         version: 5.0.12(@types/node@20.11.6)
@@ -3401,8 +3401,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /valibot@0.26.0:
-    resolution: {integrity: sha512-cM8VM9jsJGx9P4qarZUBXd0I88OVI4ddtyZ1sAMiofC3Usj7Jxm2c8Xx5accdTrKc3CblO8yyytRaJ6lrsuA+Q==}
+  /valibot@0.27.0:
+    resolution: {integrity: sha512-1Wv0FfiosoAYruPhueHJgJtgj18KlUoBaIEeCefCEsohStcJQWp3jL59J8Tj9w8jiuQ3USkZGH8BtzDHDGgdxQ==}
     dev: true
 
   /vite-node@1.2.1(@types/node@20.11.6):
