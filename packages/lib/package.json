@@ -38,14 +38,14 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@types/node": "20.11.16",
-    "@vitejs/plugin-vue": "5.0.3",
+    "@types/node": "20.11.18",
+    "@vitejs/plugin-vue": "5.0.4",
     "@vuetils/form": "workspace:*",
     "typescript": "5.3.3",
     "valibot": "0.28.1",
-    "vite": "5.0.12",
+    "vite": "5.1.3",
     "vitest": "1.2.2",
-    "vue": "3.4.15",
+    "vue": "3.4.19",
     "vue-tsc": "1.8.27",
     "zod": "3.22.4"
   },
