@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@vuetils/form": "workspace:*",
-		"vue": "3.4.19"
+		"vue": "3.4.20"
 	},
 	"devDependencies": {
 		"sass": "1.71.1",
