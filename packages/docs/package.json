@@ -16,6 +16,6 @@
 		"sass": "1.71.1",
 		"unocss": "0.58.5",
 		"vitepress": "1.0.0-rc.44",
-		"wrangler": "3.29.0"
+		"wrangler": "3.30.0"
 	}
 }
