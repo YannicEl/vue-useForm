@@ -10,12 +10,12 @@
 	},
 	"dependencies": {
 		"@vuetils/form": "workspace:*",
-		"vue": "3.4.27"
+		"vue": "3.4.31"
 	},
 	"devDependencies": {
-		"sass": "1.77.2",
-		"unocss": "0.60.2",
-		"vitepress": "1.2.0",
-		"wrangler": "3.57.0"
+		"sass": "1.77.6",
+		"unocss": "0.61.0",
+		"vitepress": "1.2.3",
+		"wrangler": "3.62.0"
 	}
 }
