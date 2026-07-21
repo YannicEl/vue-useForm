@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/node": "20.14.14",
-    "@vitejs/plugin-vue": "5.1.2",
+    "@vitejs/plugin-vue": "6.0.8",
     "@vuetils/form": "workspace:*",
     "typescript": "5.5.4",
     "valibot": "0.37.0",
